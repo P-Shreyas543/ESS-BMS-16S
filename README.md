@@ -80,6 +80,16 @@ Every change follows [`instruction.md`](instruction.md):
 
 IPC-2221B (clearance), IPC-7351B (land patterns), IPC-A-610 Class 3, IEC 60664-1, IEC 62619 / UL 1973 (stationary storage), UL 9540A, ISO 26262 principles, AEC-Q100/101/200 where available. Certification is not claimed.
 
+## Third-party material
+
+* **Datasheets and app notes are not included.** They are copyrighted by their manufacturers. The design notes and research reports cite them by document number and page; download them from the manufacturer (TI, ST, Vishay, …) or the LCSC product page.
+* **3D models are not included** (vendor licences vary). Footprints reference them under `${KIPRJMOD}/3d_models/`; fetch them from the manufacturer or with `easyeda2kicad` for local use.
+* Product and company names (Daly, JBD, JK, Seplos, PACE, ANT, Pylontech, Victron, …) are trademarks of their owners and are used only to identify products in the comparison. Competitor data is taken from public documents and listings, cited in `docs/research/02_competitors.md`; no affiliation or endorsement is implied.
+
+## Disclaimer
+
+This is a **work-in-progress design shared for learning and review, not a certified product.** Lithium battery packs store large amounts of energy; a fault in a BMS can cause fire, explosion, electric shock or injury. Anyone who builds, modifies or uses this design does so at their own risk and is responsible for testing it and for meeting the safety standards that apply where it is used (for example IEC 62619, UL 1973, UL 9540A). The design is provided **"as is", without any warranty**, as stated in section 6 (Disclaimer and Liability) of the CERN-OHL-S-2.0 licence. No certification or compliance is claimed.
+
 ## License
 
 * **Hardware** (schematics, PCB, libraries, design documentation): [CERN Open Hardware Licence v2 — Strongly Reciprocal](LICENSE) (`CERN-OHL-S-2.0`). You may use, modify, make and sell it; if you distribute a modified design or products made from it, you must publish your modified source under the same licence.

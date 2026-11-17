@@ -1,32 +1,94 @@
-# KiCad Git Ignore for Automotive_ESS_BMS
+# .gitignore — ESS-BMS-16S (public repository)
+# Rule of thumb: commit only our own design files and documentation.
+# Anything copyrighted by a third party, personal, secret or regenerable stays out.
 
-# Backup files
+# ---------------------------------------------------------------------------
+# 1. Third-party copyrighted material (legal) — never publish
+# ---------------------------------------------------------------------------
+# Vendor datasheets, app notes, reference manuals and standards.
+# Keep only our own index (datasheets/README.md) with links to the sources.
+*.pdf
+!docs/**/*_own.pdf
+datasheets/**
+!datasheets/
+!datasheets/README.md
+# Downloaded 3D models (vendor / EasyEDA / manufacturer licences vary).
+# Models are referenced by path; each user fetches them (see README).
+3d_models/**
+!3d_models/
+!3d_models/README.md
+*.step
+*.stp
+*.wrl
+*.STEP
+*.STP
+*.WRL
+# Standards and paid documents, if ever placed in the tree
+standards/
+
+# ---------------------------------------------------------------------------
+# 2. Secrets and credentials
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials*
+*token*.txt
+# BQ76952 unseal / full-access keys and production OTP images with keys
+*.keys
+*_keys.*
+otp_images/
+
+# ---------------------------------------------------------------------------
+# 3. Personal, OS and editor files
+# ---------------------------------------------------------------------------
+desktop.ini
+Thumbs.db
+.DS_Store
+*.lnk
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---------------------------------------------------------------------------
+# 4. KiCad local / generated files
+# ---------------------------------------------------------------------------
+*.kicad_prl
+fp-info-cache
+*.lck
+~*.lck
+_autosave-*
+*-backups/
+.history/
 *.bak
 *-bak
 *.kicad_pcb-bak
 *.kicad_sch-bak
 *-save.kicad_pcb
 *-save.kicad_sch
-_autosave-*
-
-# Cache and temporary files
-fp-info-cache
-*.lck
 *.tmp
-
-# User-specific settings
-*.kicad_prl
-
-# Output and simulation directories
+# Exported netlists, reports and renders (regenerate with tools/ and kicad-cli)
+*.net
+*.rpt
+erc*.json
+drc*.json
 /output/
-/gerbers/
 /drc_reports/
 /erc_reports/
-*.kicad_dru
+/renders/
 
-# Playbook section 13 additions (2026-11-17)
-*-backups/
-.history/
-~*.lck
-desktop.ini
+# ---------------------------------------------------------------------------
+# 5. Python
+# ---------------------------------------------------------------------------
 __pycache__/
+*.pyc
+.venv/
+venv/
+
+# Note: project design rules (*.kicad_dru) ARE tracked — they are part of the design.
+# Note: fabrication outputs go to production/ and are committed only for a released revision.
