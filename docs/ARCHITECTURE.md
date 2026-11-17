@@ -630,6 +630,8 @@ Each row gives the recommendation and its consequence. Source tags: A Qn, B Q-Bn
 
 ### Blocking (needed before schematic work)
 
+> **Status 2026-11-17:** the owner decided all **blocking** items D-01 to D-16 as recommended below, with D-05 taken as an ASSUMPTION (DC link 2-10 mF, <= 50 mA, R_PRE 50 ohm) and D-06 = 500 A for <= 10 ms, 200 A continuous charge and discharge. Recorded in `PROJECT.md`. Items D-17 onward are still open.
+
 | # | Decision | Recommendation | Consequence |
 |---|---|---|---|
 | D-01 | `FET_EN` default and live output in Sleep (B Q-B4, D Q1, I-5) | **Pull-down; Sleep = output off, AFE monitoring.** Live output stays available in Standby (≈ 5.9 mA) | MCU-independent kill stays armed whenever the board is on. Loses Seplos-style live output at µA. The alternative (PU to `AFE_REG1`, logic on REG1) also needs `MCU_NRST` and `OC_TRIP_N` defaulted "OK", so the latch and watchdog kill are off in Sleep |
