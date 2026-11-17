@@ -156,3 +156,35 @@ Questions for the owner: (1) R_VC0-16 value 100R vs MPN 1 k (filter corner 7.96 
 ### Merge — sheets 02–06 installed — 2026-11-17
 Status: DONE - waiting for review
 The five scratch sheets plus the `+3V3_A` symbol were merged into one scratch copy and checked together, then installed. Evidence on the installed project: netcmp vs the 2026-11-17 baseline `connectivity identical: True`; net names 165/165 identical; ERC --severity-all on the root 0 violations; 123 `#PWR`/`#FLG` references, no duplicate; all 7 sheets A3. Full-page renders: `%TEMP%\bms_work\merge\*.png`. Live backup before install: `%TEMP%\bms_work\merge\backup_live\`.
+
+---
+
+## RESUME HERE (state at end of session 2026-11-17)
+1. **Architecture integration (P2) is in progress.** Four section files are done: `%TEMP%\bms_work\arch\A_power_stage.md`, `B_power_tree.md`, `C_afe.md`, `D_mcu_comms_io.md`. An integrator agent was merging them into `%TEMP%\bms_work\arch\out\ARCHITECTURE.md` + `out\docs_architecture\*.md`. If `out\` is missing or incomplete, re-run the integration (inputs and the 10 conflict resolutions are listed below).
+2. **Next steps:**
+   - Check `out\ARCHITECTURE.md` yourself: conflicts resolved, rail budget ≤ 80 %, pin map has every signal.
+   - Install it as `docs/ARCHITECTURE.md` + `docs/architecture/` and update `PROJECT.md`.
+   - Run the privacy scan, commit as the owner, push.
+   - Ask the owner the BLOCKING decisions.
+3. **Agent-proposed resolutions (owner to confirm):**
+   - The hardware AND gate (`FET_EN` · `OC_TRIP_N` · `MCU_NRST`) drives `AFE_DFETOFF`; the MCU is only an input.
+   - `AFE_ALERT` moves to a 5 V-tolerant wake pin.
+   - Pull-ups for wake, alert and AFE I2C go to `AFE_REG1`.
+   - DDSG / DCHG pull-downs are 1 M.
+   - `FET_EN` is pulled down (fail-safe; no live output in sleep).
+   - When the sense rail is off, the FETs are held off.
+   - One OV margin table, one rail budget, one protection-layer table.
+4. **Blocking owner decisions (expected):**
+   - inverter DC-link capacitance
+   - `FET_EN` default / live output in sleep
+   - two-board stack vs one board
+   - 100 V FET margin (keep and prove by short-circuit test, or 150 V)
+   - keep or drop +12V / EXT coil outputs
+   - CAN FD vs classic
+   - LM5164 cost
+   - fit the USB-C port
+5. **Then:** P3 part selection with a live LCSC check of every part. More than 30 wrong LCSC numbers were found in the current fields; see the section files. After that, P4 schematic v1, sheet by sheet.
+6. **Git:**
+   - Commit on local branch `public` (tracks `origin/main`). Commit and push as the owner after each milestone, with no agent attribution.
+   - Never push `rework-2026-11` or `main`.
+   - Git runs from PowerShell.

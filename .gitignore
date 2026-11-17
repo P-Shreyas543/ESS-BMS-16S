@@ -26,6 +26,9 @@ datasheets/**
 # Standards and paid documents, if ever placed in the tree
 standards/
 
+# Private agent runbook (owner's own, not part of the published project)
+BRAHMASTRA.md
+
 # ---------------------------------------------------------------------------
 # 2. Secrets and credentials
 # ---------------------------------------------------------------------------
