@@ -160,7 +160,7 @@ The five scratch sheets plus the `+3V3_A` symbol were merged into one scratch co
 ---
 
 ## RESUME HERE (state at end of session 2026-11-17)
-1. **Architecture integration (P2) is in progress.** Four section files are done: `%TEMP%\bms_work\arch\A_power_stage.md`, `B_power_tree.md`, `C_afe.md`, `D_mcu_comms_io.md`. An integrator agent was merging them into `%TEMP%\bms_work\arch\out\ARCHITECTURE.md` + `out\docs_architecture\*.md`. If `out\` is missing or incomplete, re-run the integration (inputs and the 10 conflict resolutions are listed below).
+1. **Architecture integration (P2): DONE 2026-11-17** — installed as `docs/ARCHITECTURE.md` (47 open decisions D-01..D-47, 16 blocking) + `docs/architecture/A..D`. Original note: Four section files are done: `%TEMP%\bms_work\arch\A_power_stage.md`, `B_power_tree.md`, `C_afe.md`, `D_mcu_comms_io.md`. An integrator agent was merging them into `%TEMP%\bms_work\arch\out\ARCHITECTURE.md` + `out\docs_architecture\*.md`. If `out\` is missing or incomplete, re-run the integration (inputs and the 10 conflict resolutions are listed below).
 2. **Next steps:**
    - Check `out\ARCHITECTURE.md` yourself: conflicts resolved, rail budget ≤ 80 %, pin map has every signal.
    - Install it as `docs/ARCHITECTURE.md` + `docs/architecture/` and update `PROJECT.md`.
