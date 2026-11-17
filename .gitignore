@@ -1,0 +1,32 @@
+# KiCad Git Ignore for Automotive_ESS_BMS
+
+# Backup files
+*.bak
+*-bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-save.kicad_pcb
+*-save.kicad_sch
+_autosave-*
+
+# Cache and temporary files
+fp-info-cache
+*.lck
+*.tmp
+
+# User-specific settings
+*.kicad_prl
+
+# Output and simulation directories
+/output/
+/gerbers/
+/drc_reports/
+/erc_reports/
+*.kicad_dru
+
+# Playbook section 13 additions (2026-11-17)
+*-backups/
+.history/
+~*.lck
+desktop.ini
+__pycache__/

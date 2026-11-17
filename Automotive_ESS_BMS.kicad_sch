@@ -1,0 +1,324 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "3d230c7b-fb77-475b-887e-a4c7f611181b")
+	(paper "A3")
+	(title_block
+		(title "Automotive & ESS 7S-16S BMS - Master System Hierarchy")
+		(date "2026-10-27")
+		(rev "v1.0")
+		(company "NextGen Automotive Energy Storage Solutions")
+		(comment 1 "Universal LiFePO4 (LFP) / NMC Dual-Chemistry Architecture (16V - 72V Continuous, 100V Transient)")
+		(comment 2 "Automotive ISO 26262 ASIL-C Ready & ISO 16750-2 / ISO 7637-2 / ISO 10605 Transient Compliant")
+		(comment 3 "Galvanically Isolated CAN-FD & RS-485 Modbus Telemetry to Energy Management System & Inverter")
+		(comment 4 "Sheet 1/7: Master Architectural Hierarchy & Subsystem Interconnect Map")
+	)
+	(lib_symbols)
+	(text "AUTOMOTIVE & ENERGY STORAGE SYSTEM (ESS) 7S-16S CONFIGURABLE BMS\nEngineered for Tier-1 Commercial Energy Storage & Light Electric Vehicle (LEV) Applications\n---------------------------------------------------------------------------------------\nKey Architectural Features:\n - Wide Input Voltage Operating Range: 16V to 72V continuous (100V peak load dump)\n - Dual Chemistry Support: LiFePO4 (3.2V nom, 3.65V max) & NMC/Li-Ion (3.7V nom, 4.2V max)\n - Series Cell Count: Dynamically selectable from 7S up to 16S via hardware DIP switch / EEPROM\n - 3000Vrms Galvanic Isolation Barrier separating Pack High-Voltage from External CAN-FD & RS-485\n - Sub-Microsecond Hardware Analog Over-Current Fast Trip (<4.5ns response time)\n - 100% Surface Mount Technology (SMT) optimized for JLCPCB 4-Layer standard fabrication"
+		(exclude_from_sim no)
+		(at 25.4 180 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "cffe743c-defa-4af2-bb1b-99903749809b")
+	)
+	(text "MASTER BMS SYSTEM ARCHITECTURE & INTER-MODULE BUS MAP\nAutomotive ASIL-C & ESS 7S-16S Dual Chemistry (LFP / NMC) Configurable"
+		(exclude_from_sim no)
+		(at 25.4 18 0)
+		(effects
+			(font
+				(size 2 2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "f2e1f0d0-57cb-4d15-a2e5-98119865366e")
+	)
+	(sheet
+		(at 101.6 25.4)
+		(size 50.8 50.8)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "31d8d49b-339e-4e55-aff4-e5e38a9f60e4")
+		(property "Sheetname" "AFE_Cell_Monitor"
+			(at 104.14 24.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "02_AFE_Cell_Monitor.kicad_sch"
+			(at 104.14 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 177.8 101.6)
+		(size 50.8 50.8)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "5dcf46bf-7392-489e-b68d-2f07bc50ec76")
+		(property "Sheetname" "Communications"
+			(at 180.34 100.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "06_Communications.kicad_sch"
+			(at 180.34 153.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 25.4)
+		(size 50.8 50.8)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "641d7a6c-3a49-4541-abba-8556d3383fec")
+		(property "Sheetname" "Power_Supply"
+			(at 27.94 24.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "01_Power_Supply.kicad_sch"
+			(at 27.94 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 177.8 25.4)
+		(size 50.8 50.8)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "8c2414a1-44ea-462a-8da6-b5c99b547230")
+		(property "Sheetname" "MCU_Control"
+			(at 180.34 24.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "03_MCU_Control.kicad_sch"
+			(at 180.34 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 101.6)
+		(size 50.8 50.8)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "99c21b91-f1cf-451e-a7fa-19f834d9d877")
+		(property "Sheetname" "Current_Sensing"
+			(at 27.94 100.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "04_Current_Sensing.kicad_sch"
+			(at 27.94 153.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 101.6 101.6)
+		(size 50.8 50.8)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ded8e59d-9b21-4d76-919e-cbe8b6d661be")
+		(property "Sheetname" "Power_Actuators"
+			(at 104.14 100.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "05_Power_Actuators.kicad_sch"
+			(at 104.14 153.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
