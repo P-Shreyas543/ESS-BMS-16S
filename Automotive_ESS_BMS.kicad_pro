@@ -725,7 +725,7 @@
       "dashed_lines_dash_length_ratio": 12.0,
       "dashed_lines_gap_length_ratio": 3.0,
       "default_line_thickness": 6.0,
-      "default_text_size": 50.0,
+      "default_text_size": 31.5,
       "field_names": [],
       "hop_over_size_choice": 0,
       "intersheets_ref_own_page": false,
@@ -760,7 +760,7 @@
         "uuid": "3d230c7b-fb77-475b-887e-a4c7f611181b"
       }
     ],
-    "used_designators": "#PWR30",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
@@ -773,24 +773,32 @@
       "Power_Supply"
     ],
     [
-      "99c21b91-f1cf-451e-a7fa-19f834d9d877",
-      "Current_Sensing"
-    ],
-    [
       "31d8d49b-339e-4e55-aff4-e5e38a9f60e4",
       "AFE_Cell_Monitor"
-    ],
-    [
-      "ded8e59d-9b21-4d76-919e-cbe8b6d661be",
-      "Power_Actuators"
     ],
     [
       "8c2414a1-44ea-462a-8da6-b5c99b547230",
       "MCU_Control"
     ],
     [
+      "c9728a2b-455d-5894-b269-a2bca1588621",
+      "Aux_Outputs"
+    ],
+    [
       "5dcf46bf-7392-489e-b68d-2f07bc50ec76",
       "Communications"
+    ],
+    [
+      "71ace6a4-67a6-5ab3-99c1-88d53f19bbe1",
+      "IO_Front_Panel"
+    ],
+    [
+      "859e7e13-61ac-527a-a26d-29e48a8b43e7",
+      "Wireless"
+    ],
+    [
+      "71b2bb4c-f355-5e55-8f8d-6cc961d24c4d",
+      "Memory_Sensors"
     ]
   ],
   "text_variables": {},

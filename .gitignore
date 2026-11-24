@@ -9,6 +9,7 @@
 # Keep only our own index (datasheets/README.md) with links to the sources.
 *.pdf
 !docs/**/*_own.pdf
+!docs/schematic/*.pdf
 datasheets/**
 !datasheets/
 !datasheets/README.md

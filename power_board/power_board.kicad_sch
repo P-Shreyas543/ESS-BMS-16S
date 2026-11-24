@@ -1,0 +1,127 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "5318d76f-aab9-595c-b709-3db8b62382d1")
+	(paper "A3")
+	(title_block
+		(title "Automotive & ESS 16S LFP BMS v1 - Power Board")
+		(date "2026-11-23")
+		(rev "v1.0")
+		(company "NextGen Automotive Energy Storage Solutions")
+		(comment 4 "Sheet 1/3: power board hierarchy")
+	)
+	(lib_symbols)
+	(sheet
+		(at 38.1 50.8)
+		(size 63.5 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e8f15a86-1401-5e60-bd10-8bbb7ff1cd11")
+		(property "Sheetname" "Current_Sensing"
+			(at 38.1 50.165 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "04_Current_Sensing.kicad_sch"
+			(at 38.1 76.835 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "power_board"
+				(path "/5318d76f-aab9-595c-b709-3db8b62382d1"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 119.38 50.8)
+		(size 63.5 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "cec7cd02-364b-5a9b-a3ad-d7ab22fae315")
+		(property "Sheetname" "Power_Stage"
+			(at 119.38 50.165 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "07_Power_Stage.kicad_sch"
+			(at 119.38 76.835 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "power_board"
+				(path "/5318d76f-aab9-595c-b709-3db8b62382d1"
+					(page "3")
+				)
+			)
+		)
+	)
+	(text "POWER BOARD - sheets 04 07\nControl-board sheets are in the Automotive_ESS_BMS project (one folder up).\nThe boards meet at J701 (sheet 07, female) = J206 (sheet 02, male), 2 x 15 pin.\nSymbol and footprint libraries are shared with the control project."
+		(exclude_from_sim no)
+		(at 38.1 165.1 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "c6983d75-e481-59c8-a632-7df0ed9f1e29")
+	)
+	(rectangle (start 38.1 85.09) (end 226.06 107.95) (stroke (width 0.254) (type dash) (color 0 0 132 1)) (fill (type none)) (uuid "37912395-5d3d-4f32-877f-af914be8f51d"))
+	(text "Power board - sheets and B2B" (exclude_from_sim no) (at 39.370000000000005 86.36 0) (effects (font (size 1 1) (bold yes) (color 0 0 132 1)) (justify left top)) (uuid "6aedadf8-47ab-4bbe-83eb-438b1b65e27c"))
+	(text "04 Current Sensing - shunt (Kelvin SHUNT_K_BAT / _PACK), ISENSE_OUT, overcurrent latch -> OC_TRIP_N_PB,\n      OC_CLR, NTC_SHUNT, NT401 = the single BAT- / GND_PWR tie.\n07 Power Stage - CHG / DSG FET banks, pre-charge, PACK / BAT clamps, kill logic U701-U703,\n      heater FET, B- / B+ / PACK lugs, F701 supply-tap fuse, MH701-MH706 on CHASSIS.\nB2B: J701 (sheet 07, female) = J206 (control sheet 02, male), 2 x 15, pin n <-> pin n.\n      In: +3V3, +3V3_A, +12V, GND_PWR, AFE gate drives, FET_EN, MCU_NRST, AFE_FLT_*_N, OC_CLR, HEATER_EN.\n      Out: VSUP_TAP (F701), SHUNT_K_*, ISENSE_OUT, NTC_FET, NTC_SHUNT, OC_TRIP_N, AFE_DFETOFF, KILL_N." (exclude_from_sim no) (at 41.91 91.44 0) (effects (font (size 1 1)) (justify left top)) (uuid "1a5b9b62-f2fa-4331-84fc-46e89383db6a"))
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -4,8 +4,8 @@ A compact, open-hardware battery management system for 16S LFP (51.2 V) energy-s
 
 The goal is a BMS that matches the features of the widely used Chinese ESS boards (Daly, JBD, JK, Seplos, PACE) and goes beyond them where they are weak: protection that does not depend on firmware, measured switch and pre-charge health, deeper diagnostics, and open, documented protocols.
 
-> **Status (2026-11-17): architecture rework in progress — not production ready.**
-> The schematic has been redrawn and reviewed; the next revision (on-board MOSFET power stage, new MCU, full feature set) is being specified. Do not order boards from this repository yet. See [Project status](#project-status).
+> **Status (2026-11-24): schematic v1 done — PCB layout next. Not built, not tested, not production ready.**
+> The v1 schematic is complete for both boards of the stack (control board + power board), verified against its pin-level spec and independently reviewed: [`docs/SCHEMATIC_V1.md`](docs/SCHEMATIC_V1.md), PDFs [control board](docs/schematic/control_board_v1.pdf) / [power board](docs/schematic/power_board_v1.pdf). Do not order boards from this repository yet: several bring-up gates and owner decisions are open. See [Project status](#project-status).
 
 ---
 
@@ -38,17 +38,22 @@ A feature benchmark of current Daly, JBD, JK, Seplos, PACE and ANT products is i
 | Schematic redraw to house style (6 sheets, connectivity proven unchanged) | done 2026-11-17 |
 | Electrical / requirements review | done — findings in [`docs/research/`](docs/research/) and [`AGENT_TASKS.md`](AGENT_TASKS.md) |
 | Feature and component research (AFE, competitors, balancing, power path, MCU) | done — [`docs/research/00_SUMMARY.md`](docs/research/00_SUMMARY.md) |
-| Architecture v1 (power tree, power stage, AFE, MCU pin map, sheet plan) | in progress |
-| Part selection with live LCSC verification | next |
-| Schematic v1 | planned |
-| PCB layout, DRC, fabrication outputs | planned |
+| Architecture v1 (power tree, power stage, AFE, MCU pin map, sheet plan) | done — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) (updated for schematic v1) |
+| Part selection with live LCSC verification | done — [`docs/BOM_v1.md`](docs/BOM_v1.md) |
+| Schematic v1: two KiCad projects, 10 sheets, 779 references; pin-level spec → independent review → scripted drawing → netlist-vs-spec match on all 10 sheets, ERC 0 errors on both boards → final independent review (0 blockers) | done 2026-11-24 — [`docs/SCHEMATIC_V1.md`](docs/SCHEMATIC_V1.md), [design notes](docs/design/), [reviews](docs/reviews/), [BOM CSV](docs/bom/bom_schematic_v1.csv) |
+| PCB layout, DRC, fabrication outputs | **next** |
+| Bring-up and bench tests (incl. the short-circuit test) | planned |
 
 ## Repository layout
 
 | Path | Content |
 |---|---|
-| `Automotive_ESS_BMS.kicad_pro` / `.kicad_sch` | KiCad project and root schematic |
-| `01_…06_*.kicad_sch` | sub-sheets: power supply, AFE, MCU, current sensing, actuators, communications |
+| `Automotive_ESS_BMS.kicad_pro` / `.kicad_sch` | control-board KiCad project and root schematic (with block diagram) |
+| `01_*`, `02_*`, `03_*`, `05_*`, `06_*`, `08_*`, `09_*`, `10_*.kicad_sch` | control-board sheets: power supply, AFE / cell monitor, MCU, aux outputs, communications, IO / front panel, wireless, memory / sensors |
+| `power_board/` | power-board KiCad project: `04_Current_Sensing`, `07_Power_Stage` |
+| `docs/SCHEMATIC_V1.md`, `docs/schematic/` | schematic v1 overview (board split, B2B pin map, verification, bring-up gates, firmware rules, open decisions) and PDFs of both boards |
+| `docs/design/`, `docs/reviews/` | per-sheet design notes (calculations, decisions, LCSC verification) and the spec / schematic reviews |
+| `docs/ARCHITECTURE.md`, `docs/architecture/`, `docs/BOM_v1.md`, `docs/bom/` | system architecture and part selection |
 | `symbols/`, `footprints.pretty/`, `3d_models/` | project-local libraries (`${KIPRJMOD}` paths, portable) |
 | `PROJECT.md` | project facts, nets, domains, parts and the owner **decisions log** |
 | `DESIGN_NOTES.md` | calculations and design reasoning, per sheet |

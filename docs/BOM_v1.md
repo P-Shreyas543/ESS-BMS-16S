@@ -47,3 +47,18 @@ Each group file has the full table, cost, Extended / THT / low-stock lists, the 
 | P-13 | G2/G3/G4 | −40 °C rated replacements for RJ45, JST XH / GH, DIP, button, buzzer — or accept −25/−30 °C parts | D-14 rating −40…+85 °C |
 
 Further questions (INA240 grade, X5R policy, ESP32 module variant, buzzer fit, supercap, terminal torque, R_PRE stock, stack height, …) are listed per group in the group files and are asked in the next owner round.
+
+## Schematic v1 BOM (2026-11-24)
+
+The drawn schematic v1 has its own part list, generated from the frozen pin-level spec of all ten sheets after the final-review fix round: [`bom/bom_schematic_v1.csv`](bom/bom_schematic_v1.csv) (columns `Sheet, Board, Ref, Value, Footprint, MPN, Manufacturer, LCSC, Spec, Fit, Description`; one row per reference). The schematic sheets were checked against this spec by netlist comparison (see [`SCHEMATIC_V1.md`](SCHEMATIC_V1.md)). **Where it differs from the P3 tables above and in `bom/bom_G1..G4.md` / `bom_v1_all.csv`, the schematic v1 BOM wins.**
+
+| Board | References | Fitted | of which in the BOM (with LCSC) | of which copper-only (test pads, net ties, mounting holes, solder jumpers) | DNP | Unique LCSC (fitted) | Unique LCSC (incl. DNP) |
+|---|---|---|---|---|---|---|---|
+| Control (sheets 01, 02, 03, 05, 06, 08, 09, 10) | 562 | 519 | 465 | 54 | 43 | 131 | 139 |
+| Power (sheets 04, 07) | 217 | 205 | 179 | 26 | 12 | 60 | 63 |
+| **Both** | **779** | **724** | **644** | **80** | **55** | – | **178** |
+
+* Every LCSC number was live-verified on 2026-11-23 (one new number on 2026-11-24: C17948, R838) on the LCSC product API and the JLCPCB parts API; the per-sheet verification tables are in [`design/`](design/). No row is marked `UNVERIFIED`.
+* Mechanical items without a schematic symbol (M3 × 11 standoffs C551331, Cu bars, gap pad, M6 / M4 hardware) are listed in [`design/sheet07_power_stage.md`](design/sheet07_power_stage.md) §12, not in the CSV. The J802 mating plug (C7247) is a loose item ([`design/sheet08_io_front_panel.md`](design/sheet08_io_front_panel.md)).
+* Main differences from the P3 selection: shunt 2 × HolRS3920 0.2 mΩ (C558625) instead of WSLP5931; INA240A1PWR and TLV1702AIDGKR (non-Q); TLV803S supervisor added on the OC latch (review R1-05); IRF9640SPBF (−200 V) pre-charge P-FETs; four 5.0SMDJ60A PACK clamps plus a fitted MBRB20200CT freewheel; 5 A heater fuse F702; TCA9539PWR expanders (RESET on `MCU_NRST`); ESP32-C3-MINI-1-H4X; no supercap footprint; B2B power-side header HC-PM254-8.5H (C22373920).
+* Low stock on 2026-11-23 (reserve before ordering): LM5013QDDARQ1 C5219285 (250), HoRX 100 W resistors C2985693 / C2985696 (12 / 19), Micro-Fit J201 C293541 (LCSC 12 / JLC 437), 250 V MLCC C153032 (LCSC 2 644 / JLC 6 379 against 1 000 per 100 boards), 5.0SMDJ60CA C2990413 (2 389), SMCJ60A C2996503 (2 624).
