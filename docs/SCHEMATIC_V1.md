@@ -1,4 +1,4 @@
-# Schematic v1 — 16S LFP ESS BMS (v1 2026-11-24, revision v1.1 2026-11-25)
+# Schematic v1 — 16S LFP ESS BMS (v1 2026-11-24, v1.1 2026-11-25, v1.2 2026-11-25)
 
 Schematic v1 is the first complete, verified circuit of the v1 architecture ([`ARCHITECTURE.md`](ARCHITECTURE.md)): a two-board stack for a 16S LFP pack (40.0–58.4 V, 200 A continuous) with on-board back-to-back high-side N-FET banks driven by a TI BQ76952, an STM32G473 host, an MCU-independent hardware kill chain, isolated CAN / RS-485, an isolated USB-C service port and an ESP32-C3 radio.
 
@@ -13,7 +13,9 @@ Schematic v1 is the first complete, verified circuit of the v1 architecture ([`A
 | Spec review R1–R3 (before drawing) | [`reviews/spec_review.md`](reviews/spec_review.md) |
 | Final schematic review P5 (after drawing) | [`reviews/schematic_review_p5.md`](reviews/schematic_review_p5.md) |
 | v1.1 power-tree review (sheet 01) | [`reviews/v11_power_tree_review.md`](reviews/v11_power_tree_review.md) |
-| What changed in v1.1 | [§9 Revision v1.1](#9-revision-v11-2026-11-25) |
+| v1 vs v1.1 comparison (power tree review & verification) | [`reviews/v1_vs_v11_comparison.md`](reviews/v1_vs_v11_comparison.md) |
+| What changed in v1.1 (superseded buck / kept iso) | [§9 Revision v1.1](#9-revision-v11-2026-11-25) |
+| What changed in v1.2 (current hybrid power tree) | [§10 Revision v1.2](#10-revision-v12-2026-11-25) |
 
 ---
 
@@ -63,7 +65,7 @@ Pins 1–8 (columns 1–4) are the HV group, all near pack potential; pins 9 / 1
 | Sheet | Title | Board | Page | Refs: fitted (BOM + copper-only) / DNP | Main ICs | Design note |
 |---|---|---|---|---|---|---|
 | root | Control board root + block diagram | control | A3 | – | – | – |
-| 01 | Power Supply (rev v1.1) | control | A2 | 112 (106 + 6) / 2 | LM5146-Q1 + SQ2398ES / 2 × DMN10H220LQ (+5V), LM5163-Q1 (+12V), TPS7B8233-Q1 (+3V3), TLV62569 (+3V3_ESP), TPS22918 + SN6505B + LT31-113 + TLV76750 (+5V_ISO) | [sheet01](design/sheet01_power_supply.md) |
+| 01 | Power Supply (rev v1.2) | control | A3 | 93 (87 + 6) / 2 | `LM5013DDAR` (+5V), `LM5163-Q1` (+12V), `TPS7B8233-Q1` (+3V3), `TLV62569` (+3V3_ESP), `TPS22918` + `SN6505B-Q1` + `LT31-113` + `TLV76750` (+5V_ISO) | [sheet01](design/sheet01_power_supply.md) |
 | 02 | AFE / Cell Monitor | control | A2 | 164 (152 + 12) / 12 | BQ76952PFBR | [sheet02](design/sheet02_afe_cell_monitor.md) |
 | 03 | MCU Control | control | A3 | 37 (28 + 9) / 0 | STM32G473RCT6, TPS3828-33 | [sheet03](design/sheet03_mcu_control.md) |
 | 05 | Aux Outputs | control | A3 | 36 (33 + 3) / 0 | – (AO3400A drivers) | [sheet05](design/sheet05_aux_outputs.md) |
@@ -75,7 +77,7 @@ Pins 1–8 (columns 1–4) are the HV group, all near pack potential; pins 9 / 1
 | 04 | Current Sensing | power | A3 | 42 (34 + 8) / 1 | INA240A1, TLV1702, SN74AUP1G74, TLV803S | [sheet04](design/sheet04_current_sensing.md) |
 | 07 | Power Stage | power | A2 | 163 (145 + 18) / 11 | 16 × IPT015N10N5, 2 × IRF9640S, 2 × SN74LVC1G11, SN74LVC1G04 | [sheet07](design/sheet07_power_stage.md) |
 
-Totals (v1.1): control 586 refs (543 fitted, 43 DNP, 146 unique LCSC fitted); power 217 refs (205 fitted, 12 DNP, 60 unique LCSC fitted). Copper-only parts (test pads, net ties, mounting holes, solder jumpers) are `Fit` but not in the BOM.
+Totals (v1.2): control 567 refs (524 fitted, 43 DNP, 134 unique LCSC fitted); power 217 refs (205 fitted, 12 DNP, 60 unique LCSC fitted) — 784 total refs across both boards. Copper-only parts (test pads, net ties, mounting holes, solder jumpers) are `Fit` but not in the BOM.
 
 ---
 
@@ -88,7 +90,8 @@ Totals (v1.1): control 586 refs (543 fitted, 43 DNP, 146 unique LCSC fitted); po
 5. **Netlist-vs-spec check**: the netlist exported by `kicad-cli` was compared with the spec partition for every sheet — **SPEC MATCH on all 10 sheets** (every pin, net partition, value, footprint, MPN, LCSC and DNP flag), and the **B2B J206 ↔ J701 pin map matches** pin by pin across the two projects.
 6. **ERC** (`kicad-cli sch erc`): **0 errors on both boards**. Control board: 2 warnings, both `pin_to_pin` on U1002 (GD25Q64E) pins 3 WP and 7 HOLD, which are bidirectional quad-SPI IO pins tied to `+3V3` on purpose (WP / HOLD inactive); documented and accepted. Power board: 0 warnings.
 7. **Final independent schematic review P5** of both drawn boards, on the exported netlists joined at the B2B: **0 BLOCKER** (power board 2 MAJOR, 7 MINOR, 8 NOTE; control board 0 MAJOR, 9 MINOR, 14 NOTE). The fix round of 2026-11-24 was applied to spec and drawing and re-verified (SPEC MATCH, ERC as above) ([`reviews/schematic_review_p5.md`](reviews/schematic_review_p5.md)).
-8. **Revision v1.1** (sheet 01 power tree): specified, independently reviewed (0 BLOCKER, 4 MAJOR — all fixed before drawing, [`reviews/v11_power_tree_review.md`](reviews/v11_power_tree_review.md)), drawn; ERC re-run on 2026-11-25: 0 errors on both boards, control board with the same 2 documented U1002 warnings, power board 0 warnings. See §9.
+8. **Revision v1.1** (sheet 01 power tree, 2026-11-25): specified, independently reviewed (0 BLOCKER, 4 MAJOR — all fixed before drawing, [`reviews/v11_power_tree_review.md`](reviews/v11_power_tree_review.md)), drawn and archived on commit `ca3a7a3` (fallback). See §9.
+9. **Revision v1.2** (sheet 01 hybrid power tree, 2026-11-25): following an independent v1-vs-v1.1 hardware comparison ([`reviews/v1_vs_v11_comparison.md`](reviews/v1_vs_v11_comparison.md)), restored the v1.0 LM5013 `+5V` buck using commercial `LM5013DDAR` (`C5383001`) + v1.0 power latch, kept the v1.1 `+5V_ISO` chain with AEC-Q100 `SN6505B-Q1` (`C1849490`), verified `T101_barrier_keepout` in `Transformer_WE-PPTI_760390014.kicad_mod` (F-06), and fixed the stale wake-pulse rule (F-09). Verified on working tree / `f026c04`: SPEC MATCH on all 10 sheets (sheet 01 = 95 refs, A3), B2B J206 = J701 on 30 pins, ERC 0 errors on both boards (same 2 documented U1002 warnings on control board). See §10.
 
 ---
 
@@ -108,11 +111,11 @@ Totals (v1.1): control 586 refs (543 fitted, 43 DNP, 146 unique LCSC fitted); po
 | Kill driver | 42 V / 47 k = 0.9 mA active, 37 mW | sheet 07 |
 | Heater | ≤ 3.5 A continuous (F702 5 A, 10 kA at 75 VDC); VGS ≈ 11.7 V, 16 V clamp | sheet 07 |
 | Supply input | R_DAMP 2 × 2.2 Ω = 4.4 Ω: hot-plug 13 A peak, TVS ≈ 79 V at 25 °C (< 100 V) | sheet 01 |
-| +5V trunk (v1.1) | LM5146-Q1 synchronous, 200 kHz forced PWM, 5.08 V (4.95–5.22 V), ΔIL 0.34 A; shunt current limit valley 1.29–1.76 A; fc 20 kHz / PM 60°; peak 0.96–1.00 A at η ≈ 81 % | sheet 01 |
+| +5V trunk (v1.2) | `LM5013DDAR` non-sync COT buck, SS520, 22 µH, ≈ 321 kHz, 5.03 V (4.87–5.18 V); peak 1.00 A = 29 % of 3.5 A | sheet 01 |
 | +12V leaf | LM5163-Q1, 305 kHz, 12.2 V; budget fan 150 mA + 2 × 70 mA EXT + 1.2 mA heater gate ≈ 291 mA of ≈ 470 mA (62 %) | sheets 01, 05 |
 | +3V3 | TPS7B8233-Q1, 0.40 W at 233 mA → Tj 111 °C at 85 °C ambient | sheet 01 |
-| +5V_ISO (v1.1) | SN6505B 424 kHz → T101 1:1.3 → 2 × MBR0520L → TLV76750 5.0 V: 4.94–5.05 V at 0–300 mA, no minimum load; 300 mA = 0.40 A from +5V; barrier 2.5 kVAC / 60 s, 8.02 mm pad gap | sheet 01 |
-| Power latch (v1.1) | `PWR_EN` hold 0.68 s; release 11 µA × 56 k = 0.62 V < 1.164 V; shutdown below 0.37 V falling (typ); ≤ 11.5 V; AUX on ≈ 7.1 V / off ≈ 4.4 V; shutdown ≈ 1.3 s after `PWR_HOLD` low | sheet 01 |
+| +5V_ISO (v1.2) | `SN6505B-Q1` 424 kHz → `T101 LT31-113` 1:1.3 → 2 × `MBR0520L` → `TLV76750` 5.0 V: 4.90–5.05 V at 0–300 mA, no minimum load; 300 mA = 0.40 A from `+5V`; barrier 2.5 kVAC / 60 s, 8.02 mm pad gap | sheet 01 |
+| Power latch (v1.2) | `PWR_EN` hold 0.66 s typ (0.46 s worst); shutdown falling < 0.45 V; ≤ 19.5 V via `FORCE_ON` / `AUX`; `AFE_ALERT` charge τ ≈ 1 ms | sheet 01 |
 | Cell filter | τ = 2 × 100 Ω × 220 nF = 44 µs (cell 1: 22 µs, C201 to VSS) | sheet 02 |
 | Balancing | TI NPN stage, 118 mA at 3.4 V / 129 mA at 3.65 V per cell; ≤ 8 cells, ≤ 3.0 W bank | sheet 02 |
 | AFE_REG1 load | ≤ 1.80 mA = 36 % of the 5 mA budget | sheet 02 |
@@ -150,20 +153,19 @@ Nothing in this list has been done yet. Items marked **before order** must pass 
 | 19 | Single-pulse checks with no published curve: R101 / R102 at F701 opening, HoRX R_PRE at 68 W × 2.55 s hot, HolRS3920 at 500 A / 10 ms | bench | sheets 01, 04, 07 |
 | 20 | Fan plug fit / polarisation on the DLL 2510-4A header with the chosen fan | assembly | sheet 05 |
 | 21 | Optional load-step tests: +3V3_ESP (C123 / C124 DNP), DC-bias of the 250 V 2220 MLCCs at 58 V | bench | sheet 01, R2-16, R2-23 |
-| 22 | PWR_EN shutdown band (B1): PWR_EN and VSUP current in Sleep / Ship at 25 °C and 85 °C, AUX absent and AUX connected but unpowered: PWR_EN ≤ 0.15 V, U101 VIN current ≤ 30 µA (not the 1.75 mA standby band) | first power-up | sheet 01 v1.1 |
-| 23 | AFE_ALERT wake with the minimum configured ALERT pulse at −40 °C (B2): PWR_EN > 1.3 V, `PWR_HOLD` high before PWR_EN falls below 1.2 V with ≥ 50 ms spare after NRST release; latch release after `PWR_HOLD` low (B3): shutdown within ≈ 2 s | cold test | sheet 01 v1.1 |
-| 24 | +5V buck SW node and low-side gate (B4) at 58.4 V / 1 A and at an 80 V bench VSUP: (V_SW,pk − VSUP) ≤ 8 V, undershoot ≥ −5 V; V_SW,pk < 95 V at 80 V; `01_Q104_G` bump < 0.8 V. Tune the fitted R135 / C138 or R133 (4.7–10 Ω); never increase R134 / R139 | power bench | sheet 01 v1.1 |
-| 25 | +5V load step 0.1 ↔ 0.9 A at 40 / 58.4 V (B5): overshoot < 150 mV, ≤ 2 rings; overload ramp (B6): hiccup between 1.45 and 2.0 A, L101 peak ≤ 2.2 A; thermal at 0.96–1.0 A scaled to 85 °C (B7): Q104 / Q105 < 120 °C, Q103 < 140 °C, R138 < 100 °C | power bench | sheet 01 v1.1 |
-| 26 | +5V_ISO 0 → 300 mA at −40 °C and +85 °C (B8): 4.90–5.10 V, TP115 ≥ 5.4 V at 300 mA cold; T101 pin-1 orientation on the first article; **LT31-113 −40 °C qualification** (no temperature range in its spec; alternate Würth 760390014) | cold / hot test | sheet 01 v1.1 |
-| 27 | Barrier hipot after assembly (B9), ≤ the 2.5 kVAC / 60 s T101 rating; Q103 V_DS(on) ≤ 0.6 V at 1 A, −40 °C, AUX 9 V only (B10), else swap Q103 to DMN10H220LQ-7 | production / cold test | sheet 01 v1.1 |
-| 28 | Back-feed (B11): never drive `+5V` from a bench supply with U101 enabled (forced PWM boosts it into VSUP) — forbidden test configuration | bench rule | sheet 01 v1.1 |
+| 22 | Wake by `AFE_ALERT` with the **minimum configured ALERT pulse at −40 °C** (B2, v1.2 latch, F-09): C111 −25 %, slowest supervisor (300 ms); scope `PWR_EN`, `MCU_NRST` and `PWR_HOLD`: `PWR_EN` > 1.6 V, `PWR_HOLD` high before `PWR_EN` falls below 1.47 V | cold test | sheet 01 v1.2 |
+| 23 | `+5V_ISO` 0 → 300 mA at −40 °C and +85 °C (B8): 4.85–5.10 V, TP115 ≥ 5.3 V at 300 mA cold; T101 pin-1 orientation on the first article; **LT31-113 −40 °C qualification** (no temperature range in its spec; alternate Würth 760390014) | cold / hot test | sheet 01 v1.1/v1.2 |
+| 24 | Barrier hipot after assembly (B9), ≤ the 2.5 kVAC / 60 s T101 rating (functional isolation) | production | sheet 01 v1.1/v1.2 |
+| 25 | **EMC pre-scan of the `+5V` `LM5013DDAR` COT buck (B12)**: conducted emissions on `VSUP_TAP` / `AUX` with a LISN and near-field H-probe over L101 / D104 / SW node at 0.07 A, 0.16 A and 1.0 A, `VSUP` 51.2 V and 58.4 V, against the chosen stationary-ESS / CISPR target; record whether an input π-filter or D104 RC snubber is needed before PCB release | power bench | sheet 01 v1.2 |
+
+*(v1.1-only LM5146-Q1 gates B1, B3–B7, B10, B11 are superseded on `main`; see §9 and commit `ca3a7a3` if the LM5146 fallback is revisited.)*
 
 ---
 
 ## 6. Firmware rules (consolidated)
 
 **Start-up and reset (sheet 03)**
-1. Drive `PWR_HOLD` (PC6) high as the **first GPIO action after reset** (before clock-tree / peripheral init); the reset supervisor alone uses up to 300 ms of the 0.49–0.68 s latch hold (P5C-12, V11-04). After `PWR_HOLD` is released, shutdown takes ≈ 1.3 s: do not treat the live rail as a failed shutdown and do not re-assert `PWR_HOLD` in that window. **AFE_ALERT wake pulse: latched until the MCU clears it (preferred), or low ≥ 30 ms** (AFE configuration, V11-04). **Never back-feed `+5V` while U101 is enabled** (forced PWM conducts negative inductor current and boosts into VSUP, V11-13); for back-powered tests hold PWR_EN low or move R132 to GND.
+1. Drive `PWR_HOLD` (PC6) high as the **first GPIO action after reset** (before clock-tree / peripheral init); the reset supervisor alone uses up to 300 ms of the 0.40–0.66 s latch hold (P5C-12, F-09). **AFE_ALERT wake pulse (v1.2, F-09): latched until the MCU clears it (preferred), or low ≥ 2 ms** (charge τ ≈ 1.0 ms → 2.33–2.51 V → 0.40–0.51 s hold; ≥ 1.4 ms worst-case minimum).
 2. Toggle `WDI` (PC12) within 0.9 s after start and before any long start-up task; WDI floats in reset and disables the external watchdog. Enable IWDG as backstop. Before Stop mode set PC12 to analog and rely on IWDG (P5C-11). Debug: cut JP302 or keep PC12 analog.
 3. Release PA15 / PB4 from JTAG (SWD only); set `UCPD1_DBDIS` early — before the first read of `KILL_N`, before enabling EXTI4 and before driving `FET_EN` high (R3-16, P5C-10).
 4. PB8 to non-analog mode after start; keep nSWBOOT0 = 1. PC13 (`WAKE_BTN_N`) input only. LSEDRV = 11 for Y302.
@@ -200,7 +202,7 @@ Nothing in this list has been done yet. Items marked **before order** must pass 
 | – | **J201** Micro-Fit 430451800 stock (LCSC 12 / JLC 437): reserve, or the gold-flash 430451801 (C19793486) | open | sheet 02 |
 | – | **R_PRE / R_PCHG** HoRX 100 W stock (12 / 19 pcs): back-order or a consigned ≥ 100 W Al-housed equivalent | open | sheet 07 |
 | – | **T101 LT31-113**: JLC-only (771 pcs), no temperature range / AEC statement in its spec | owner 2026-11-25: keep LT31-113 with a −40 °C qualification gate; Würth 760390014 (AEC-Q200, 0 stock) as drop-in alternate | sheet 01, V11-12 |
-| – | SN6505B-Q1 (+$2.18) instead of SN6505BDBVR; MCU spread-spectrum clock on SYNCIN (R132 pad) instead of the fixed 200 kHz strap | open options | sheet 01 |
+| – | EMC class and target margin for gate **B12** (`LM5013DDAR` pre-scan: CISPR 25 vs stationary-ESS CISPR 11/32 / IEC 61000-6-x from 150 kHz) | open (v1.2) | sheet 01, §10 |
 | D-04 | **100 V FET margin**: 15 % in the design case, 0 % in the SCD-only double fault; the short-circuit bench test decides R_OFF / zener / C_GS values (bring-up gate 14); 120–150 V TOLL fallback | open | ARCH §6, sheet 07 |
 | – | Non-Q TLV1702AIDGKR (the -Q1 had 0 stock) and OC window +599 / −305 A | accepted as AGENT DECISION / proposal | sheet 04 |
 | D-16 | FUSE / breaker part for the BQ FUSE path | J205 path DNP | sheet 02 |
@@ -217,9 +219,9 @@ Nothing in this list has been done yet. Items marked **before order** must pass 
 * **B2B unplugged** (P5-03): with the connector out the power board has no `+3V3`, so the kill FETs are not driven and the BQ drivers are disconnected; the banks are held off only by 10 MΩ + zeners (off-state sound, no active turn-off; gate decay ≈ 1.0–1.4 s under load, calc). Never separate the boards with the output on. The sheet 07 on-sheet note states this since v1.1.
 * **100 V FETs**: 0 % margin in the SCD-only double fault and a negative margin with a reversed parallel pack (ARCH §6, D-04).
 * **Charge-fault policy** as built (P5-01): no discharge outside 0…45 °C cell temperature until the owner decides.
-* **Isolation (v1.1)**: the comms supply barrier is T101, 2.5 kVAC / 60 s with an 8.02 mm pad gap (≥ 2.5 kVrms requirement met), but it is **functional isolation, not reinforced**; the transceivers are 5 kVrms / 8 mm. The USB service barrier (ISO7721DR, 4 mm) is functional only. (v1.0 had a 1500 VDC module with only 3.58 mm creepage on its footprint.)
-* **+5V trunk (v1.1)**: ≈ 81 % peak efficiency and ≈ +6 mA standby versus the v1.0 LM5013 (owner-accepted); the EN/UVLO shutdown threshold is typical-only (gate B1).
-* **Temperature rating** −40…85 °C ambient (D-14); several parts are not AEC-Q (STM32G473, CA-IS transceivers, ESP32, CH340X, INA240A1PWR, TLV1702AIDGKR, TPS22918DBVR, TLV62569DBVR, SN6505BDBVR, TLV76750DRVR).
+* **Isolation (v1.1 / v1.2):** the comms supply barrier is T101, 2.5 kVAC / 60 s with an 8.02 mm pad gap (≥ 2.5 kVrms requirement met), with `T101_barrier_keepout` enforced inside the footprint (`*.Cu`, x ±4.0 / y ±3.4 mm), but it is **functional isolation, not reinforced**; the transceivers are 5 kVrms / 8 mm. The USB service barrier (ISO7721DR, 4 mm) is functional only. (v1.0 had a 1500 VDC module with only 3.58 mm creepage on its footprint.)
+* **+5V trunk (v1.2):** commercial-grade `LM5013DDAR` (no AEC-Q100 qualification, ESD HBM ±1 kV / CDM ±750 V) chosen for stock and BOM simplicity; variable-frequency COT EMI behaviour is unmeasured and gated by **B12** (EMC pre-scan).
+* **Temperature rating** −40…85 °C ambient (D-14); several parts are not AEC-Q (STM32G473, CA-IS transceivers, ESP32, CH340X, INA240A1PWR, TLV1702AIDGKR, TPS22918DBVR, TLV62569DBVR, TLV76750DRVR, `LM5013DDAR`; `SN6505B-Q1` restored AEC-Q100 in v1.2).
 * **AFE accuracy**: BQ76952 ±15 mV max cell accuracy, not the ±1.5 mV of the original requirement.
 * **Ship mode** is delayed while LD is held above 0.8–2.25 V (charger or parallel pack on `PACK+`, R2-13); the RTC is lost in Ship.
 * **Open B− cable under load** is destructive in every variant: tap fuses at the cells are required (R2-29).
@@ -228,9 +230,11 @@ Nothing in this list has been done yet. Items marked **before order** must pass 
 
 ---
 
-## 9. Revision v1.1 (2026-11-25)
+## 9. Revision v1.1 (2026-11-25 — `+5V` buck superseded by v1.2; `+5V_ISO` kept)
 
-v1.1 changes only the control-board **sheet 01 power tree**. The interface net set, the B2B pin map and the other nine sheets are electrically unchanged; the sheet 07 box-5 note was corrected as text. Sheet 01 is now A2 with 114 references (v1.0: A3, 90). Design note: [`design/sheet01_power_supply.md`](design/sheet01_power_supply.md) §12–§13; review: [`reviews/v11_power_tree_review.md`](reviews/v11_power_tree_review.md).
+> **Superseded note:** The v1.1 **LM5146-Q1 `+5V` buck and re-scaled `PWR_EN` latch** (together with gates B1, B3–B7, B10, B11 and the `≥ 30 ms` wake rule) are **superseded in v1.2** (§10) and kept below for history and as the owner's documented fallback (`ca3a7a3`). The v1.1 **`+5V_ISO` chain** is kept in v1.2 (upgraded to `SN6505B-Q1`).
+
+v1.1 changes only the control-board **sheet 01 power tree**. The interface net set, the B2B pin map and the other nine sheets are electrically unchanged; the sheet 07 box-5 note was corrected as text. Sheet 01 was A2 with 114 references (v1.0: A3, 90). Design note (historical §12–§13): [`design/sheet01_power_supply.md`](design/sheet01_power_supply.md); review: [`reviews/v11_power_tree_review.md`](reviews/v11_power_tree_review.md).
 
 ### 9.1 What changed and why
 
@@ -259,5 +263,35 @@ v1.1 changes only the control-board **sheet 01 power tree**. The interface net s
 * Netlist-vs-spec check: SPEC MATCH on all 10 sheets (both projects), against the updated sheet-01 spec.
 * B2B pin map: J206 = J701 on all 30 pins, matching the contract table.
 * ERC: control board 0 errors (2 documented U1002 WP/HOLD pin_to_pin warnings), power board 0 errors / 0 warnings.
+
+---
+
+## 10. Revision v1.2 (2026-11-25 — current hybrid power tree)
+
+v1.2 (`PROJECT.md` §5 row `"v1.2"`, installed in commit `f026c04`) changes only **sheet 01 (`01_Power_Supply.kicad_sch`)** and adds the copper barrier rule area in the `T101` footprint (`Transformer_WE-PPTI_760390014.kicad_mod`). All other 9 sheets, the interface net set, and the 30-pin B2B map are unchanged. Sheet 01 returns to **A3** with **95 references** (93 fitted = 87 BOM + 6 copper-only test pads, 2 DNP; 49 unique LCSC). Design note: [`design/sheet01_power_supply.md`](design/sheet01_power_supply.md) §14.
+
+### 10.1 What changed and why
+
+Following an independent v1-vs-v1.1 hardware comparison ([`reviews/v1_vs_v11_comparison.md`](reviews/v1_vs_v11_comparison.md)), the owner chose a **hybrid** power tree instead of the full LM5146-Q1 rework:
+
+* **`+5V` trunk & `PWR_EN` latch → v1.0 circuit with commercial `LM5013DDAR`:**
+  * Restores the simpler non-synchronous COT `LM5013` buck (`SS520` D104, `22 µH` L101, ≈ 321 kHz, `R105`/`R106` `150 k / 47 k` → `5.03 V`, type-3 ripple injection `C105/C106/R107`) and exact v1.0 latch values (`R109` 1 MΩ, `C111` 1 µF, `R110/R111` 2 MΩ, `R123/R124` 100 kΩ, 2 × `33 kΩ` AUX bleeders `R103/R127`). Removes all 23 v1.1 LM5146-only parts (`Q103–Q105`, `R129–R139`, `C130–C138`).
+  * Replaces low-stock automotive `LM5013QDDARQ1` (`C5219285`, **213 pcs** live 2026-11-25) with pin-identical commercial **`LM5013DDAR`** (`C5383001`, **6,940 pcs** live, **$0.98 @100** JLC/LCSC; −40…+125 °C design limit, non-AEC, HBM ±1 kV).
+  * Why: eliminates the v1.1 `LM5146-Q1` delta (**≈ +$5.6/board**, +17 parts, ≈ +6 mA standby penalty after review fixes, and typ-only 0.37 V EN shutdown threshold), while keeping `LM5146-Q1` archived on `ca3a7a3` as fallback.
+* **`+5V_ISO` chain → kept from v1.1 with AEC-Q100 `SN6505B-Q1`:**
+  * Keeps `U105` `TPS22918` → `U106` → `T101` `LT31-113` (1:1.3, 2.5 kVAC / 60 s, 8.02 mm pad gap, no dummy load, `4.90–5.05 V` at 0–300 mA), upgrading `U106` from commercial `SN6505BDBVR` to **`SN6505BQDBVRQ1`** (`C1849490`, AEC-Q100 Grade 1, **3,000 pcs** live, **$0.995 @100**).
+* **Review defects fixed in v1.2:**
+  * **F-06 (`T101` barrier keepout):** confirmed rule area `T101_barrier_keepout` (`*.Cu`, x ±4.0 / y ±3.4 mm, no tracks / vias / pours) inside `footprints.pretty/Transformer_WE-PPTI_760390014.kicad_mod`.
+  * **F-09 (wake-pulse rule):** cleared the stale "≥ 10 ms / ≥ 30 ms" text; with the restored 1 MΩ / 1 µF latch (charge τ ≈ 1.0 ms through `1 kΩ`, hold `0.46–0.66 s` vs TPS3828 300 ms max reset), firmware rule is **`AFE_ALERT` latched until MCU clears it (preferred), or low ≥ 2 ms** (≥ 1.4 ms worst-case minimum).
+
+### 10.2 New bring-up gate (B12) and EMC scope note
+
+* **Gate B12 (EMC pre-scan of `LM5013DDAR` COT buck):** measure conducted emissions (`VSUP_TAP` / `AUX` via LISN) and near-field H-probe over `L101` / `D104` / SW node at 0.07 A, 0.16 A, and 1.0 A at `VSUP` 51.2 V and 58.4 V; record margin and whether an input π-filter or `D104` RC snubber is needed before board release. Note: shifting fundamental switching to ≈ 400 kHz clears automotive **CISPR 25 LW (150–300 kHz)**, but **stationary-ESS conducted limits (CISPR 11 / 32, IEC 61000-6-x)** still start at **150 kHz** — owner to define the applicable EMC standard and margin target.
+
+### 10.3 Verification of v1.2 (2026-11-25)
+
+* **Netlist-vs-spec:** `SPEC MATCH: True` verified across all 10 sheets (`sheet01`: 95 refs / 220 pins / 50 nets; control 567 refs; power 217 refs; total 784 refs).
+* **B2B pin map:** `B2B MATCH: True` (`J206` = `J701` across all 30 pins).
+* **ERC (`kicad-cli sch erc`):** control board **0 errors** (same 2 documented `U1002` `WP`/`HOLD` `pin_to_pin` warnings on `/Memory_Sensors/`); power board **0 errors / 0 warnings**.
 * Independent review of the v1.1 change: 0 blockers; all 4 majors fixed ([`reviews/v11_power_tree_review.md`](reviews/v11_power_tree_review.md)).
 

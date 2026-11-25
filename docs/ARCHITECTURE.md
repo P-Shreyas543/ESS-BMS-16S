@@ -13,7 +13,9 @@
 > * Sleep budget: with output off the 100 kΩ AFE_FLT pull-downs draw 0 µA; "output live" adds 2 × 33 µA.
 > * LED rails: green LEDs and the (DNP) buzzer on **+5V**; red ALM LED and photoMOS LEDs on +3V3.
 >
-> **Updated for schematic v1.1 (2026-11-25)** ([`SCHEMATIC_V1.md`](SCHEMATIC_V1.md) §9): +5V trunk **LM5146-Q1** synchronous controller (200 kHz forced PWM, external FETs, 100 mΩ shunt current limit) instead of LM5013-Q1 (D-08 superseded); `+5V_ISO` from **SN6505B + LT31-113 transformer + 2 × MBR0520L + TLV76750** instead of the B0505S-2WR3 + dummy load (D-09 superseded: barrier 2.5 kVAC / 60 s, functional isolation, 8.02 mm creepage; fixes the 3.58 mm B0505S footprint defect); +5V peak ≈ 1.00 A; standby ≈ +6 mA (buck) − 9 mA (iso) ≈ 3 mA below v1.0; PWR_EN latch re-scaled (R109 56 k, C111 10 µF). Rows changed are marked **v1.1**.
+> **Updated for schematic v1.2 (2026-11-25)** ([`SCHEMATIC_V1.md`](SCHEMATIC_V1.md) §10, superseding the v1.1 buck on `+5V`): restores the v1.0 `+5V` trunk (**LM5013** non-sync buck with commercial `LM5013DDAR`, C5383001, and the v1.0 `PWR_EN` latch values; LM5146-Q1 archived on commit `ca3a7a3` as fallback) while keeping the v1.1 `+5V_ISO` chain with AEC-Q100 **`SN6505B-Q1`** (`SN6505BQDBVRQ1`, C1849490) + `LT31-113` + 2 × `MBR0520L` + `TLV76750`. `+5V` peak ≈ 1.00 A (29 % of 3.5 A); standby ≈ 9 mA below v1.0 while `EN_ISO` is on; Sleep restored to ≈ 54 µA est. (no LM5146 shutdown penalty). Added bring-up gate B12 (EMC pre-scan).
+>
+> **Updated for schematic v1.1 (2026-11-25, `+5V` buck superseded by v1.2, iso chain kept)** ([`SCHEMATIC_V1.md`](SCHEMATIC_V1.md) §9): tested `+5V` trunk **LM5146-Q1** synchronous controller (archived fallback) and introduced the `+5V_ISO` **SN6505B + LT31-113 transformer + 2 × MBR0520L + TLV76750** chain replacing the B0505S-2WR3 + dummy load (D-09 superseded: barrier 2.5 kVAC / 60 s, functional isolation, 8.02 mm creepage; fixes the 3.58 mm B0505S footprint defect).
 
 Integrated architecture of the 16S LFP energy-storage BMS, built from four detailed sections:
 
@@ -57,8 +59,8 @@ Older decisions (2026-11-16) still apply: complete the schematic first, the PCB 
  cell harness ──────┤ J_CELL1 Micro-Fit 2×9 ─ R_VC/C_DF ─ U_AFE1 BQ76952 ─ SS8050 balancing ─ J_ABAL1 (ext. bal.) │
  (CELL_0..16,       │       BAT_SNS (pin 18) ─ D_BAT1/R/C ─ BAT ; D_REG0 ─ FCX495 ─ REGIN → AFE_REG1 3.3 V island   │
   BAT_SNS, NTC1-4)  │ J_NTC1 ─ TS1/TS3/HDQ             I2C1+CRC (PA15/PB7, pull-ups on AFE_REG1)              │
-                    │ 01 VSUP ─ LM5146-Q1 (v1.1) → +5V ─ TPS7B82 → +3V3 / +3V3_A ; TLV62569 → +3V3_ESP ; LM5163 → +12V │
-                    │      TPS22918 → SN6505B → LT31-113 → TLV76750 ══ +5V_ISO / GND_ISO ══ 2 × CA-IS3050CW, 2 × CA-IS3082WX │
+                    │ 01 VSUP ─ LM5013DDAR (v1.2) → +5V ─ TPS7B82 → +3V3 / +3V3_A ; TLV62569 → +3V3_ESP ; LM5163 → +12V│
+                    │      TPS22918 → SN6505B-Q1 → LT31-113 → TLV76750 ══ +5V_ISO / GND_ISO ══ 2 × CA-IS3050CW, 2 × CA-IS3082WX │
                     │ 03 U301 STM32G473RCT6 ─ TPS3828-33 ─ LSE/HSE ─ SWD  10 FRAM + 8 MB flash + NTC mux             │
                     │ 08 2 × TCA9539: LEDs, DIP, enables, dry contacts   09 ESP32-C3-MINI-1-H4X (board edge)          │
                     │ 06 RJ45 × 4 (INV-CAN, INV-485, LINK-IN, LINK-OUT)  + isolated USB-C service (CH340X + ISO7721) │
@@ -86,7 +88,7 @@ References become numeric per sheet (D §7). Power symbols keep the `#PWRnxx` sc
 
 | Sheet | File | Range | Board | Section | Main parts |
 |---|---|---|---|---|---|
-| 01 | `01_Power_Supply` | 1xx | control | B | F_SUP / F_AUX, R_DAMP, D2 / D3, D_TVS1, U1 (+5V), U5 (+12V), U3 (+3V3) + FB → `+3V3_A`, U6 (+3V3_ESP), U7 + U4 (`+5V_ISO`; v1.1: U105 TPS22918 + U106 SN6505B + T101 + U107 TLV76750), power latch (`PWR_EN`, Q_BTN, Q_ALRT, D_OR), `VBAT_MCU` OR, J_AUX |
+| 01 | `01_Power_Supply` | 1xx | control | B | F_SUP / F_AUX, R_DAMP, D2 / D3, D_TVS1, U1 (`LM5013DDAR` +5V), U5 (+12V), U3 (+3V3) + FB → `+3V3_A`, U6 (+3V3_ESP), `+5V_ISO` chain (U105 TPS22918 + U106 `SN6505B-Q1` + T101 `LT31-113` + U107 `TLV76750`), power latch (`PWR_EN`, Q_BTN, Q_ALRT, D_OR), `VBAT_MCU` OR, J_AUX |
 | 02 | `02_AFE_Cell_Monitor` | 2xx | control | C | U_AFE1, J_CELL1, R_VC / C_DF, Q_BL / R_BL / R_BB / D_BB, REG0 NPN, BAT / CP1 network, NTC filters, J_NTC1/2, J_ABAL1, FUSE driver (DNP), control-side J_B2B |
 | 03 | `03_MCU_Control` | 3xx | control | D | U301 G473, decoupling, Y301 / Y302, VBAT, U302 TPS3828-33, BOOT0, J301 SWD |
 | 04 | `04_Current_Sensing` | 4xx | power | A | R_SH1/2, Kelvin filters, U_ISENSE1 INA240A1, U_OCP1 TLV1702 + divider, U_LATCH1, `NTC_SHUNT` |
@@ -108,11 +110,11 @@ With the two-board option, sheets 04 and 07 form the separate power-board projec
 ```
 BAT+ (cell side of the FETs) ─ F_SUP 2 A ─ R_DAMP 2 × 2.2 Ω ─ D2 SS320 ─┐
 J_AUX 9–58 V ─ F_AUX ─ D3 ES2D ────────────────────────────────────────┴─ VSUP (D_TVS1 SMCJ60A, 2.2 µF 250 V MLCCs)
-   VSUP ─ U1 LM5146-Q1 (v1.1; EN = PWR_EN) ─► +5V trunk ─┬─ U3 TPS7B8233-Q1 ─► +3V3 ─┬─ FB ─► +3V3_A (VDDA, VREF+, INA240, TLV1702, NTC bias)
+   VSUP ─ U1 LM5013DDAR (v1.2; EN = PWR_EN) ─► +5V trunk ─┬─ U3 TPS7B8233-Q1 ─► +3V3 ─┬─ FB ─► +3V3_A (VDDA, VREF+, INA240, TLV1702, NTC bias)
                                          │                          └─ MCU, logic, gate-kill logic, red ALM LED, photoMOS LEDs
                                          ├─ green SOC / RUN LEDs, buzzer (DNP)
                                          ├─ U6 TLV62569 (EN_ESP) ─► +3V3_ESP
-                                         ├─ U7 TPS22918 (EN_ISO) ─► v1.1: SN6505B ─ T101 1:1.3 ═ MBR0520L × 2 ─ TLV76750 ─► +5V_ISO / GND_ISO
+                                         ├─ U7 TPS22918 (EN_ISO) ─► SN6505B-Q1 ─ T101 1:1.3 ═ MBR0520L × 2 ─ TLV76750 ─► +5V_ISO / GND_ISO
                                          └─ J_ABAL1 pin 3 (100 mA PTC)
    VSUP ─ U5 LM5163-Q1 (EN_12V) ─► +12V (switched leaf): fan, heater gate stage, optional EXT coils
 AFE island: BAT_SNS ─ REG0 NPN ─ REGIN → REG1 = AFE_REG1 3.3 V (≤ 5 mA): DDSG / DCHG high level, I2C, ALERT and
@@ -125,18 +127,18 @@ Changes made during integration (each **INTEGRATOR PROPOSAL — owner to confirm
 * ~~SOC / RUN / ALM LEDs, dry-contact LEDs and the buzzer are on `+3V3`~~ — **schematic v1 (P-10):** the green SOC / RUN LEDs and the (DNP) buzzer are on `+5V` (green Vf up to 3.1 V; 5 V-tolerant TCA9539 ports); the red ALM LED and the photoMOS LEDs are on `+3V3`.
 * **No separate ESP load switch.** D's U902 is dropped; the TLV62569 EN pin does the job (B §5.1).
 * **`+12V` is kept** as B's switched leaf. A's heater FET and D's fan both need it (conflict 8).
-* **The `+5V` trunk converter is upgraded to LM5013-Q1** (B's option A′), because the merged peak exceeds the LM5164's 1 A (table below; decision D-08). **v1.1:** replaced by the LM5146-Q1 synchronous controller, 200 kHz forced PWM, Q103 + Q104 // Q105, R138 shunt limit (valley 1.29–1.76 A), ≈ 81 % peak efficiency (owner 2026-11-24 / 25, supersedes D-08).
+* **The `+5V` trunk converter is upgraded to LM5013** (B's option A′), because the merged peak exceeds the LM5164's 1 A (table below; decision D-08). (v1.1 evaluated the LM5146-Q1 synchronous controller, archived on commit `ca3a7a3`; **v1.2** restores the LM5013 COT buck using the commercial **`LM5013DDAR`** to resolve low `-Q1` stock while saving cost and standby draw.)
 
 ### 4.2 Rail budget (every load from A, B, C, D; peak = all worst cases at once)
 
 | Rail | Source | Typ / peak (mA) | Limit | Peak % | Basis |
 |---|---|---|---|---|---|
 | `VSUP` | BAT+ tap | ≈ 21 / ≈ 290 at 51.2 V; ≈ 460 at 32 V | F_SUP 2 A | 23 % | calc from the rows below, η 0.85 (B est.) |
-| `+5V` | U1 | 164 / **962**; **v1.1: ≈ 1.00 A** | LM5164 1 A (valley 0.95 A min) → **96 % ✗**; LM5013-Q1 3.5 A → **27 % ✓**; **v1.1 LM5146-Q1: output current limit 1.45–1.97 A** (valley 1.29–1.76 A) | v1.1: ≈ 69 % of the minimum limit (calc) | calc: U3 233 + U6 272 + U4 input 357 (300 / 0.84) + J_ABAL1 100 (PTC hold, C). **v1.1:** 962 − 357 (B0505S input) + 396 (SN6505 path at 300 mA) ≈ 1.00 A |
+| `+5V` | U1 `LM5013DDAR` (v1.2) | 164 / **1.00 A** (962 mA in v1.0) | **LM5013DDAR 3.5 A** | **29 % ✓** (LM5164 1 A → **96 % ✗**) | calc: U3 233 + U6 272 + J_ABAL1 100 (PTC hold, C) + SN6505B-Q1 iso path 396 (at 300 mA `+5V_ISO`) ≈ 1.00 A (was 962 mA with 357 mA B0505S input) |
 | `+3V3` | U3 TPS7B8233-Q1 | 79 / 233 | 300 mA | **78 %** | B's 60 / 114, plus LEDs 12 (B), dry-contact LEDs 5 / 10 (B), buzzer 0 / 95 (D, MLT p.2), NTC dividers 1.5 (calc: 9 × 3.3 V / 20 kΩ) |
 | `+3V3_A` | ferrite from +3V3 | ≈ 7 / ≈ 11 | ferrite rating not checked | – | VDDA 3 / 6 (B est.), INA240 + comparator 2.3 / 3.4 (B), NTC bias 1.5 (calc) |
 | `+3V3_ESP` | U6 TLV62569 | 30 / 350 | 2 A | 18 % | B (ESP p.21) |
-| `+5V_ISO` | U7 + U4 B0505S-2WR3; **v1.1: TPS22918 + SN6505B + T101 + TLV76750** | ≈ 20 / **300** | 400 mA; **min. load 40 mA** (v1.1: no minimum load; 300 mA = 0.40 A from +5V at η ≈ 76 %) | **75 %** | D §3.4: CAN 2 × 73, RS-485 2 × ≈ 70 (ISO1500 figure as proxy), 2 × 6.8 quiescent. v1.1: 4.94–5.05 V at 0–300 mA; idle draw from +5V ≈ 109 → 32 mA |
+| `+5V_ISO` | U105 `TPS22918` + U106 `SN6505B-Q1` + T101 `LT31-113` + U107 `TLV76750` | ≈ 20 / **300** | 300 mA+ (`TLV76750` 1 A LDO; **no minimum load**) | – | D §3.4: CAN 2 × 73, RS-485 2 × ≈ 70 (ISO1500 figure as proxy), 2 × 6.8 quiescent. **v1.2:** 4.90–5.05 V at 0–300 mA; 300 mA = 0.40 A from `+5V` (η ≈ 76 %); idle draw from `+5V` ≈ 32 mA (vs ≈ 109 mA for v1.0 B0505S + dummy) |
 | `+12V` | U5 LM5163-Q1 | 0 / 151 | ≈ 0.47 A DC (B calc) | 32 % | fan 150 (B, unverified) + heater gate stage ≈ 1.2 (calc: 12 V / 10 kΩ) |
 | `+12V` with EXT coils | U5 = LM5164-Q1 | 0 / 651 hold | 1 A | 65 % | + 2 × 250 hold (B). **One coil pull-in ≤ 0.40 A only** (calc: 800 − 250 − 150) |
 | `AFE_REG1` | BQ76952 REG1 | 0.015 / 1.80 | 5 mA budget (C §3.4) | 36 % | **schematic v1 (sheet 02):** I2C 2 × 0.7 mA while low, ALERT 0.33 mA, DDSG / DCHG 2 × 33 µA into the 100 kΩ pull-downs on the power board (was 2 × 3.3 V / 470 kΩ = 14 µA) |
@@ -153,9 +155,9 @@ Notes:
 | State | AFE | FETs / `PACK+` | Board rails | MCU | Wake sources | I_pack at 51.2 V, 25 °C |
 |---|---|---|---|---|---|---|
 | **Ship** | SHUTDOWN | off | off | off | TS2 button, LD (charger) | **≈ 8 µA** (B §6.2) |
-| **Sleep** (recommended: output **off**) | SLEEP, protections on | off (BOTHOFF via the DFETOFF pull-down) | off (`PWR_EN` low) | off, RTC on `VBAT_MCU` | button, charger, AFE fault (`AFE_ALERT`), Remote-ON opto (DNP) | **≈ 54 µA** est. (B's 47 µA itemisation with 470 kΩ instead of 1 MΩ pull-downs, calc +7.4 µA; AFE SLEEP current with the drivers off is not specified, B's 24 µA used). **Schematic v1:** the DDSG / DCHG pull-downs are 100 kΩ (R732 / R733); with the output off the pins are low and draw 0 µA there (R2-14), so this figure is an upper estimate. **v1.1:** U101 LM5146-Q1 shutdown current adds +10–20 µA |
+| **Sleep** (recommended: output **off**) | SLEEP, protections on | off (BOTHOFF via the DFETOFF pull-down) | off (`PWR_EN` low) | off, RTC on `VBAT_MCU` | button, charger, AFE fault (`AFE_ALERT`), Remote-ON opto (DNP) | **≈ 54 µA** est. (B's 47 µA itemisation with 470 kΩ instead of 1 MΩ pull-downs, calc +7.4 µA; AFE SLEEP current with the drivers off is not specified, B's 24 µA used). **Schematic v1 / v1.2:** the DDSG / DCHG pull-downs are 100 kΩ (R732 / R733); with the output off the pins are low and draw 0 µA there (R2-14), so this figure is an upper estimate; `LM5013DDAR` shutdown is 3.1 µA typ / 9.9 µA max (identical to v1.0, reversing the v1.1 +10–20 µA penalty) |
 | Sleep, option "output live" (Seplos-style) | SLEEP, DSG source-follower | live | off | off | + load current (Wake Comparator) | ≈ 54 µA with source-follower; **≈ 71 µA** with C's Chg Pump Control 0x01 (41 µA overdrive, B §6.1). **Schematic v1:** DDSG / DCHG high into the 100 kΩ pull-downs add 2 × 33 µA = 66 µA (R2-14) |
-| **Standby** | NORMAL ↔ SLEEP | on (output live) | on; ISO on, ESP off / BLE, `+12V` off | Stop 1 | CAN / RS-485 RX, button, ALERT, RTC, `PG_5V` | **≈ 5.9 mA** est. (B's 5.2 mA + sense rail now always on + CA-IS iso load, calc). **v1.1:** LM5146-Q1 buck ≈ +6 mA vs LM5013, SN6505B iso chain ≈ −9 mA (while `EN_ISO` is on) → board standby ≈ 3 mA below v1.0 (owner record 2026-11-25) |
+| **Standby** | NORMAL ↔ SLEEP | on (output live) | on; ISO on, ESP off / BLE, `+12V` off | Stop 1 | CAN / RS-485 RX, button, ALERT, RTC, `PG_5V` | **≈ 5.9 mA** baseline (v1.0 est.). **v1.2:** `LM5013DDAR` buck draw matches v1.0 (≈ 2.1 mA at 70 mA `+5V` load), while the `SN6505B-Q1` iso chain saves **≈ 9 mA** pack current when `EN_ISO` is on (no dummy load), bringing Standby well below v1.0 (≈ 6 mA lower than v1.1 FPWM) |
 | **Run** | NORMAL | per protection | on | 170 MHz | – | **≈ 19 mA** typ, ≈ 26 mA with WiFi (B §6.3) |
 | **Fault** | NORMAL, FET(s) off by AFE or kill | off | on | Run: log, ALM, DRY1/2 | recovery per AFE / firmware | as Run |
 
@@ -269,7 +271,7 @@ Margin = (abs max − worst case) / abs max. Rows under 10 % are flagged ⚠.
 | `BAT+` lug / FET V_DS | 51.2 V | 58.4 V | **78–85 V** at 0.8 kA, t_f 20 / 15 µs (A §6); **100 V** SCD-only double fault | 4 × 5.0SMDJ60CA: VBR 66.7 V min, Vc 96.8 V @ 51.7 A (listing) | IPT015N10N5 100 V | 15 % (design case); **0 %** (double fault) | ⚠ |
 | Open banks, parallel pack reversed | – | ≈ 117 V (A §10.4) | – | – | 100 V | **negative** | ⚠ |
 | Clamp at rated Vc | – | – | if the TVS reaches 96.8 V | – | 100 V | 3 % | ⚠ |
-| `VSUP` (v1.1: LM5146-Q1 VIN / SW and Q103 / Q104 V_DS, all 100 V) | 51.2 V | 58.4 V | via R_DAMP from BAT+ | **Schematic v1:** R_DAMP 2 × 2.2 Ω = 4.4 Ω → TVS current ≈ 3.8 A, SMCJ60A clamp ≈ 79 V at 25 °C (calc, est., review R2-15; hot value not computed). Was ≈ 91 / 93 V with 2 Ω | 100 V (LM5013-Q1 VIN); C_IN now 250 V | ≈ 21 % at 25 °C (calc) | |
+| `VSUP` (v1.2: `LM5013DDAR` VIN / SW, 100 V) | 51.2 V | 58.4 V | via R_DAMP from BAT+ | **Schematic v1 / v1.2:** R_DAMP 2 × 2.2 Ω = 4.4 Ω → TVS current ≈ 3.8 A, SMCJ60A clamp ≈ 79 V at 25 °C (calc, est., review R2-15; hot value not computed). Was ≈ 91 / 93 V with 2 Ω | 100 V (`LM5013DDAR` VIN); C_IN now 250 V | ≈ 21 % at 25 °C (calc) | |
 | `PACK+` → BQ LD / PACK (10 kΩ series) | 51.2 V | 58.4 V (charger) | charger / load-cable kick (not computed) | **Schematic v1:** 4 × 5.0SMDJ60A (Vc 96.8 V @ 51.7 A each) + MBRB20200CT freewheel (review R1-07); BAS21 VSS clamps on `AFE_LD` / `AFE_PACK` at the BQ (R1-02) | LD / PACK pin range 0–80 V (DS p.10); abs max not quoted in the sections | negative at full clamp; current-limited by 10 kΩ | ⚠ verify |
 | AFE `BAT` (BAT_SNS tap → 1N4148WS → 100 Ω → 1 µF) | 50.7 V | 57.9 V | ≤ +4.8 V for a 20 µs, +26.6 V event (calc, τ = 100 µs) | none at the pin | 74 V while the pump runs (research 01: CP1 ≤ 85 V) | 15 % | |
 | `CP1` (BAT + 11…13 V) | – | 71.4 V (A) | ≈ 75.7 V | – | 85 V (DS p.9) | 16 % / 11 % | at the line |
@@ -277,12 +279,12 @@ Margin = (abs max − worst case) / abs max. Rows under 10 % are flagged ⚠.
 | REG0 path (1N4148WS, FCX495) | – | 58.4 V | reverse only if BAT_SNS collapses | – | 100 V / 150 V | 42 % | |
 | Gate–source of the banks | 11 V overdrive | – | – | 16 V zener (15.3–17.1 V) | VGS ±20 V | 14 % | |
 | Kill level shifters (**schematic v1: BSS131**, was BSS123) | – | 58.4 V | 85 V / 100 V via the gate bus | – | 240 V (BSS131) | 2.4× at 100 V (calc) | |
-| `+5V_ISO` | 5.0 V | **v1.1: TLV76750 LDO, 4.94–5.05 V** (v1.0: unregulated, 12 % load regulation) | – (v1.0: light load below 40 mA) | – | CA-IS bus side 5.5 V max (D) | **v1.1: ≥ 8 %** (calc) | |
-| Isolation barrier | – | – | – | – | **v1.1: T101 2.5 kVAC / 60 s, 8.02 mm pad gap** (functional isolation, not reinforced) against 5 kVrms transceivers and the ≥ 2.5 kVrms requirement; v1.0 B0505S-2WR3 was 1500 VDC with 3.58 mm footprint creepage | **v1.1: met (functional)** | D-09 superseded |
+| `+5V_ISO` | 5.0 V | **v1.2: TLV76750 LDO, 4.90–5.05 V** (v1.0: unregulated, 12 % load regulation) | – (v1.0: light load below 40 mA) | – | CA-IS bus side 5.5 V max (D) | **v1.2: ≥ 8 %** (calc) | |
+| Isolation barrier | – | – | – | – | **v1.1 / v1.2: T101 2.5 kVAC / 60 s, 8.02 mm pad gap** (functional isolation, not reinforced) against 5 kVrms transceivers and the ≥ 2.5 kVrms requirement; v1.0 B0505S-2WR3 was 1500 VDC with 3.58 mm footprint creepage | **v1.2: met (functional)** | D-09 superseded |
 
 **Schematic v1:** the pre-charge / pre-discharge P-FETs are IRF9640S (−200 V, 200 V / 97 V clamp = 2.06×) with their sources on `FET_MID` (reviews R1-01, R1-13); all MLCCs on 58 V nodes are 250 V (P-01).
 
-**Conclusion.** In the design case the chain fits with 15 % at the FETs and the +5V converter (v1.1: LM5146-Q1, 100 V). It does not fit in the double fault (latch failed, SCD only), with a reversed parallel pack, or if the TVS reaches its rated clamp. All of these rest on the mandatory short-circuit bench test (A §6) and decision D-04.
+**Conclusion.** In the design case the chain fits with 15 % at the FETs and 21 % at the +5V converter (`LM5013DDAR`, 100 V). It does not fit in the double fault (latch failed, SCD only), with a reversed parallel pack, or if the TVS reaches its rated clamp. All of these rest on the mandatory short-circuit bench test (A §6) and decision D-04.
 
 ---
 
@@ -388,7 +390,7 @@ EXTI lines in use: 4, 5 (`PG_5V`), 8, 9 (`AFE_ALERT`), 13; no conflict. A WKUP p
 
 * **Isolated CAN × 2:** CA-IS3050CW (SOIC16-WB, CAN FD 5 Mbps, 5 kVrms, 8 mm creepage, logic side 3.0–5.5 V on `+3V3`). Firmware sets 500 kbit/s classic for inverters; FD is possible on the pack link.
 * **Isolated RS-485 × 2:** CA-IS3082WX (500 kbps, 1/8 UL, true fail-safe receiver, DE internal pull-down, 8 mm creepage). Bias resistors DNP. **Schematic v1:** 10 kΩ DE pull-downs R634 / R635 (P5C-03) and 10 Ω anti-surge resistors R630–R633 between the TVS node and the A / B pins (R3-07).
-* **Isolated supply:** one `GND_ISO` domain behind TPS22918 (`EN_ISO`, ≈ 1 ms ramp); **v1.1:** SN6505B push-pull driver → LT31-113 1:1.3 transformer (2.5 kVAC / 60 s, 8.02 mm pad gap, rule area under the body) → 2 × MBR0520L → TLV76750 5.0 V LDO; ready ≥ 25 ms after `EN_ISO` (v1.0: B0505S-2WR3 2 W module). The barrier is functional isolation, not reinforced. `+5V_ISO` is **not** exported on any RJ45.
+* **Isolated supply:** one `GND_ISO` domain behind TPS22918 (`EN_ISO`, ≈ 1 ms ramp); **v1.1 / v1.2:** `SN6505B-Q1` push-pull driver → LT31-113 1:1.3 transformer (2.5 kVAC / 60 s, 8.02 mm pad gap, rule area under the body) → 2 × MBR0520L → TLV76750 5.0 V LDO; ready ≥ 25 ms after `EN_ISO` (v1.0: B0505S-2WR3 2 W module). The barrier is functional isolation, not reinforced. `+5V_ISO` is **not** exported on any RJ45.
 * **Terminations:**
   * CAN: split 2 × 60.4 Ω + 4.7 nF, one DIP pole per leg (SW601a/b, SW602a/b). The inverter port is ON by default; the link port is ON only at the chain ends.
   * RS-485: 120 Ω through one pole (SW601c / SW602c).
@@ -507,7 +509,7 @@ PD = pull-down, PU = pull-up. Sections: A, B, C, D; **I** = changed by the integ
 |---|---|---|---|
 | §1 | Stationary ESS application | Met | whole design |
 | §1 | LFP primary, optional NMC / LCO | **Changed by owner decision** | LFP only (2026-11-17); 100 V FETs do not allow 16S NMC |
-| §1.1 | AEC-Q100 / Q101 / Q200 throughout | **Not met** | No STM32G4 is AEC-Q (owner accepted). CA-IS transceivers, ESP32, CH340X and many passives / connectors are not AEC-Q. **Schematic v1:** INA240A1PWR, TLV1702AIDGKR, TPS22918DBVR and TLV62569DBVR are the non-Q grades; AEC parts kept: LM5163-Q1 / LM5013-Q1, TPS7B82-Q1 |
+| §1.1 | AEC-Q100 / Q101 / Q200 throughout | **Not met** | No STM32G4 is AEC-Q (owner accepted). CA-IS transceivers, ESP32, CH340X and many passives / connectors are not AEC-Q. **v1.2:** `INA240A1PWR`, `TLV1702AIDGKR`, `TPS22918DBVR`, `TLV62569DBVR`, `TLV76750DRVR` and `LM5013DDAR` are the non-Q grades (owner-accepted); AEC parts kept: `LM5163-Q1`, `TPS7B82-Q1`, **`SN6505B-Q1`** (`C1849490`) |
 | §1.1 | −40 … +105 °C | **Not met** | STM32G473RCT6 is the 85 °C grade (D, DS473 p.221). ESP32-C3-MINI-1-N4 85 °C (−H4 105 °C exists, B Q-B15). Buzzer −20…70 °C, RJ45 −25…70 °C, FC-135 −40…85 °C (D). **Schematic v1 (P-13):** ESP32-C3-MINI-1-H4X (−40…105 °C), −40 °C RJ45 / DIP / button / buzzer / connectors; documented exception for the XFCN lugs (no rating, all metal). Realistic v1 rating: −40…85 °C ambient (D-14) |
 | §1.2 | Low cost, JLC 4-layer, DFM | Partly | control board on JLC04161H; power board 2 oz with hand-soldered Cu bars and lugs (A §4.6); most power parts are Extended (A Q16) |
 | §1.3 | ISO 26262 ASIL B/C principles, IEC 62619, UL 1973, UL 9540A | Partly | independent hardware trip, external watchdog, I2C CRC, CAN CRC, redundant thermal (AFE + MCU). No FMEDA, no certification |
@@ -573,14 +575,14 @@ Stock and B/E as reported by the sections on 2026-11-17 (not re-checked). n/r = 
 | R_DAMP1/2 | HoLRT2512-2W-1R — **v1: 2 × 2.2 Ω RC2512FK-7W2R2L (R101 / R102, review R2-15)** | C5127856 → **v1 C876260** | 28 945 | E | B, **v1** |
 | D2 / D3 | SS320 / ES2D | C18199172 / C2848676 | 304 705 / 28 690 | E | B |
 | C_IN1–4 | CL31Y225KCHVPNE 2.2 µF 100 V — **v1: FS55X225K251EGG 2.2 µF 250 V 2220 (C101–C104)** | C2803390 → **v1 C153032** | 15 894 | E | B, **v1** (P-01) |
-| U1 (rec.) | TI LM5013QDDARQ1 — **v1.1: LM5146QRGYRQ1 (U101) + SQ2398ES-T1_GE3 (Q103, C727466) + 2 × DMN10H220LQ-7 (Q104 / Q105, C5260572) + HoLRTX 100 mΩ shunt (R138, C5123673)** | C5219285 → **v1.1 C1850329** | 8 862 (2026-11-24) | E | B alt., **I**, **v1.1** |
+| U1 (rec.) | TI `LM5013DDAR` (v1.2, commercial; v1.0 was `LM5013QDDARQ1`, v1.1 `LM5146QRGYRQ1` fallback) | C5383001 | 6 940 (2026-11-25) | E | B alt., **I**, **v1.2** |
 | U1 (alt.) | TI LM5164QDDARQ1 | C2072225 | 994 | E | B |
-| L1 | SWRB1207S-470MT — **v1.1: SMDRI127-680MT 68 µH (L101)** | C169376 → **v1.1 C9907** | 1 075 | E | B, **v1.1** |
+| L1 | `SDFL1005` / `SMDRI127-220MT` 22 µH (L101, restored v1.2; v1.1 fallback `SMDRI127-680MT` C9907) | C9905 | 3 620 | E | B, **v1.2** |
 | U5 / L5 | LM5163QDDARQ1 / SWRH1005C-101MT | C2877984 / C72572 | 1 666 / 623 | E | B |
 | U3 | TPS7B8233QDGNRQ1 | C5220182 | 209 (LCSC 2 598) | E | B |
 | U6 | TLV62569DBVR | C141836 | 639 669 | E | B |
 | U7 | TPS22918TDBVRQ1 | C2653760 | 2 943 | E | B |
-| U4 | EVISUN B0505S-2WR3 — **v1.1: SN6505BDBVR (U106, C74518) + Linekey LT31-113 (T101, C7471252, JLC-only; alt. Würth 760390014 C2802211) + 2 × MBR0520LT1G (C23848) + TLV76750DRVR (U107, C2872569)** | C7465195 → **v1.1 see left** | 5 411 | E | B, D, **v1.1** |
+| U4 | **v1.2: `SN6505BQDBVRQ1` (U106, C1849490) + Linekey LT31-113 (T101, C7471252, JLC-only; alt. Würth 760390014 C2802211) + 2 × MBR0520LT1G (C23848) + TLV76750DRVR (U107, C2872569)** | **v1.2 see left** | 3 000 (U106, 2026-11-25) | E | B, D, **v1.1/v1.2** |
 | Q_BTN, Q_ALRT | AO3401A | C15127 | 1 517 931 | B | B |
 | D_OR, D_BAT1, D_REG0, D_BB | 1N4148WS | C2128 | 3 944 705 (J) | B | B, C |
 | D_WAKE1 | BAV170 | C68970 | 11 520 | E | B, C |
@@ -674,8 +676,8 @@ Each row gives the recommendation and its consequence. Source tags: A Qn, B Q-Bn
 | D-05 | Inverter DC-link capacitance and pre-DC-link standby current (A Q1) | Owner to supply. 50 Ω if ≤ 0.05 A, else 25 Ω | Sets R_PRE1 and the predischarge settings |
 | D-06 | 500 A peak duration / repetition; charge current rating (A Q2, C Q2) | Owner to supply | OCD1 delay, OCC and the shunt pulse check |
 | D-07 | `+12V`: keep as a switched leaf; EXT coil supply and current (B Q-B1, Q-B2, A Q10) | Keep (heater gate + fan need it); LM5163-Q1 without EXT coils, LM5164-Q1 with them; pull-in ≤ 0.40 A | Drives U5 choice and EXT usefulness |
-| D-08 | `+5V` trunk converter (B Q-B9, I-8) | **LM5013-Q1** (3.5 A, 27 % peak) — **superseded 2026-11-24 (v1.1): LM5146-Q1**, 200 kHz forced PWM | The LM5164 would sit at 96 % of 1 A. v1.1 accepted cost: ≈ 81 % peak efficiency, ≈ +6 mA standby vs LM5013 |
-| D-09 | Isolated supply and barrier rating (B Q-B5) | 1 × 2 W for v1; owner to accept 1.5 kVDC or fund a transformer-driver design — **superseded 2026-11-24 (v1.1): SN6505B + LT31-113 + TLV76750**, transformer qualified at −40 °C at bring-up, Würth 760390014 alternate | v1.1: barrier 2.5 kVAC / 60 s, **functional isolation** (not reinforced); requirement met |
+| D-08 | `+5V` trunk converter (B Q-B9, I-8) | **LM5013** (3.5 A, 29 % peak) — v1.1 evaluated LM5146-Q1 (`ca3a7a3` fallback); **v1.2 (2026-11-25): restored LM5013 using commercial `LM5013DDAR` (C5383001)** + v1.0 latch | Resolves the 213-pc `LM5013-Q1` stock limit while saving ≈ $5.6/board, 17 parts and standby draw vs LM5146; EMC pre-scan required (gate B12) |
+| D-09 | Isolated supply and barrier rating (B Q-B5) | 1 × 2 W for v1 — **superseded 2026-11-24/25 (v1.1/v1.2): `SN6505B-Q1` (C1849490) + `LT31-113` + `TLV76750`**, transformer qualified at −40 °C at bring-up, Würth 760390014 alternate | Barrier 2.5 kVAC / 60 s, 8.02 mm pad gap, **functional isolation** (not reinforced); requirement met; no dummy load |
 | D-10 | Isolated transceivers and creepage (D Q3, Q4) | CA-IS3050CW + CA-IS3082WX, keep 6.5 mm (8 mm parts) | Wide-body footprints; cheapest option |
 | D-11 | `AFE_DFETOFF` driven by A's AND gate; pin moves `AFE_ALERT` → PB9, `PG_5V` → PC5 (D Q2, I-1, I-2) | Accept | C's Q_DOFF1 / R_DOFF1 / D_DOFF1 removed; 100 kΩ PD at the BQ pin |
 | D-12 | Hard-fault policy: every AFE fault kills both banks (A Q7) | Accept, with firmware limits inside the BQ limits (§5.1) | COV / OCC also block discharge while asserted. **Schematic v1 (P5-01):** DCHG also asserts on UTC / OTC, so as built the pack cannot discharge below 0 °C or above 45 °C and cannot self-heat; strap R759 (0R fitted) / R760 (10 k DNP) lets the owner take charge faults out of the hardware kill without a respin — **owner decision pending** |
@@ -760,7 +762,7 @@ Counts: **16 blocking, 21 before layout, 10 firmware / production** (47 in total
   * whether a higher temperature code than 6 (DS473 p.221) is stocked.
 * **Power tree:**
   * converter efficiencies;
-  * ~~LM5013-Q1 pin-out and inductor~~ (v1.1: LM5146-Q1, verified in the sheet 01 design note);
+  * `LM5013DDAR` EMC pre-scan (gate B12) and commercial vs `-Q1` acceptance;
   * LM5163 ↔ LM5164 footprint;
   * TPS7B82 dropout at 233 mA and junction temperature at 85 °C ambient;
   * FB1 ferrite current rating with ≈ 11 mA on `+3V3_A`;

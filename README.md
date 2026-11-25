@@ -4,9 +4,9 @@ A compact, open-hardware battery management system for 16S LFP (51.2 V) energy-s
 
 The goal is a BMS that matches the features of the widely used Chinese ESS boards (Daly, JBD, JK, Seplos, PACE) and goes beyond them where they are weak: protection that does not depend on firmware, measured switch and pre-charge health, deeper diagnostics, and open, documented protocols.
 
-> **Status (2026-11-25): schematic v1.1 done — PCB layout next. Not built, not tested, not production ready.**
-> v1.1 reworks the control-board power tree: synchronous LM5146-Q1 +5V trunk and a transformer-isolated (2.5 kVAC) `+5V_ISO` supply ([what changed](docs/SCHEMATIC_V1.md#9-revision-v11-2026-11-25)).
-> The v1 schematic is complete for both boards of the stack (control board + power board), verified against its pin-level spec and independently reviewed: [`docs/SCHEMATIC_V1.md`](docs/SCHEMATIC_V1.md), PDFs [control board](docs/schematic/control_board_v1.pdf) / [power board](docs/schematic/power_board_v1.pdf). Do not order boards from this repository yet: several bring-up gates and owner decisions are open. See [Project status](#project-status).
+> **Status (2026-11-25): schematic v1.2 done — PCB layout next. Not built, not tested, not production ready.**
+> v1.2 installs a hybrid control-board power tree: restores the v1.0 `+5V` LM5013 non-synchronous buck with the commercial `LM5013DDAR` and v1.0 power latch, and keeps the v1.1 transformer-isolated (2.5 kVAC) `+5V_ISO` chain with the AEC-Q100 `SN6505B-Q1` ([what changed](docs/SCHEMATIC_V1.md#10-revision-v12-2026-11-25)).
+> The schematic is complete for both boards of the stack (control board + power board), verified against its pin-level spec and independently reviewed: [`docs/SCHEMATIC_V1.md`](docs/SCHEMATIC_V1.md), PDFs [control board](docs/schematic/control_board_v1.pdf) / [power board](docs/schematic/power_board_v1.pdf). Do not order boards from this repository yet: several bring-up gates (including an LM5013 EMC pre-scan) and owner decisions are open. See [Project status](#project-status).
 
 ---
 
@@ -41,7 +41,7 @@ A feature benchmark of current Daly, JBD, JK, Seplos, PACE and ANT products is i
 | Feature and component research (AFE, competitors, balancing, power path, MCU) | done — [`docs/research/00_SUMMARY.md`](docs/research/00_SUMMARY.md) |
 | Architecture v1 (power tree, power stage, AFE, MCU pin map, sheet plan) | done — [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) (updated for schematic v1) |
 | Part selection with live LCSC verification | done — [`docs/BOM_v1.md`](docs/BOM_v1.md) |
-| Schematic v1 / v1.1: two KiCad projects, 10 sheets, 803 references (v1.1); pin-level spec → independent review → scripted drawing → netlist-vs-spec match on all 10 sheets, ERC 0 errors on both boards → final independent review (0 blockers) | v1 done 2026-11-24, v1.1 (power tree, independently reviewed) 2026-11-25 — [`docs/SCHEMATIC_V1.md`](docs/SCHEMATIC_V1.md), [design notes](docs/design/), [reviews](docs/reviews/), [BOM CSV](docs/bom/bom_schematic_v1.csv) |
+| Schematic v1 / v1.2: two KiCad projects, 10 sheets, 784 references (v1.2); pin-level spec → independent review → scripted drawing → netlist-vs-spec match on all 10 sheets, ERC 0 errors on both boards → final independent review (0 blockers) + v1-vs-v1.1 comparison | v1 done 2026-11-24, v1.1 2026-11-25 (`ca3a7a3` fallback), v1.2 hybrid power tree 2026-11-25 — [`docs/SCHEMATIC_V1.md`](docs/SCHEMATIC_V1.md), [design notes](docs/design/), [reviews](docs/reviews/), [BOM CSV](docs/bom/bom_schematic_v1.csv) |
 | PCB layout, DRC, fabrication outputs | **next** |
 | Bring-up and bench tests (incl. the short-circuit test) | planned |
 

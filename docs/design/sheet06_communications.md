@@ -13,12 +13,12 @@ Tags: **DS** = datasheet page, **calc** = own arithmetic, **est.** = engineering
 | Domain | Ground | Supply | Parts |
 |---|---|---|---|
 | MCU side | `GND_PWR` | `+3V3` | U601–U604 pins 1–8, U606 pins 5–8, C601/C603/C607/C609/C611/C613/C623, R611–R617, R634/R635 (DE pull-downs) |
-| Isolated bus side | `GND_ISO` | `+5V_ISO` (from sheet 01: U105 TPS22918 → U106 SN6505B push-pull driver → T101 1:1.3 transformer (LT31-113, 2.5 kV) → D110/D111 → U107 TLV76750 5.0 V LDO, v1.1; never on an RJ45) | U601–U604 pins 9–16, CMCs, 0R bypasses, termination, TVS, bias, RJ45 3/6, C602/C604–C606/C608/C610/C612/C614–C617, TP601–TP609 |
+| Isolated bus side | `GND_ISO` | `+5V_ISO` (from sheet 01: U105 TPS22918 → U106 SN6505B-Q1 (C1849490) push-pull driver → T101 1:1.3 transformer (LT31-113, 2.5 kV) → D110/D111 → U107 TLV76750 5.0 V LDO, v1.1/v1.2; never on an RJ45) | U601–U604 pins 9–16, CMCs, 0R bypasses, termination, TVS, bias, RJ45 3/6, C602/C604–C606/C608/C610/C612/C614–C617, TP601–TP609 |
 | Chassis | `CHASSIS` | – | RJ45 shields, MH601–MH604; C618 1 nF 2 kV ∥ R626 1 MΩ to `GND_ISO` |
 | USB service | `GND_USB` | `+5V_USB` (VBUS via F601) | J605, U605, U607, U606 pins 1–4, R627–R629, C619–C622, C624, TP610/TP611 |
 `GND_ISO`, `GND_PWR` and `GND_USB` meet only through the isolators (union-find check: no merge). The USB barrier is ISO7721DR D-package, CPG 4 mm (ISO7721 DS p.7): a functional barrier against laptop ground loops, not the 6.5 mm comms barrier.
 
-**v1.1 supply change (owner 2026-11-24, PROJECT.md §5 "v1.1 power tree", text only on this sheet):** the isolated bus side is fed by the sheet-01 SN6505B + T101 + TLV76750 chain instead of the v1.0 2 W isolated DC/DC module (D-09 superseded). The comms barrier on the supply path is now T101 (2.5 kVAC / 60 s; 8.02 mm pad gap across the barrier, sheet 01 §12.3), in line with the 6.5 mm rule; the v1.0 module footprint had only 3.58 mm between its input and output ground pads. No dummy load on `+5V_ISO` any more. No sheet-06 part or net changes; layout: keep the barrier keep-out (and the optional isolation slot) continuous under T101 on sheet 01.
+**v1.1 / v1.2 supply change (owner 2026-11-24 / 2026-11-25, PROJECT.md §5 "v1.1 power tree" / "v1.2", text only on this sheet):** the isolated bus side is fed by the sheet-01 SN6505B-Q1 (U106 `SN6505BQDBVRQ1`, C1849490 in v1.2) + T101 + TLV76750 chain instead of the v1.0 2 W isolated DC/DC module (D-09 superseded). The comms barrier on the supply path is now T101 (2.5 kVAC / 60 s; 8.02 mm pad gap across the barrier, sheet 01 §12.3), in line with the 6.5 mm rule; the v1.0 module footprint had only 3.58 mm between its input and output ground pads. No dummy load on `+5V_ISO` any more. No sheet-06 part or net changes; layout: keep the barrier keep-out (`T101_barrier_keepout`, rule area in the T101 footprint) continuous under T101 on sheet 01.
 
 ## Blocks (left = MCU side, barrier in the middle, connectors on the right board edge)
 | # | Box title | Contents | Key number for the on-sheet note |
@@ -116,7 +116,7 @@ After the swaps every fitted part is rated −40 °C or better: CA-IS3050CW / CA
 * FDCAN TX pins are pulled up (recessive) during reset; RS-485 DE has the transceiver's internal PD, so all four buses are silent while the MCU is in reset.
 * RE is tied low: the MCU receives its own RS-485 frames (echo check; discard them in the driver).
 * Inverter port runs 500 kbit/s classic CAN; FD only on the link (D-47).
-* Ignore `RS485_*_RX` / `CAN_*_RX` while `EN_ISO` is off and for ≥ 25 ms after `EN_ISO` goes high (receiver state with `+5V_ISO` down not specified, R3-24; v1.1 supply start-up = TPS22918 1.06 ms + SN6505B soft-start delay ≤ 18 ms + LDO, sheet 01 §12.5).
+* Ignore `RS485_*_RX` / `CAN_*_RX` while `EN_ISO` is off and for ≥ 25 ms after `EN_ISO` goes high (receiver state with `+5V_ISO` down not specified, R3-24; v1.1/v1.2 supply start-up = TPS22918 1.06 ms + SN6505B-Q1 soft-start delay ≤ 18 ms + LDO, sheet 01 §12.4).
 * User manual: termination DIP poles 1 and 2 must always be set together (R3-14).
 
 ## Review disposition (review R3, 2026-11-23)
