@@ -45,6 +45,12 @@ A feature benchmark of current Daly, JBD, JK, Seplos, PACE and ANT products is i
 | PCB layout, DRC, fabrication outputs | **next** |
 | Bring-up and bench tests (incl. the short-circuit test) | planned |
 
+## System block diagram
+
+[![ESS-BMS-16S Block Diagram](docs/block_diagram.svg)](docs/block_diagram.svg)
+
+*Interactive full-resolution diagram: [`docs/block_diagram.svg`](docs/block_diagram.svg) (power path, power board hardware safety island, B2B stack interface, control board v1.2 hybrid power tree, comms, IO, pending owner decisions, and planned additions).*
+
 ## Repository layout
 
 | Path | Content |

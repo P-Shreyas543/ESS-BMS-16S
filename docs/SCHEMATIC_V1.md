@@ -14,6 +14,7 @@ Schematic v1 is the first complete, verified circuit of the v1 architecture ([`A
 | Final schematic review P5 (after drawing) | [`reviews/schematic_review_p5.md`](reviews/schematic_review_p5.md) |
 | v1.1 power-tree review (sheet 01) | [`reviews/v11_power_tree_review.md`](reviews/v11_power_tree_review.md) |
 | v1 vs v1.1 comparison (power tree review & verification) | [`reviews/v1_vs_v11_comparison.md`](reviews/v1_vs_v11_comparison.md) |
+| System block diagram (v1.2 status + open items) | [`docs/block_diagram.svg`](block_diagram.svg) |
 | What changed in v1.1 (superseded buck / kept iso) | [§9 Revision v1.1](#9-revision-v11-2026-11-25) |
 | What changed in v1.2 (current hybrid power tree) | [§10 Revision v1.2](#10-revision-v12-2026-11-25) |
 
