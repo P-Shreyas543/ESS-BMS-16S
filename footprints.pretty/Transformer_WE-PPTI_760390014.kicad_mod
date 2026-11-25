@@ -3,7 +3,7 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(descr "Push-pull transformer SMD-6, 2x3 pads 1.12x0.96 mm, row pitch 9.14 mm, pin pitch 2.54 mm; Wurth WE-PPTI 760390014 recommended land pattern DS p.1 (Linekey LT31-113 spec p.2: 10.26/8.02 mm, pad 1.12x0.9, same grid). Primary 1-2-3 left, secondary 6-5-4 right; 8.02 mm copper gap across the barrier, keep the area between the rows free of copper (isolation slot optional)")
+	(descr "Push-pull transformer SMD-6, 2x3 pads 1.12x0.96 mm, row pitch 9.14 mm, pin pitch 2.54 mm; Wurth WE-PPTI 760390014 recommended land pattern DS p.1 (Linekey LT31-113 spec p.2: 10.26/8.02 mm, pad 1.12x0.9, same grid). Primary 1-2-3 left, secondary 6-5-4 right; 8.02 mm copper gap across the barrier, rule area x +-4.0 / y +-3.4 mm on all copper layers forbids tracks, vias and pours between the rows (review V11-14; isolation slot optional)")
 	(tags "transformer push-pull SN6505 isolation 760390014 LT31-113")
 	(property "Reference" "REF**"
 		(at 0 -4.60 0)
@@ -222,6 +222,37 @@
 		(size 1.12 0.96)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "ded8186e-a835-4570-8d70-52f38a5c4b29")
+	)
+	(zone
+		(layers "*.Cu")
+		(uuid "53b28fe3-63d8-43e6-a224-1fadaef10e1c")
+		(name "T101_barrier_keepout")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy -4 -3.4) (xy 4 -3.4) (xy 4 3.4) (xy -4 3.4)
+			)
+		)
 	)
 	(embedded_fonts no)
 )
