@@ -1,0 +1,227 @@
+(footprint "Transformer_WE-PPTI_760390014"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Push-pull transformer SMD-6, 2x3 pads 1.12x0.96 mm, row pitch 9.14 mm, pin pitch 2.54 mm; Wurth WE-PPTI 760390014 recommended land pattern DS p.1 (Linekey LT31-113 spec p.2: 10.26/8.02 mm, pad 1.12x0.9, same grid). Primary 1-2-3 left, secondary 6-5-4 right; 8.02 mm copper gap across the barrier, keep the area between the rows free of copper (isolation slot optional)")
+	(tags "transformer push-pull SN6505 isolation 760390014 LT31-113")
+	(property "Reference" "REF**"
+		(at 0 -4.60 0)
+		(layer "F.SilkS")
+		(uuid "cbc16383-d25b-4151-b4e9-3aa168f8dc68")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Transformer_WE-PPTI_760390014"
+		(at 0 4.60 0)
+		(layer "F.Fab")
+		(uuid "4159a3b3-54c8-428b-bda9-9d2702ebfde5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0.00 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "95eb9585-ca2e-422b-b7e1-59ce2491d27d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0.00 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "07048b58-2264-4685-a582-f12a8cdd1b85")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.570 -3.365)
+		(end 3.570 -3.365)
+		(stroke
+			(width 0.10)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ea7adc2d-ebf8-4aae-a0aa-7fe2d0289fc0")
+	)
+	(fp_line
+		(start 3.570 -3.365)
+		(end 3.570 3.365)
+		(stroke
+			(width 0.10)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a16f95a2-a129-475c-802d-ed4838f5936a")
+	)
+	(fp_line
+		(start 3.570 3.365)
+		(end -3.570 3.365)
+		(stroke
+			(width 0.10)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6e50020e-c9f7-4945-9470-110aa790339c")
+	)
+	(fp_line
+		(start -3.570 3.365)
+		(end -3.570 -3.365)
+		(stroke
+			(width 0.10)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "cd7244b0-8075-4f43-9822-d645fc38d7c8")
+	)
+	(fp_line
+		(start -5.380 -3.620)
+		(end 5.380 -3.620)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "8042eb4a-5de8-4037-97c8-4d706b3775b2")
+	)
+	(fp_line
+		(start 5.380 -3.620)
+		(end 5.380 3.620)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2a6fdf71-0991-4b62-a308-27c119bf73fd")
+	)
+	(fp_line
+		(start 5.380 3.620)
+		(end -5.380 3.620)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "9cfba028-6b63-4ded-8682-fe862de8bde8")
+	)
+	(fp_line
+		(start -5.380 3.620)
+		(end -5.380 -3.620)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a176eb7f-372e-419a-a4c3-a7a85b184de0")
+	)
+	(fp_line
+		(start -3.680 -3.480)
+		(end 3.680 -3.480)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fef68cb6-6bf7-41f2-97e8-0f5a0fbfef3b")
+	)
+	(fp_line
+		(start -3.680 3.480)
+		(end 3.680 3.480)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "32ecf1de-f1af-4f37-aeff-acdba1f30b07")
+	)
+	(fp_circle
+		(center -5.0 -3.75)
+		(end -4.85 -3.75)
+		(stroke
+			(width 0.3)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "240a6bd6-c743-40ba-9f7d-6cc3eb104290")
+	)
+	(fp_line
+		(start -3.570 -2.400)
+		(end -2.400 -3.365)
+		(stroke
+			(width 0.10)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f757f9d3-5ec9-4830-8b10-1f803c64907b")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "ea3c51ba-83e4-4ed7-9e8f-1e953c05aa68")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -4.57 -2.54)
+		(size 1.12 0.96)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f330e9c6-77f4-461a-a75b-f4c99d72018e")
+	)
+	(pad "2" smd rect
+		(at -4.57 0.00)
+		(size 1.12 0.96)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "aa03536d-1acb-4e53-836b-957b5cc89cad")
+	)
+	(pad "3" smd rect
+		(at -4.57 2.54)
+		(size 1.12 0.96)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "3a1c0ff4-7b77-4234-abd4-5b29faae25b1")
+	)
+	(pad "4" smd rect
+		(at 4.57 2.54)
+		(size 1.12 0.96)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "392d75f2-b836-4e9d-a9cb-4d26eb03b66b")
+	)
+	(pad "5" smd rect
+		(at 4.57 0.00)
+		(size 1.12 0.96)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "16cb5aa4-a401-47a4-b9ee-029ad5163632")
+	)
+	(pad "6" smd rect
+		(at 4.57 -2.54)
+		(size 1.12 0.96)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ded8186e-a835-4570-8d70-52f38a5c4b29")
+	)
+	(embedded_fonts no)
+)

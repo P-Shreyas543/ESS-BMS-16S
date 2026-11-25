@@ -90,7 +90,7 @@
 				(hide yes)
 				(effects
 					(font
-						(size 0.8 0.8)
+						(size 1.27 1.27)
 					)
 				)
 			)
@@ -155,9 +155,6 @@
 			(embedded_fonts no)
 		)
 		(symbol "Automotive_ESS_BMS:ESP32-C3-MINI-1"
-			(pin_names
-				(offset 0.508)
-			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1262,7 +1259,7 @@
 				(hide yes)
 				(effects
 					(font
-						(size 0.8 0.8)
+						(size 1.27 1.27)
 					)
 				)
 			)
@@ -2326,11 +2323,190 @@
 			(embedded_fonts no)
 		)
 	)
-	(junction
-		(at 30.48 127)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0af27bb2-dd15-4bea-85ad-c174c30b2065")
+	(rectangle
+		(start 77.47 76.2)
+		(end 204.47 147.32)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "0426f170-f87e-4053-a2b3-b0293189c84f")
+	)
+	(rectangle
+		(start 205.74 76.2)
+		(end 266.7 114.3)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "431dcb9a-8554-4712-8027-2f501f046d4a")
+	)
+	(rectangle
+		(start 205.74 115.57)
+		(end 297.18 162.56)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "6d904686-9225-4c4a-89e1-5c14d451df39")
+	)
+	(rectangle
+		(start 17.78 76.2)
+		(end 76.2 113.03)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "ae688213-7e2b-4205-9d74-ad3241315d8d")
+	)
+	(rectangle
+		(start 17.78 114.3)
+		(end 76.2 162.56)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "d76f03a8-e5fe-4b12-aaf7-f4a8ad13ed7e")
+	)
+	(text "ROM-flash options (DNP)"
+		(exclude_from_sim no)
+		(at 207.01 116.84 0)
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+				(color 0 0 132 1)
+			)
+			(justify left top)
+		)
+		(uuid "40529f87-6aee-4fd4-80a0-185d29bee027")
+	)
+	(text "GPIO9 = 1 → SPI boot, 0 → download\n(GPIO8 must be 1; ESP DS p.13 tab. 4-3)."
+		(exclude_from_sim no)
+		(at 25.4 154.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "554477d6-a7c4-4575-9399-efcf830e51a1")
+	)
+	(text "EN reset RC"
+		(exclude_from_sim no)
+		(at 19.05 77.47 0)
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+				(color 0 0 132 1)
+			)
+			(justify left top)
+		)
+		(uuid "647f197b-b313-4c8d-b770-d57fe66581c9")
+	)
+	(text "ESP32-C3 module"
+		(exclude_from_sim no)
+		(at 78.74 77.47 0)
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+				(color 0 0 132 1)
+			)
+			(justify left top)
+		)
+		(uuid "70a0c118-74ab-4a53-b7cc-591b51cb7a56")
+	)
+	(text "+3V3_ESP 3.0–3.6 V (ESP DS p.21); 350 mA TX peak (ARCH §4.2, 18 % of U104).\nPCB: antenna end (beyond pads 36–48) at the board edge; keep-out per DS p.10."
+		(exclude_from_sim no)
+		(at 82.55 140.97 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "885b4786-c256-4f58-900a-06f1b5e42c58")
+	)
+	(text "τ = 10 k × 1 µF = 10 ms (ESP DS p.34).\nESP_EN low → EN = 0.30 V < VIL 0.83 V."
+		(exclude_from_sim no)
+		(at 25.4 105.41 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "889569dd-0441-4e4a-9a8a-0f338a89091d")
+	)
+	(text "1 k series: back-power ≤ 3 mA with the ESP off.\nR911 100 k: PC11 idles high (33 µA back-feed)."
+		(exclude_from_sim no)
+		(at 213.36 106.68 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "d3cdcd8b-3036-4e71-bcc5-6687afe4a2fc")
+	)
+	(text "Boot straps"
+		(exclude_from_sim no)
+		(at 19.05 115.57 0)
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+				(color 0 0 132 1)
+			)
+			(justify left top)
+		)
+		(uuid "e8c9141e-640b-4515-8b9f-e6eb58ba4fbb")
+	)
+	(text "D-46: R905 / Q901 / R906 DNP, fit only if the ESP may re-flash / reset the STM32.\nJ901 DNP (bench flashing / probe holes): pin 6 = +3V3_ESP sense only, do not feed."
+		(exclude_from_sim no)
+		(at 213.36 154.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "fb03997a-3675-44c3-9bdb-a64636639611")
+	)
+	(text "UART to MCU"
+		(exclude_from_sim no)
+		(at 207.01 77.47 0)
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+				(color 0 0 132 1)
+			)
+			(justify left top)
+		)
+		(uuid "fdc9a84b-2443-4d1d-af43-179bdfc66a42")
 	)
 	(junction
 		(at 30.48 134.62)
@@ -2339,82 +2515,10 @@
 		(uuid "01172dda-87c4-4a76-824c-7e1171222b0d")
 	)
 	(junction
-		(at 48.26 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "77327c6b-6993-49a7-a4a1-fe4d577964c1")
-	)
-	(junction
-		(at 48.26 142.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ea563239-43e8-4698-b350-74f72dd5b832")
-	)
-	(junction
-		(at 55.88 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1cfa8920-6ab6-4d5c-b474-f7932f0c460e")
-	)
-	(junction
-		(at 90.17 109.22)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cff83b1b-fd4b-46af-8bde-426b5aca98b2")
-	)
-	(junction
-		(at 97.79 96.52)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "604ad10c-1e6b-47db-a96f-ba8740d22196")
-	)
-	(junction
 		(at 104.14 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "076de527-bc29-4d2b-a983-c1699c007f0c")
-	)
-	(junction
-		(at 128.27 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f9cbd587-835c-4b58-8900-557843f5bb7b")
-	)
-	(junction
-		(at 130.81 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "95c20839-a380-4860-b315-0a23061a6fca")
-	)
-	(junction
-		(at 133.35 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fdb8d096-8816-4d0b-85e4-8c5522abd03e")
-	)
-	(junction
-		(at 135.89 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f41b2662-de9c-4c7c-bb9c-7067355416ea")
-	)
-	(junction
-		(at 138.43 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "379d94f0-9175-4e9c-9056-1492869b4ead")
-	)
-	(junction
-		(at 140.97 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0cf02ec2-72a8-4cd8-971d-97344542a17c")
-	)
-	(junction
-		(at 143.51 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b9e05ebd-0717-457a-be69-b5e5f7cbba89")
 	)
 	(junction
 		(at 146.05 137.16)
@@ -2423,46 +2527,16 @@
 		(uuid "0958df80-b069-4647-a4d8-25d6e0d9ad34")
 	)
 	(junction
-		(at 148.59 137.16)
+		(at 30.48 127)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b392a146-d6df-4658-8f86-1b33fbfc3b5f")
+		(uuid "0af27bb2-dd15-4bea-85ad-c174c30b2065")
 	)
 	(junction
-		(at 151.13 137.16)
+		(at 140.97 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "faf6d85e-51e9-4a97-b007-e0575851c385")
-	)
-	(junction
-		(at 153.67 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7eee9e75-f5bc-4aff-bed9-70b6998927f3")
-	)
-	(junction
-		(at 156.21 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "72e1ee3c-1a6e-42c3-ac3f-1985902eb434")
-	)
-	(junction
-		(at 158.75 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "973c84d6-b2bb-4170-8159-31f7181efc36")
-	)
-	(junction
-		(at 161.29 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cdb9fc4c-d165-4d81-a1c3-7f0fc39f722f")
-	)
-	(junction
-		(at 163.83 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "53981a3b-36fa-47ee-a458-bf778f36f974")
+		(uuid "0cf02ec2-72a8-4cd8-971d-97344542a17c")
 	)
 	(junction
 		(at 166.37 137.16)
@@ -2471,28 +2545,16 @@
 		(uuid "11d293a1-8e1d-4f0f-a039-5724078d0cdd")
 	)
 	(junction
-		(at 168.91 137.16)
+		(at 55.88 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4fb5938e-3101-4a47-add5-1f5e9492e528")
+		(uuid "1cfa8920-6ab6-4d5c-b474-f7932f0c460e")
 	)
 	(junction
-		(at 171.45 137.16)
+		(at 138.43 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7eca3d21-0851-487d-bbab-2316048c3918")
-	)
-	(junction
-		(at 173.99 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a23aee31-475b-46df-9d60-2586ce9988c9")
-	)
-	(junction
-		(at 176.53 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "82273c2b-e8cf-41ab-83de-07f3779b3c6a")
+		(uuid "379d94f0-9175-4e9c-9056-1492869b4ead")
 	)
 	(junction
 		(at 226.06 140.97)
@@ -2501,34 +2563,146 @@
 		(uuid "448a8fe3-3fe9-4428-9a2b-f7cc494bd5ee")
 	)
 	(junction
+		(at 168.91 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4fb5938e-3101-4a47-add5-1f5e9492e528")
+	)
+	(junction
+		(at 163.83 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "53981a3b-36fa-47ee-a458-bf778f36f974")
+	)
+	(junction
+		(at 97.79 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "604ad10c-1e6b-47db-a96f-ba8740d22196")
+	)
+	(junction
+		(at 156.21 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "72e1ee3c-1a6e-42c3-ac3f-1985902eb434")
+	)
+	(junction
+		(at 48.26 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "77327c6b-6993-49a7-a4a1-fe4d577964c1")
+	)
+	(junction
+		(at 171.45 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7eca3d21-0851-487d-bbab-2316048c3918")
+	)
+	(junction
+		(at 153.67 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7eee9e75-f5bc-4aff-bed9-70b6998927f3")
+	)
+	(junction
+		(at 176.53 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "82273c2b-e8cf-41ab-83de-07f3779b3c6a")
+	)
+	(junction
+		(at 130.81 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "95c20839-a380-4860-b315-0a23061a6fca")
+	)
+	(junction
+		(at 158.75 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "973c84d6-b2bb-4170-8159-31f7181efc36")
+	)
+	(junction
+		(at 173.99 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a23aee31-475b-46df-9d60-2586ce9988c9")
+	)
+	(junction
+		(at 148.59 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b392a146-d6df-4658-8f86-1b33fbfc3b5f")
+	)
+	(junction
+		(at 143.51 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b9e05ebd-0717-457a-be69-b5e5f7cbba89")
+	)
+	(junction
+		(at 161.29 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cdb9fc4c-d165-4d81-a1c3-7f0fc39f722f")
+	)
+	(junction
+		(at 90.17 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cff83b1b-fd4b-46af-8bde-426b5aca98b2")
+	)
+	(junction
 		(at 241.3 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e618d717-9dae-45c8-aa73-802c675cb557")
 	)
-	(no_connect
-		(at 120.65 104.14)
-		(uuid "11f665aa-2347-4e8b-ad6f-7406ba7aeec9")
+	(junction
+		(at 48.26 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ea563239-43e8-4698-b350-74f72dd5b832")
 	)
-	(no_connect
-		(at 120.65 106.68)
-		(uuid "ce99beab-6410-4a97-8ae6-64301059382c")
+	(junction
+		(at 135.89 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f41b2662-de9c-4c7c-bb9c-7067355416ea")
 	)
-	(no_connect
-		(at 120.65 109.22)
-		(uuid "59c1d0af-b113-45da-aad3-dc5f0a3d98b8")
+	(junction
+		(at 128.27 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f9cbd587-835c-4b58-8900-557843f5bb7b")
+	)
+	(junction
+		(at 151.13 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "faf6d85e-51e9-4a97-b007-e0575851c385")
+	)
+	(junction
+		(at 133.35 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fdb8d096-8816-4d0b-85e4-8c5522abd03e")
 	)
 	(no_connect
 		(at 120.65 127)
 		(uuid "06dbb2c1-c031-40b1-b137-51d6e606d2b2")
 	)
 	(no_connect
+		(at 120.65 104.14)
+		(uuid "11f665aa-2347-4e8b-ad6f-7406ba7aeec9")
+	)
+	(no_connect
 		(at 120.65 116.84)
 		(uuid "51ee6e69-7468-45e2-a274-22d3d5f2683a")
 	)
 	(no_connect
-		(at 120.65 119.38)
-		(uuid "c51b0736-e635-4beb-afeb-ac6832baf30b")
+		(at 120.65 109.22)
+		(uuid "59c1d0af-b113-45da-aad3-dc5f0a3d98b8")
 	)
 	(no_connect
 		(at 186.69 101.6)
@@ -2538,45 +2712,13 @@
 		(at 186.69 104.14)
 		(uuid "97800f99-4d3d-43e0-8b63-e50068d93a1e")
 	)
-	(wire
-		(pts
-			(xy 30.48 93.98) (xy 34.29 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05d35f19-dab3-44ef-a05d-048ef8650da3")
+	(no_connect
+		(at 120.65 119.38)
+		(uuid "c51b0736-e635-4beb-afeb-ac6832baf30b")
 	)
-	(wire
-		(pts
-			(xy 41.91 93.98) (xy 48.26 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ebf32e74-bc47-4d3d-baa8-6d439e3a35db")
-	)
-	(wire
-		(pts
-			(xy 48.26 93.98) (xy 55.88 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e562d064-62ee-4b49-a24e-f0aa553d4383")
-	)
-	(wire
-		(pts
-			(xy 55.88 93.98) (xy 63.5 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9d446298-0ae5-4934-9818-c5cbfd3c5587")
+	(no_connect
+		(at 120.65 106.68)
+		(uuid "ce99beab-6410-4a97-8ae6-64301059382c")
 	)
 	(wire
 		(pts
@@ -2590,223 +2732,13 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 120.65) (xy 30.48 127)
+			(xy 30.48 93.98) (xy 34.29 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8538e3a0-c23e-47ab-b1ee-657642427eda")
-	)
-	(wire
-		(pts
-			(xy 30.48 127) (xy 30.48 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8aed2dd2-23f8-4dbd-bfba-9921952d8cbd")
-	)
-	(wire
-		(pts
-			(xy 30.48 134.62) (xy 30.48 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3a7e9911-ffbe-444e-a5d5-934de7938cd4")
-	)
-	(wire
-		(pts
-			(xy 30.48 127) (xy 34.29 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "21c349d6-2578-49f3-b134-acb59fe091cc")
-	)
-	(wire
-		(pts
-			(xy 41.91 127) (xy 55.88 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eba0d2e8-701d-49f5-87ca-ebec4d824ac2")
-	)
-	(wire
-		(pts
-			(xy 30.48 134.62) (xy 34.29 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8259f749-85ef-4272-93da-15cd628d29d9")
-	)
-	(wire
-		(pts
-			(xy 41.91 134.62) (xy 55.88 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cd01912c-868d-4e03-9411-b799aa2d0463")
-	)
-	(wire
-		(pts
-			(xy 30.48 142.24) (xy 34.29 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "274a3405-b852-444d-8927-02df97dc1d2c")
-	)
-	(wire
-		(pts
-			(xy 41.91 142.24) (xy 48.26 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2361b27f-509f-4b82-8381-7c2499fe5be1")
-	)
-	(wire
-		(pts
-			(xy 48.26 142.24) (xy 55.88 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e775d6fd-20f2-4f4b-953f-c617722e3c62")
-	)
-	(wire
-		(pts
-			(xy 33.02 149.86) (xy 36.83 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c5aaf286-b181-4787-9b48-1176302c2602")
-	)
-	(wire
-		(pts
-			(xy 44.45 149.86) (xy 48.26 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "262dd294-98a5-4061-bdc8-ac9c0ce7c46c")
-	)
-	(wire
-		(pts
-			(xy 48.26 149.86) (xy 48.26 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2ecfd3f7-48ac-4875-b9a2-577049e7cbbd")
-	)
-	(wire
-		(pts
-			(xy 90.17 96.52) (xy 97.79 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "933654aa-4784-402a-b959-0d21ad4e3cae")
-	)
-	(wire
-		(pts
-			(xy 97.79 96.52) (xy 104.14 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eaa6e6dd-7651-41dd-92fa-0bd41f0120aa")
-	)
-	(wire
-		(pts
-			(xy 104.14 96.52) (xy 120.65 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b768e545-2972-4468-83df-6189456947ec")
-	)
-	(wire
-		(pts
-			(xy 90.17 96.52) (xy 90.17 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "589b9612-1529-454c-93ee-1ed0ea1fa8b6")
-	)
-	(wire
-		(pts
-			(xy 90.17 106.68) (xy 90.17 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8ec7add-a4a7-4203-af2f-a44081017191")
-	)
-	(wire
-		(pts
-			(xy 97.79 96.52) (xy 97.79 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "293487e5-7e63-4f70-b9d2-5c0011062e01")
-	)
-	(wire
-		(pts
-			(xy 97.79 106.68) (xy 97.79 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d83da68c-c33d-4756-94fc-00d8ba9433e2")
-	)
-	(wire
-		(pts
-			(xy 90.17 109.22) (xy 97.79 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e4221255-b224-4e4d-8b0b-7c4a93000b33")
-	)
-	(wire
-		(pts
-			(xy 120.65 101.6) (xy 118.11 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e47acd62-4645-4414-b18b-d6d08dc229ff")
+		(uuid "05d35f19-dab3-44ef-a05d-048ef8650da3")
 	)
 	(wire
 		(pts
@@ -2820,16 +2752,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 111.76) (xy 118.11 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af325e78-5109-4a20-8676-d9758184595c")
-	)
-	(wire
-		(pts
 			(xy 120.65 114.3) (xy 118.11 114.3)
 		)
 		(stroke
@@ -2837,116 +2759,6 @@
 			(type default)
 		)
 		(uuid "09f19670-1ff4-439a-83fa-af53446bde73")
-	)
-	(wire
-		(pts
-			(xy 120.65 121.92) (xy 118.11 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4ae7976a-4880-43fb-b0fd-d864bef75166")
-	)
-	(wire
-		(pts
-			(xy 120.65 124.46) (xy 118.11 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b64fc561-d6a1-4a58-9f0c-3f873d99ea7e")
-	)
-	(wire
-		(pts
-			(xy 186.69 96.52) (xy 189.23 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0d7b4393-f3dd-49e0-a45c-68c40d86c8e5")
-	)
-	(wire
-		(pts
-			(xy 186.69 99.06) (xy 189.23 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "724e9006-94de-44b4-ae29-b380c5e867fb")
-	)
-	(wire
-		(pts
-			(xy 125.73 137.16) (xy 128.27 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c31b26f4-897d-4f81-8fe3-9bb847cdf217")
-	)
-	(wire
-		(pts
-			(xy 128.27 137.16) (xy 130.81 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5622e082-0511-4e72-bfaf-38805f764912")
-	)
-	(wire
-		(pts
-			(xy 130.81 137.16) (xy 133.35 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "280a4807-631e-422c-94be-e9df652343b9")
-	)
-	(wire
-		(pts
-			(xy 133.35 137.16) (xy 135.89 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "997fe421-7b06-4b76-a6dd-e60c50305cbb")
-	)
-	(wire
-		(pts
-			(xy 135.89 137.16) (xy 138.43 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1809d783-eaa6-4ba3-918d-757998d62703")
-	)
-	(wire
-		(pts
-			(xy 138.43 137.16) (xy 140.97 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9d86144-3e5f-475b-9c65-a6d1d154d1d0")
-	)
-	(wire
-		(pts
-			(xy 140.97 137.16) (xy 143.51 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b509bef-80d0-431e-b6fe-83e0a89135ef")
 	)
 	(wire
 		(pts
@@ -2960,153 +2772,33 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 137.16) (xy 148.59 137.16)
+			(xy 186.69 96.52) (xy 189.23 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "81b4f176-70ae-4595-922a-c6388048c409")
+		(uuid "0d7b4393-f3dd-49e0-a45c-68c40d86c8e5")
 	)
 	(wire
 		(pts
-			(xy 148.59 137.16) (xy 151.13 137.16)
+			(xy 135.89 137.16) (xy 138.43 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "743c288c-a91b-4c5f-988e-929702d0999e")
+		(uuid "1809d783-eaa6-4ba3-918d-757998d62703")
 	)
 	(wire
 		(pts
-			(xy 151.13 137.16) (xy 153.67 137.16)
+			(xy 140.97 137.16) (xy 143.51 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ed40cc12-09c7-4af3-8a85-7fae1433523c")
-	)
-	(wire
-		(pts
-			(xy 153.67 137.16) (xy 156.21 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "74a8b1a2-2bc2-4f86-b0f1-7ae8888993a7")
-	)
-	(wire
-		(pts
-			(xy 156.21 137.16) (xy 158.75 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4e3eb3d-53fd-4320-9f45-e5d871818684")
-	)
-	(wire
-		(pts
-			(xy 158.75 137.16) (xy 161.29 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3aca1a35-37bc-4b85-b44a-8f4fdf2bda2b")
-	)
-	(wire
-		(pts
-			(xy 161.29 137.16) (xy 163.83 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f05adc7-1e95-4fdc-95ce-86e8b8edce6e")
-	)
-	(wire
-		(pts
-			(xy 163.83 137.16) (xy 166.37 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "801721d2-6879-4746-a795-e715e81fa1c3")
-	)
-	(wire
-		(pts
-			(xy 166.37 137.16) (xy 168.91 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c6630ed6-2714-4ea2-a58c-b859c545bb40")
-	)
-	(wire
-		(pts
-			(xy 168.91 137.16) (xy 171.45 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dd605fb4-28bf-4711-9e88-c4e5fd1128b0")
-	)
-	(wire
-		(pts
-			(xy 171.45 137.16) (xy 173.99 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "322d1c2a-427d-419e-b786-b90cbad14134")
-	)
-	(wire
-		(pts
-			(xy 173.99 137.16) (xy 176.53 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bf223fa9-9e08-4b4b-8385-ae5b5ca2e8b4")
-	)
-	(wire
-		(pts
-			(xy 176.53 137.16) (xy 179.07 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f88554b-4bc4-49c1-aec4-673924ec00c6")
-	)
-	(wire
-		(pts
-			(xy 220.98 91.44) (xy 227.33 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dfdc5a38-5794-4ad5-9e23-9d97759fbfba")
-	)
-	(wire
-		(pts
-			(xy 234.95 91.44) (xy 241.3 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "776df201-9b3e-459f-9fa1-10dd911d8d7e")
+		(uuid "1b509bef-80d0-431e-b6fe-83e0a89135ef")
 	)
 	(wire
 		(pts
@@ -3120,23 +2812,133 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 90.17) (xy 241.3 91.44)
+			(xy 30.48 127) (xy 34.29 127)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e029de5a-2bb8-48f9-8739-ac543f8dc183")
+		(uuid "21c349d6-2578-49f3-b134-acb59fe091cc")
 	)
 	(wire
 		(pts
-			(xy 220.98 101.6) (xy 227.33 101.6)
+			(xy 41.91 142.24) (xy 48.26 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c19916ef-9c0d-4ca5-a4f8-66a6e6484a28")
+		(uuid "2361b27f-509f-4b82-8381-7c2499fe5be1")
+	)
+	(wire
+		(pts
+			(xy 226.06 140.97) (xy 231.14 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "262a9d1f-526e-4651-ad16-7cbf3d17275c")
+	)
+	(wire
+		(pts
+			(xy 44.45 149.86) (xy 48.26 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "262dd294-98a5-4061-bdc8-ac9c0ce7c46c")
+	)
+	(wire
+		(pts
+			(xy 30.48 142.24) (xy 34.29 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "274a3405-b852-444d-8927-02df97dc1d2c")
+	)
+	(wire
+		(pts
+			(xy 130.81 137.16) (xy 133.35 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "280a4807-631e-422c-94be-e9df652343b9")
+	)
+	(wire
+		(pts
+			(xy 97.79 96.52) (xy 97.79 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "293487e5-7e63-4f70-b9d2-5c0011062e01")
+	)
+	(wire
+		(pts
+			(xy 276.86 143.51) (xy 279.4 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a1ec081-a2d4-4150-80de-a5edf77d25e2")
+	)
+	(wire
+		(pts
+			(xy 48.26 149.86) (xy 48.26 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ecfd3f7-48ac-4875-b9a2-577049e7cbbd")
+	)
+	(wire
+		(pts
+			(xy 171.45 137.16) (xy 173.99 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "322d1c2a-427d-419e-b786-b90cbad14134")
+	)
+	(wire
+		(pts
+			(xy 276.86 138.43) (xy 279.4 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32c616ba-6ec9-45c9-a062-edd3555f5460")
+	)
+	(wire
+		(pts
+			(xy 30.48 134.62) (xy 30.48 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a7e9911-ffbe-444e-a5d5-934de7938cd4")
+	)
+	(wire
+		(pts
+			(xy 158.75 137.16) (xy 161.29 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3aca1a35-37bc-4b85-b44a-8f4fdf2bda2b")
 	)
 	(wire
 		(pts
@@ -3150,6 +2952,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 121.92) (xy 118.11 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ae7976a-4880-43fb-b0fd-d864bef75166")
+	)
+	(wire
+		(pts
 			(xy 220.98 125.73) (xy 227.33 125.73)
 		)
 		(stroke
@@ -3157,6 +2969,96 @@
 			(type default)
 		)
 		(uuid "51b7a6f2-71fd-478c-9276-f3a49a593aad")
+	)
+	(wire
+		(pts
+			(xy 128.27 137.16) (xy 130.81 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5622e082-0511-4e72-bfaf-38805f764912")
+	)
+	(wire
+		(pts
+			(xy 90.17 96.52) (xy 90.17 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "589b9612-1529-454c-93ee-1ed0ea1fa8b6")
+	)
+	(wire
+		(pts
+			(xy 238.76 133.35) (xy 248.92 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6962e250-8dcb-4a50-b8ec-9bc6c2507df5")
+	)
+	(wire
+		(pts
+			(xy 161.29 137.16) (xy 163.83 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f05adc7-1e95-4fdc-95ce-86e8b8edce6e")
+	)
+	(wire
+		(pts
+			(xy 176.53 137.16) (xy 179.07 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f88554b-4bc4-49c1-aec4-673924ec00c6")
+	)
+	(wire
+		(pts
+			(xy 186.69 99.06) (xy 189.23 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "724e9006-94de-44b4-ae29-b380c5e867fb")
+	)
+	(wire
+		(pts
+			(xy 148.59 137.16) (xy 151.13 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "743c288c-a91b-4c5f-988e-929702d0999e")
+	)
+	(wire
+		(pts
+			(xy 153.67 137.16) (xy 156.21 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74a8b1a2-2bc2-4f86-b0f1-7ae8888993a7")
+	)
+	(wire
+		(pts
+			(xy 234.95 91.44) (xy 241.3 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "776df201-9b3e-459f-9fa1-10dd911d8d7e")
 	)
 	(wire
 		(pts
@@ -3180,13 +3082,63 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 140.97) (xy 231.14 140.97)
+			(xy 163.83 137.16) (xy 166.37 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "262a9d1f-526e-4651-ad16-7cbf3d17275c")
+		(uuid "801721d2-6879-4746-a795-e715e81fa1c3")
+	)
+	(wire
+		(pts
+			(xy 146.05 137.16) (xy 148.59 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81b4f176-70ae-4595-922a-c6388048c409")
+	)
+	(wire
+		(pts
+			(xy 30.48 134.62) (xy 34.29 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8259f749-85ef-4272-93da-15cd628d29d9")
+	)
+	(wire
+		(pts
+			(xy 30.48 120.65) (xy 30.48 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8538e3a0-c23e-47ab-b1ee-657642427eda")
+	)
+	(wire
+		(pts
+			(xy 30.48 127) (xy 30.48 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8aed2dd2-23f8-4dbd-bfba-9921952d8cbd")
+	)
+	(wire
+		(pts
+			(xy 276.86 146.05) (xy 279.4 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c7f927a-455a-4c32-a195-09ecfbf7ca9f")
 	)
 	(wire
 		(pts
@@ -3200,13 +3152,103 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 133.35) (xy 248.92 133.35)
+			(xy 90.17 96.52) (xy 97.79 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6962e250-8dcb-4a50-b8ec-9bc6c2507df5")
+		(uuid "933654aa-4784-402a-b959-0d21ad4e3cae")
+	)
+	(wire
+		(pts
+			(xy 133.35 137.16) (xy 135.89 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "997fe421-7b06-4b76-a6dd-e60c50305cbb")
+	)
+	(wire
+		(pts
+			(xy 55.88 93.98) (xy 63.5 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d446298-0ae5-4934-9818-c5cbfd3c5587")
+	)
+	(wire
+		(pts
+			(xy 156.21 137.16) (xy 158.75 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4e3eb3d-53fd-4320-9f45-e5d871818684")
+	)
+	(wire
+		(pts
+			(xy 120.65 111.76) (xy 118.11 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af325e78-5109-4a20-8676-d9758184595c")
+	)
+	(wire
+		(pts
+			(xy 120.65 124.46) (xy 118.11 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b64fc561-d6a1-4a58-9f0c-3f873d99ea7e")
+	)
+	(wire
+		(pts
+			(xy 104.14 96.52) (xy 120.65 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b768e545-2972-4468-83df-6189456947ec")
+	)
+	(wire
+		(pts
+			(xy 173.99 137.16) (xy 176.53 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf223fa9-9e08-4b4b-8385-ae5b5ca2e8b4")
+	)
+	(wire
+		(pts
+			(xy 220.98 101.6) (xy 227.33 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c19916ef-9c0d-4ca5-a4f8-66a6e6484a28")
+	)
+	(wire
+		(pts
+			(xy 125.73 137.16) (xy 128.27 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c31b26f4-897d-4f81-8fe3-9bb847cdf217")
 	)
 	(wire
 		(pts
@@ -3220,6 +3262,46 @@
 	)
 	(wire
 		(pts
+			(xy 33.02 149.86) (xy 36.83 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5aaf286-b181-4787-9b48-1176302c2602")
+	)
+	(wire
+		(pts
+			(xy 166.37 137.16) (xy 168.91 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6630ed6-2714-4ea2-a58c-b859c545bb40")
+	)
+	(wire
+		(pts
+			(xy 41.91 134.62) (xy 55.88 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd01912c-868d-4e03-9411-b799aa2d0463")
+	)
+	(wire
+		(pts
+			(xy 97.79 106.68) (xy 97.79 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d83da68c-c33d-4756-94fc-00d8ba9433e2")
+	)
+	(wire
+		(pts
 			(xy 276.86 135.89) (xy 279.4 135.89)
 		)
 		(stroke
@@ -3230,13 +3312,73 @@
 	)
 	(wire
 		(pts
-			(xy 276.86 138.43) (xy 279.4 138.43)
+			(xy 168.91 137.16) (xy 171.45 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "32c616ba-6ec9-45c9-a062-edd3555f5460")
+		(uuid "dd605fb4-28bf-4711-9e88-c4e5fd1128b0")
+	)
+	(wire
+		(pts
+			(xy 220.98 91.44) (xy 227.33 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfdc5a38-5794-4ad5-9e23-9d97759fbfba")
+	)
+	(wire
+		(pts
+			(xy 241.3 90.17) (xy 241.3 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e029de5a-2bb8-48f9-8739-ac543f8dc183")
+	)
+	(wire
+		(pts
+			(xy 90.17 109.22) (xy 97.79 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4221255-b224-4e4d-8b0b-7c4a93000b33")
+	)
+	(wire
+		(pts
+			(xy 120.65 101.6) (xy 118.11 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e47acd62-4645-4414-b18b-d6d08dc229ff")
+	)
+	(wire
+		(pts
+			(xy 48.26 93.98) (xy 55.88 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e562d064-62ee-4b49-a24e-f0aa553d4383")
+	)
+	(wire
+		(pts
+			(xy 48.26 142.24) (xy 55.88 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e775d6fd-20f2-4f4b-953f-c617722e3c62")
 	)
 	(wire
 		(pts
@@ -3250,62 +3392,86 @@
 	)
 	(wire
 		(pts
-			(xy 276.86 143.51) (xy 279.4 143.51)
+			(xy 97.79 96.52) (xy 104.14 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2a1ec081-a2d4-4150-80de-a5edf77d25e2")
+		(uuid "eaa6e6dd-7651-41dd-92fa-0bd41f0120aa")
 	)
 	(wire
 		(pts
-			(xy 276.86 146.05) (xy 279.4 146.05)
+			(xy 41.91 127) (xy 55.88 127)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8c7f927a-455a-4c32-a195-09ecfbf7ca9f")
+		(uuid "eba0d2e8-701d-49f5-87ca-ebec4d824ac2")
 	)
-	(global_label "ESP_EN"
-		(shape input)
-		(at 30.48 93.98 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify right)
+	(wire
+		(pts
+			(xy 41.91 93.98) (xy 48.26 93.98)
 		)
-		(uuid "280a3776-53f0-411e-8187-1a3eb0db15e6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.48 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify right)
-			)
+		(stroke
+			(width 0)
+			(type default)
 		)
+		(uuid "ebf32e74-bc47-4d3d-baa8-6d439e3a35db")
 	)
-	(label "09_ESP_EN"
-		(at 63.5 93.98 0)
-		(fields_autoplaced yes)
+	(wire
+		(pts
+			(xy 151.13 137.16) (xy 153.67 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed40cc12-09c7-4af3-8a85-7fae1433523c")
+	)
+	(wire
+		(pts
+			(xy 90.17 106.68) (xy 90.17 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8ec7add-a4a7-4203-af2f-a44081017191")
+	)
+	(wire
+		(pts
+			(xy 138.43 137.16) (xy 140.97 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9d86144-3e5f-475b-9c65-a6d1d154d1d0")
+	)
+	(label "09_ESP_TXD0"
+		(at 279.4 135.89 0)
 		(effects
 			(font
 				(size 0.8 0.8)
 			)
 			(justify left bottom)
 		)
-		(uuid "2090e7dd-1366-41bc-b93e-bb166c0ae0fd")
+		(uuid "09ebdada-4673-45ea-8e27-bae8cd241f0c")
+	)
+	(label "09_ESP_RXD0"
+		(at 220.98 101.6 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify right bottom)
+		)
+		(uuid "12561cbb-957e-4f23-abdf-4958bf93927a")
 	)
 	(label "09_ESP_IO2"
 		(at 55.88 127 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -3314,9 +3480,18 @@
 		)
 		(uuid "1d22b93f-a8c1-4ac8-963d-117216d874b4")
 	)
+	(label "09_ESP_EN"
+		(at 63.5 93.98 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "2090e7dd-1366-41bc-b93e-bb166c0ae0fd")
+	)
 	(label "09_ESP_IO8"
 		(at 55.88 134.62 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -3326,98 +3501,7 @@
 		(uuid "2e7b3f28-27ca-48d7-8ba3-03bac759d519")
 	)
 	(label "09_ESP_IO9"
-		(at 55.88 142.24 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify left bottom)
-		)
-		(uuid "479cbe56-5cae-428c-960c-4b571fc2bca4")
-	)
-	(global_label "ESP_BOOT"
-		(shape input)
-		(at 33.02 149.86 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify right)
-		)
-		(uuid "5951fd1c-6d09-4c3a-8ea9-ecede4fc853d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 33.02 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify right)
-			)
-		)
-	)
-	(label "09_ESP_IO2"
-		(at 118.11 101.6 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify right bottom)
-		)
-		(uuid "9b4562c1-90a2-4e1d-add9-dfa6c4fdaf48")
-	)
-	(label "09_ESP_EN"
-		(at 118.11 99.06 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify right bottom)
-		)
-		(uuid "a28c1070-9cec-4c20-b057-921bad35ab6b")
-	)
-	(label "09_ESP_IO4"
-		(at 118.11 111.76 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify right bottom)
-		)
-		(uuid "f30c3288-3a06-464a-99e6-26a03e9f09d2")
-	)
-	(label "09_ESP_IO5"
-		(at 118.11 114.3 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify right bottom)
-		)
-		(uuid "bf96ce14-027e-4d67-a7a5-1682b327f0b5")
-	)
-	(label "09_ESP_IO8"
-		(at 118.11 121.92 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify right bottom)
-		)
-		(uuid "9d80779b-ce27-46fe-98fc-63aa1271bea7")
-	)
-	(label "09_ESP_IO9"
 		(at 118.11 124.46 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -3426,20 +3510,18 @@
 		)
 		(uuid "398f2268-1c1e-4078-81f7-b60c74700bd7")
 	)
-	(label "09_ESP_RXD0"
-		(at 189.23 96.52 0)
-		(fields_autoplaced yes)
+	(label "09_ESP_IO9"
+		(at 55.88 142.24 0)
 		(effects
 			(font
 				(size 0.8 0.8)
 			)
 			(justify left bottom)
 		)
-		(uuid "8030f51a-44af-48a7-b2b3-2d294218de6b")
+		(uuid "479cbe56-5cae-428c-960c-4b571fc2bca4")
 	)
 	(label "09_ESP_TXD0"
 		(at 189.23 99.06 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -3448,79 +3530,18 @@
 		)
 		(uuid "4c982075-2c79-4d55-bb80-829e754afa4d")
 	)
-	(label "09_ESP_TXD0"
-		(at 220.98 91.44 180)
-		(fields_autoplaced yes)
+	(label "09_ESP_EN"
+		(at 279.4 140.97 0)
 		(effects
 			(font
 				(size 0.8 0.8)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
-		(uuid "bdf55ca9-6b1c-49f1-86ce-3ea62a24532a")
-	)
-	(global_label "ESP_TXD"
-		(shape output)
-		(at 251.46 91.44 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify left)
-		)
-		(uuid "bf6f104a-72ac-41a1-93c1-57e29a632bc2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 251.46 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-	)
-	(label "09_ESP_RXD0"
-		(at 220.98 101.6 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify right bottom)
-		)
-		(uuid "12561cbb-957e-4f23-abdf-4958bf93927a")
-	)
-	(global_label "ESP_RXD"
-		(shape input)
-		(at 251.46 101.6 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.8 0.8)
-			)
-			(justify left)
-		)
-		(uuid "670dbeb4-8a33-4d3e-b783-32a122c33d81")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 251.46 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
+		(uuid "5f77798b-2610-42a6-8502-d1ebe0ae7843")
 	)
 	(label "09_ESP_IO4"
 		(at 220.98 125.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -3529,33 +3550,68 @@
 		)
 		(uuid "6beb5a08-083a-483e-8718-87c4ea33de8f")
 	)
-	(global_label "MCU_BOOT0"
-		(shape output)
-		(at 243.84 125.73 0)
-		(fields_autoplaced yes)
+	(label "09_ESP_RXD0"
+		(at 189.23 96.52 0)
 		(effects
 			(font
 				(size 0.8 0.8)
 			)
-			(justify left)
+			(justify left bottom)
 		)
-		(uuid "23c0d44d-eeb5-4bea-84d5-4ebabf893046")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 243.84 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
+		(uuid "8030f51a-44af-48a7-b2b3-2d294218de6b")
+	)
+	(label "09_ESP_RXD0"
+		(at 279.4 138.43 0)
+		(effects
+			(font
+				(size 0.8 0.8)
 			)
+			(justify left bottom)
 		)
+		(uuid "9615e8fd-1fc1-4821-960c-6f316d1725a6")
+	)
+	(label "09_ESP_IO2"
+		(at 118.11 101.6 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify right bottom)
+		)
+		(uuid "9b4562c1-90a2-4e1d-add9-dfa6c4fdaf48")
+	)
+	(label "09_ESP_IO8"
+		(at 118.11 121.92 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify right bottom)
+		)
+		(uuid "9d80779b-ce27-46fe-98fc-63aa1271bea7")
+	)
+	(label "09_ESP_EN"
+		(at 118.11 99.06 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify right bottom)
+		)
+		(uuid "a28c1070-9cec-4c20-b057-921bad35ab6b")
+	)
+	(label "09_ESP_TXD0"
+		(at 220.98 91.44 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify right bottom)
+		)
+		(uuid "bdf55ca9-6b1c-49f1-86ce-3ea62a24532a")
 	)
 	(label "09_ESP_IO5"
 		(at 220.98 140.97 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -3563,6 +3619,36 @@
 			(justify right bottom)
 		)
 		(uuid "be12212d-7055-49ae-81f5-63ce5fc29c06")
+	)
+	(label "09_ESP_IO5"
+		(at 118.11 114.3 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify right bottom)
+		)
+		(uuid "bf96ce14-027e-4d67-a7a5-1682b327f0b5")
+	)
+	(label "09_ESP_IO9"
+		(at 279.4 143.51 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "cc97b0c6-02b5-4841-aab6-0e7dfc624109")
+	)
+	(label "09_ESP_IO4"
+		(at 118.11 111.76 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify right bottom)
+		)
+		(uuid "f30c3288-3a06-464a-99e6-26a03e9f09d2")
 	)
 	(global_label "MCU_NRST"
 		(shape output)
@@ -3588,234 +3674,559 @@
 			)
 		)
 	)
-	(label "09_ESP_TXD0"
-		(at 279.4 135.89 0)
+	(global_label "MCU_BOOT0"
+		(shape output)
+		(at 243.84 125.73 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
 			)
-			(justify left bottom)
+			(justify left)
 		)
-		(uuid "09ebdada-4673-45ea-8e27-bae8cd241f0c")
+		(uuid "23c0d44d-eeb5-4bea-84d5-4ebabf893046")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 243.84 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
 	)
-	(label "09_ESP_RXD0"
-		(at 279.4 138.43 0)
+	(global_label "ESP_EN"
+		(shape input)
+		(at 30.48 93.98 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
 			)
-			(justify left bottom)
+			(justify right)
 		)
-		(uuid "9615e8fd-1fc1-4821-960c-6f316d1725a6")
+		(uuid "280a3776-53f0-411e-8187-1a3eb0db15e6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 30.48 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify right)
+			)
+		)
 	)
-	(label "09_ESP_EN"
-		(at 279.4 140.97 0)
+	(global_label "ESP_BOOT"
+		(shape input)
+		(at 33.02 149.86 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
 			)
-			(justify left bottom)
+			(justify right)
 		)
-		(uuid "5f77798b-2610-42a6-8502-d1ebe0ae7843")
+		(uuid "5951fd1c-6d09-4c3a-8ea9-ecede4fc853d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 33.02 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify right)
+			)
+		)
 	)
-	(label "09_ESP_IO9"
-		(at 279.4 143.51 0)
+	(global_label "ESP_RXD"
+		(shape input)
+		(at 251.46 101.6 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.8 0.8)
 			)
-			(justify left bottom)
+			(justify left)
 		)
-		(uuid "cc97b0c6-02b5-4841-aab6-0e7dfc624109")
+		(uuid "670dbeb4-8a33-4d3e-b783-32a122c33d81")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
 	)
-	(text "τ = 10 k × 1 µF = 10 ms (ESP DS p.34).\nESP_EN low → EN = 0.30 V < VIL 0.83 V."
-		(exclude_from_sim no)
-		(at 25.4 105.41 0)
+	(global_label "ESP_TXD"
+		(shape output)
+		(at 251.46 91.44 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
-				(size 1 1)
+				(size 0.8 0.8)
 			)
-			(justify left top)
+			(justify left)
 		)
-		(uuid "889569dd-0441-4e4a-9a8a-0f338a89091d")
+		(uuid "bf6f104a-72ac-41a1-93c1-57e29a632bc2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
 	)
-	(rectangle
-		(start 17.78 76.2)
-		(end 76.2 113.03)
-		(stroke
-			(width 0.254)
-			(type dash)
-			(color 0 0 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "ae688213-7e2b-4205-9d74-ad3241315d8d")
-	)
-	(text "EN reset RC"
+	(symbol
+		(lib_id "Automotive_ESS_BMS:GND_PWR")
+		(at 90.17 109.22 0)
+		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
-		(at 19.05 77.47 0)
-		(effects
-			(font
-				(size 1 1)
-				(bold yes)
-				(color 0 0 132 1)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0947e818-099a-4a45-9328-4dce8d707f94")
+		(property "Reference" "#PWR904"
+			(at 90.17 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
 			)
-			(justify left top)
 		)
-		(uuid "647f197b-b313-4c8d-b770-d57fe66581c9")
+		(property "Value" "GND_PWR"
+			(at 90.17 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND_PWR\""
+			(at 90.17 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "89121e7a-967b-41f3-a506-1c69ec87ffbb")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "#PWR904")
+					(unit 1)
+				)
+			)
+		)
 	)
-	(text "GPIO9 = 1 → SPI boot, 0 → download\n(GPIO8 must be 1; ESP DS p.13 tab. 4-3)."
+	(symbol
+		(lib_id "Device:R")
+		(at 38.1 142.24 90)
+		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
-		(at 25.4 154.94 0)
-		(effects
-			(font
-				(size 1 1)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "19b4d835-fb60-4c0c-847e-c7b81189523d")
+		(property "Reference" "R903"
+			(at 38.1 137.795 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
 			)
-			(justify left top)
 		)
-		(uuid "554477d6-a7c4-4575-9399-efcf830e51a1")
+		(property "Value" "10k 1%"
+			(at 38.1 139.065 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 38.1 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25804"
+			(at 38.1 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Description" "10k 1% 0603, GPIO9 boot strap pull-up = SPI boot; ESP_BOOT low = download (ESP DS p.13 table 4-3)"
+			(at 38.1 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 38.1 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 38.1 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 38.1 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "0603 100mW"
+			(at 38.1 140.335 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "341aad9d-122c-4438-915e-d75807f22f04")
+		)
+		(pin "2"
+			(uuid "c43931bb-b31b-4ee7-b66f-b70f1207da52")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "R903")
+					(unit 1)
+				)
+			)
+		)
 	)
-	(rectangle
-		(start 17.78 114.3)
-		(end 76.2 162.56)
-		(stroke
-			(width 0.254)
-			(type dash)
-			(color 0 0 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "d76f03a8-e5fe-4b12-aaf7-f4a8ad13ed7e")
-	)
-	(text "Boot straps"
+	(symbol
+		(lib_id "Automotive_ESS_BMS:+3V3_ESP")
+		(at 104.14 96.52 0)
+		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
-		(at 19.05 115.57 0)
-		(effects
-			(font
-				(size 1 1)
-				(bold yes)
-				(color 0 0 132 1)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "64b04aed-7f85-454d-b7d4-2d8b28c2d05a")
+		(property "Reference" "#PWR905"
+			(at 104.14 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
 			)
-			(justify left top)
 		)
-		(uuid "e8c9141e-640b-4515-8b9f-e6eb58ba4fbb")
+		(property "Value" "+3V3_ESP"
+			(at 104.14 93.218 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 104.14 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 104.14 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3_ESP\""
+			(at 104.14 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "deba8073-b197-45b1-9a44-75d7a277c49b")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "#PWR905")
+					(unit 1)
+				)
+			)
+		)
 	)
-	(text "+3V3_ESP 3.0–3.6 V (ESP DS p.21); 350 mA TX peak (ARCH §4.2, 18 % of U104).\nPCB: antenna end (beyond pads 36–48) at the board edge; keep-out per DS p.10."
+	(symbol
+		(lib_id "Automotive_ESS_BMS:GND_PWR")
+		(at 279.4 133.35 90)
+		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
-		(at 82.55 140.97 0)
-		(effects
-			(font
-				(size 1 1)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "668ced66-505f-4dca-a5aa-0becbda29c5c")
+		(property "Reference" "#PWR910"
+			(at 279.4 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
 			)
-			(justify left top)
 		)
-		(uuid "885b4786-c256-4f58-900a-06f1b5e42c58")
+		(property "Value" "GND_PWR"
+			(at 283.21 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 279.4 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 279.4 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND_PWR\""
+			(at 279.4 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8825f6c0-7dfc-44e2-982d-e5113df115b4")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "#PWR910")
+					(unit 1)
+				)
+			)
+		)
 	)
-	(rectangle
-		(start 77.47 76.2)
-		(end 204.47 147.32)
-		(stroke
-			(width 0.254)
-			(type dash)
-			(color 0 0 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "0426f170-f87e-4053-a2b3-b0293189c84f")
-	)
-	(text "ESP32-C3 module"
+	(symbol
+		(lib_id "Automotive_ESS_BMS:+3V3_ESP")
+		(at 279.4 146.05 270)
+		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
-		(at 78.74 77.47 0)
-		(effects
-			(font
-				(size 1 1)
-				(bold yes)
-				(color 0 0 132 1)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7762eac9-dcaa-46fa-a520-f97be0e12f63")
+		(property "Reference" "#PWR911"
+			(at 279.4 146.05 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
 			)
-			(justify left top)
 		)
-		(uuid "70a0c118-74ab-4a53-b7cc-591b51cb7a56")
-	)
-	(text "1 k series: back-power ≤ 3 mA with the ESP off.\nR911 100 k: PC11 idles high (33 µA back-feed)."
-		(exclude_from_sim no)
-		(at 213.36 106.68 0)
-		(effects
-			(font
-				(size 1 1)
+		(property "Value" "+3V3_ESP"
+			(at 282.702 146.05 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
 			)
-			(justify left top)
 		)
-		(uuid "d3cdcd8b-3036-4e71-bcc5-6687afe4a2fc")
-	)
-	(rectangle
-		(start 205.74 76.2)
-		(end 266.7 114.3)
-		(stroke
-			(width 0.254)
-			(type dash)
-			(color 0 0 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "431dcb9a-8554-4712-8027-2f501f046d4a")
-	)
-	(text "UART to MCU"
-		(exclude_from_sim no)
-		(at 207.01 77.47 0)
-		(effects
-			(font
-				(size 1 1)
-				(bold yes)
-				(color 0 0 132 1)
+		(property "Footprint" ""
+			(at 279.4 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
 			)
-			(justify left top)
 		)
-		(uuid "fdc9a84b-2443-4d1d-af43-179bdfc66a42")
-	)
-	(text "D-46: R905 / Q901 / R906 DNP, fit only if the ESP may re-flash / reset the STM32.\nJ901 DNP (bench flashing / probe holes): pin 6 = +3V3_ESP sense only, do not feed."
-		(exclude_from_sim no)
-		(at 213.36 154.94 0)
-		(effects
-			(font
-				(size 1 1)
+		(property "Datasheet" ""
+			(at 279.4 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
 			)
-			(justify left top)
 		)
-		(uuid "fb03997a-3675-44c3-9bdb-a64636639611")
-	)
-	(rectangle
-		(start 205.74 115.57)
-		(end 297.18 162.56)
-		(stroke
-			(width 0.254)
-			(type dash)
-			(color 0 0 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "6d904686-9225-4c4a-89e1-5c14d451df39")
-	)
-	(text "ROM-flash options (DNP)"
-		(exclude_from_sim no)
-		(at 207.01 116.84 0)
-		(effects
-			(font
-				(size 1 1)
-				(bold yes)
-				(color 0 0 132 1)
+		(property "Description" "Power symbol creates a global label with name \"+3V3_ESP\""
+			(at 279.4 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
 			)
-			(justify left top)
 		)
-		(uuid "40529f87-6aee-4fd4-80a0-185d29bee027")
+		(pin "1"
+			(uuid "ad00a043-56a1-4a21-a734-cf435edc1d42")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "#PWR911")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -3943,8 +4354,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 97.79 102.87 0)
+		(lib_id "Device:R")
+		(at 231.14 91.44 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3952,31 +4363,29 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "8ad04b6f-032b-4982-b3f7-2123d1bc0cbd")
-		(property "Reference" "C902"
-			(at 101.092 104.14 90)
+		(uuid "87c922e7-a5fb-4c82-aee8-7d9cb21ad413")
+		(property "Reference" "R909"
+			(at 231.14 86.995 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 0.8 0.8)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "100nF 50V"
-			(at 102.362 104.14 90)
+		(property "Value" "1k 1%"
+			(at 231.14 88.265 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 0.8 0.8)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 97.79 102.87 0)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 231.14 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3986,8 +4395,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C14663"
-			(at 97.79 102.87 0)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
+			(at 231.14 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3997,8 +4406,8 @@
 				)
 			)
 		)
-		(property "Description" "100nF X7R 50 V 0603, U901 3V3 bypass (C2 0.1 uF, ESP DS p.34)"
-			(at 97.79 102.87 0)
+		(property "Description" "1k 1% 0603, ESP_TXD series (TXD0 pin 31 -> MCU PC11 RX), back-power limit (D 3.1)"
+			(at 231.14 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4008,8 +4417,8 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
-			(at 97.79 102.87 0)
+		(property "MPN" "0603WAF1001T5E"
+			(at 231.14 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4019,8 +4428,8 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
-			(at 97.79 102.87 0)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 231.14 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4030,8 +4439,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
-			(at 97.79 102.87 0)
+		(property "LCSC" "C21190"
+			(at 231.14 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4041,257 +4450,8 @@
 				)
 			)
 		)
-		(property "Spec" "X7R 0603"
-			(at 103.632 104.14 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "f57f6c67-72dd-49af-a333-675888e024fd")
-		)
-		(pin "2"
-			(uuid "d1ed1527-c4a9-47cd-aa1f-bbc96181ef5d")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "C902")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 55.88 97.79 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f929d2ea-8782-4022-af18-a8780fe26b05")
-		(property "Reference" "C903"
-			(at 50.038 99.06 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1uF 50V"
-			(at 51.308 99.06 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 55.88 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C28323"
-			(at 55.88 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "1uF X7R 50 V 0805, U901 EN delay tau = 10 ms (C = 1 uF, ESP DS p.34)"
-			(at 55.88 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "MPN" "CL21B105KBFNNNE"
-			(at 55.88 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 55.88 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C28323"
-			(at 55.88 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "X7R 0805"
-			(at 52.578 99.06 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "fb370175-95f9-41be-9d35-587dafb26c4c")
-		)
-		(pin "2"
-			(uuid "3fa16e1d-a2f3-4620-be8f-57a365423a3f")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "C903")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x06")
-		(at 271.78 138.43 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "eb44169c-4f95-4bed-bd83-f9e5069fe214")
-		(property "Reference" "J901"
-			(at 273.685 128.27 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "PZ254V-11-06P"
-			(at 273.685 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
-			(at 271.78 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C492405"
-			(at 271.78 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "DNP - 1x6 2.54 mm header, ESP UART0 flash / probe: 1 GND, 2 TXD0, 3 RXD0, 4 EN, 5 GPIO9, 6 +3V3_ESP (sense only, do not feed); fit only for bench flashing; bare holes = probe points"
-			(at 271.78 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "MPN" "PZ254V-11-06P"
-			(at 271.78 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "XFCN"
-			(at 271.78 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C492405"
-			(at 271.78 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "1x6P 2.54mm THT"
-			(at 273.685 130.81 0)
+		(property "Spec" "0603 100mW"
+			(at 231.14 89.535 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4301,27 +4461,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "e5130871-2b78-468e-ad7b-37a7cc5f227a")
+			(uuid "8cd549b3-d375-43df-8238-deebcdff28c4")
 		)
 		(pin "2"
-			(uuid "c7c560af-3941-4157-ac92-9af48480be7d")
-		)
-		(pin "3"
-			(uuid "0f85f11b-9aaf-4a92-bbeb-145abd5347ac")
-		)
-		(pin "4"
-			(uuid "e6094d43-6e2d-40d8-a196-581594900759")
-		)
-		(pin "5"
-			(uuid "f9dab3b8-b67d-4bb5-8eff-748c57bde597")
-		)
-		(pin "6"
-			(uuid "bb517cfb-9e26-4f8b-abea-ef09adf8c855")
+			(uuid "81040f0a-6365-4fcf-940a-7ab758b1da57")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "J901")
+					(reference "R909")
 					(unit 1)
 				)
 			)
@@ -4456,8 +4604,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 48.26 87.63 0)
+		(lib_id "Automotive_ESS_BMS:GND_PWR")
+		(at 226.06 148.59 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4465,31 +4613,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "bab8145b-848d-401a-8855-f34f56e84879")
-		(property "Reference" "R901"
-			(at 51.435 91.44 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k 1%"
-			(at 52.705 91.44 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 48.26 87.63 0)
+		(uuid "8aaa1a72-df4b-482e-b327-c8b92644e32b")
+		(property "Reference" "#PWR908"
+			(at 226.06 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4499,8 +4625,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C25804"
-			(at 48.26 87.63 0)
+		(property "Value" "GND_PWR"
+			(at 226.06 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4510,8 +4636,8 @@
 				)
 			)
 		)
-		(property "Description" "10k 1% 0603, U901 EN pull-up to +3V3_ESP (R = 10 k, ESP DS p.34)"
-			(at 48.26 87.63 0)
+		(property "Footprint" ""
+			(at 226.06 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4521,8 +4647,8 @@
 				)
 			)
 		)
-		(property "MPN" "0603WAF1002T5E"
-			(at 48.26 87.63 0)
+		(property "Datasheet" ""
+			(at 226.06 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4532,8 +4658,8 @@
 				)
 			)
 		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 48.26 87.63 0)
+		(property "Description" "Power symbol creates a global label with name \"GND_PWR\""
+			(at 226.06 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4541,48 +4667,23 @@
 				(font
 					(size 0.8 0.8)
 				)
-			)
-		)
-		(property "LCSC" "C25804"
-			(at 48.26 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "0603 100mW"
-			(at 53.975 91.44 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
 			)
 		)
 		(pin "1"
-			(uuid "29c2f1e6-ae26-431d-bb7d-1ab4ccc0d097")
-		)
-		(pin "2"
-			(uuid "66084069-0c4b-4d27-bb9d-b1da8ce5b43d")
+			(uuid "17dc330c-5d61-4b6c-91cc-7b4a4e151d3b")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R901")
+					(reference "#PWR908")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 38.1 93.98 90)
+		(lib_id "Device:C")
+		(at 97.79 102.87 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4590,29 +4691,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "caab1a96-890f-4837-aba6-a8ee5874c917")
-		(property "Reference" "R902"
-			(at 38.1 89.535 90)
+		(uuid "8ad04b6f-032b-4982-b3f7-2123d1bc0cbd")
+		(property "Reference" "C902"
+			(at 101.092 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 0.8 0.8)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "1k 1%"
-			(at 38.1 90.805 90)
+		(property "Value" "100nF 50V"
+			(at 102.362 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 0.8 0.8)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 38.1 93.98 0)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 97.79 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4622,8 +4725,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
-			(at 38.1 93.98 0)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C14663"
+			(at 97.79 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4633,8 +4736,8 @@
 				)
 			)
 		)
-		(property "Description" "1k 1% 0603, ESP_EN (U801 P12, drive low = reset) into the EN node: EN = 3.3 x 1/11 = 0.30 V < VIL 0.83 V (calc, ESP DS p.21); limits C903 discharge"
-			(at 38.1 93.98 0)
+		(property "Description" "100nF X7R 50 V 0603, U901 3V3 bypass (C2 0.1 uF, ESP DS p.34)"
+			(at 97.79 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4644,8 +4747,8 @@
 				)
 			)
 		)
-		(property "MPN" "0603WAF1001T5E"
-			(at 38.1 93.98 0)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 97.79 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4655,8 +4758,8 @@
 				)
 			)
 		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 38.1 93.98 0)
+		(property "Manufacturer" "YAGEO"
+			(at 97.79 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4666,8 +4769,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
-			(at 38.1 93.98 0)
+		(property "LCSC" "C14663"
+			(at 97.79 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4677,148 +4780,27 @@
 				)
 			)
 		)
-		(property "Spec" "0603 100mW"
-			(at 38.1 92.075 90)
+		(property "Spec" "X7R 0603"
+			(at 103.632 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 0.8 0.8)
 				)
+				(justify left)
 			)
 		)
 		(pin "1"
-			(uuid "2d0781cf-5f58-4ac9-8a33-eb861d7f37b3")
+			(uuid "f57f6c67-72dd-49af-a333-675888e024fd")
 		)
 		(pin "2"
-			(uuid "26b4bbe0-e944-48fd-8181-929e96409821")
+			(uuid "d1ed1527-c4a9-47cd-aa1f-bbc96181ef5d")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R902")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 38.1 142.24 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "19b4d835-fb60-4c0c-847e-c7b81189523d")
-		(property "Reference" "R903"
-			(at 38.1 137.795 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "10k 1%"
-			(at 38.1 139.065 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 38.1 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C25804"
-			(at 38.1 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "10k 1% 0603, GPIO9 boot strap pull-up = SPI boot; ESP_BOOT low = download (ESP DS p.13 table 4-3)"
-			(at 38.1 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "MPN" "0603WAF1002T5E"
-			(at 38.1 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 38.1 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C25804"
-			(at 38.1 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "0603 100mW"
-			(at 38.1 140.335 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "341aad9d-122c-4438-915e-d75807f22f04")
-		)
-		(pin "2"
-			(uuid "c43931bb-b31b-4ee7-b66f-b70f1207da52")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R903")
+					(reference "C902")
 					(unit 1)
 				)
 			)
@@ -4947,255 +4929,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 231.14 125.73 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "d0235816-d05b-4919-abbe-de75afc31d77")
-		(property "Reference" "R905"
-			(at 231.14 121.285 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "1k 1%"
-			(at 231.14 122.555 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 231.14 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
-			(at 231.14 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "DNP - 1k 1% 0603, ESP GPIO4 -> MCU_BOOT0 for STM32 ROM re-flash over USART3 PC10/PC11; fit only if the owner accepts D-46"
-			(at 231.14 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "MPN" "0603WAF1001T5E"
-			(at 231.14 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 231.14 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 231.14 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "0603 100mW"
-			(at 231.14 123.825 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "613a9d1f-2866-42db-a6e3-ed1918320226")
-		)
-		(pin "2"
-			(uuid "b0aeef71-a481-4f8c-b493-47d119a3a685")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R905")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 226.06 144.78 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "f7b8fd24-fd28-4e90-90cb-6d42ccbf451d")
-		(property "Reference" "R906"
-			(at 220.345 149.86 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100k 1%"
-			(at 221.615 149.86 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 226.06 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C25803"
-			(at 226.06 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "DNP - 100k 1% 0603, Q901 gate pull-down (D-46 option)"
-			(at 226.06 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "MPN" "0603WAF1003T5E"
-			(at 226.06 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 226.06 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C25803"
-			(at 226.06 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "0603 100mW"
-			(at 222.885 149.86 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "2eb637d5-13a2-4e92-9c78-92e737a1ee12")
-		)
-		(pin "2"
-			(uuid "1959984e-b7c3-4865-8099-55b79f0359e6")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R906")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 38.1 127 90)
+		(lib_id "Automotive_ESS_BMS:+3V3_ESP")
+		(at 48.26 83.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5203,29 +4938,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "f0ee3856-5be3-44b0-b853-3db42bac802b")
-		(property "Reference" "R907"
-			(at 38.1 122.555 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "10k 1%"
-			(at 38.1 123.825 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 38.1 127 0)
+		(uuid "9eda0c6d-dbbe-4fb1-a919-579afb05548c")
+		(property "Reference" "#PWR901"
+			(at 48.26 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5235,8 +4950,18 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C25804"
-			(at 38.1 127 0)
+		(property "Value" "+3V3_ESP"
+			(at 48.26 80.518 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 48.26 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5246,8 +4971,8 @@
 				)
 			)
 		)
-		(property "Description" "10k 1% 0603, GPIO2 strap pull-up (recommended against glitches, ESP DS p.13 note 2)"
-			(at 38.1 127 0)
+		(property "Datasheet" ""
+			(at 48.26 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5257,41 +4982,9 @@
 				)
 			)
 		)
-		(property "MPN" "0603WAF1002T5E"
-			(at 38.1 127 0)
+		(property "Description" "Power symbol creates a global label with name \"+3V3_ESP\""
+			(at 48.26 83.82 0)
 			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 38.1 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C25804"
-			(at 38.1 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "0603 100mW"
-			(at 38.1 125.095 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5301,506 +4994,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "0f98a3f5-0ac6-4365-89e4-2e8716ea6b2b")
-		)
-		(pin "2"
-			(uuid "edd42583-2787-415e-afda-f0ae87a14312")
+			(uuid "77047d9f-2127-4524-9244-1851d5614b6d")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R907")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 231.14 101.6 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e476c466-8859-4787-ba45-8be583f532df")
-		(property "Reference" "R908"
-			(at 231.14 97.155 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "1k 1%"
-			(at 231.14 98.425 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 231.14 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
-			(at 231.14 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "1k 1% 0603, ESP_RXD series (MCU PC10 TX -> RXD0 pin 30), back-power limit while the ESP is off (D 3.1)"
-			(at 231.14 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "MPN" "0603WAF1001T5E"
-			(at 231.14 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 231.14 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 231.14 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "0603 100mW"
-			(at 231.14 99.695 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "221f2346-691e-44c3-b5d7-272e8e9cea0a")
-		)
-		(pin "2"
-			(uuid "cc59c739-1f2c-49bd-97ed-df24953594b1")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R908")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 231.14 91.44 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "87c922e7-a5fb-4c82-aee8-7d9cb21ad413")
-		(property "Reference" "R909"
-			(at 231.14 86.995 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "1k 1%"
-			(at 231.14 88.265 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 231.14 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
-			(at 231.14 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "1k 1% 0603, ESP_TXD series (TXD0 pin 31 -> MCU PC11 RX), back-power limit (D 3.1)"
-			(at 231.14 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "MPN" "0603WAF1001T5E"
-			(at 231.14 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 231.14 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 231.14 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "0603 100mW"
-			(at 231.14 89.535 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8cd549b3-d375-43df-8238-deebcdff28c4")
-		)
-		(pin "2"
-			(uuid "81040f0a-6365-4fcf-940a-7ab758b1da57")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R909")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 40.64 149.86 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f1a6ef23-e888-4a00-80c2-c8ee702a3384")
-		(property "Reference" "R910"
-			(at 40.64 145.415 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "1k 1%"
-			(at 40.64 146.685 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "1k 1% 0603, ESP_BOOT (U801 P13) series into GPIO9: low = 0.30 V; limits back-power when +3V3_ESP is off (calc)"
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "MPN" "0603WAF1001T5E"
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 40.64 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "0603 100mW"
-			(at 40.64 147.955 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "604a635a-2cfa-4e28-8a67-2d1f6d8f207d")
-		)
-		(pin "2"
-			(uuid "b0a55036-2ba9-4251-9392-1fb37f5ccc6c")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R910")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 241.3 86.36 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b08709cf-3d33-44e3-a7c0-5a8ad0c782c2")
-		(property "Reference" "R911"
-			(at 244.475 90.17 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100k 1%"
-			(at 245.745 90.17 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 241.3 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C25803"
-			(at 241.3 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "100k 1% 0603, ESP_TXD (MCU PC11 side) pull-up to +3V3: UART4 RX idles high while the ESP is off; back-feed into the module 3.3 V / 101 k = 33 uA (calc; review R3-13)"
-			(at 241.3 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "MPN" "0603WAF1003T5E"
-			(at 241.3 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 241.3 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "LCSC" "C25803"
-			(at 241.3 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Spec" "0603 100mW"
-			(at 247.015 90.17 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "4c209dd3-04cb-4075-bb77-57f18bc3e982")
-		)
-		(pin "2"
-			(uuid "34b4a689-eb9e-4b99-a52f-17cc9ef976e0")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "R911")
+					(reference "#PWR901")
 					(unit 1)
 				)
 			)
@@ -6082,8 +5281,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Automotive_ESS_BMS:+3V3_ESP")
-		(at 48.26 83.82 0)
+		(lib_id "Device:R")
+		(at 241.3 86.36 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6091,9 +5290,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "9eda0c6d-dbbe-4fb1-a919-579afb05548c")
-		(property "Reference" "#PWR901"
-			(at 48.26 83.82 0)
+		(uuid "b08709cf-3d33-44e3-a7c0-5a8ad0c782c2")
+		(property "Reference" "R911"
+			(at 244.475 90.17 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k 1%"
+			(at 245.745 90.17 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 241.3 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6103,18 +5324,8 @@
 				)
 			)
 		)
-		(property "Value" "+3V3_ESP"
-			(at 48.26 80.518 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 48.26 83.82 0)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25803"
+			(at 241.3 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6124,8 +5335,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 48.26 83.82 0)
+		(property "Description" "100k 1% 0603, ESP_TXD (MCU PC11 side) pull-up to +3V3: UART4 RX idles high while the ESP is off; back-feed into the module 3.3 V / 101 k = 33 uA (calc; review R3-13)"
+			(at 241.3 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6135,8 +5346,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3_ESP\""
-			(at 48.26 83.82 0)
+		(property "MPN" "0603WAF1003T5E"
+			(at 241.3 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6144,23 +5355,59 @@
 				(font
 					(size 0.8 0.8)
 				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 241.3 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 241.3 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "0603 100mW"
+			(at 247.015 90.17 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
-			(uuid "77047d9f-2127-4524-9244-1851d5614b6d")
+			(uuid "4c209dd3-04cb-4075-bb77-57f18bc3e982")
+		)
+		(pin "2"
+			(uuid "34b4a689-eb9e-4b99-a52f-17cc9ef976e0")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "#PWR901")
+					(reference "R911")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Automotive_ESS_BMS:GND_PWR")
-		(at 55.88 101.6 0)
+		(lib_id "Device:R")
+		(at 48.26 87.63 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6168,9 +5415,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "d55b032b-9642-4a44-b107-97e5ffae5ae4")
-		(property "Reference" "#PWR902"
-			(at 55.88 101.6 0)
+		(uuid "bab8145b-848d-401a-8855-f34f56e84879")
+		(property "Reference" "R901"
+			(at 51.435 91.44 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k 1%"
+			(at 52.705 91.44 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 48.26 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6180,8 +5449,8 @@
 				)
 			)
 		)
-		(property "Value" "GND_PWR"
-			(at 55.88 105.41 0)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25804"
+			(at 48.26 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6191,8 +5460,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 55.88 101.6 0)
+		(property "Description" "10k 1% 0603, U901 EN pull-up to +3V3_ESP (R = 10 k, ESP DS p.34)"
+			(at 48.26 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6202,8 +5471,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 55.88 101.6 0)
+		(property "MPN" "0603WAF1002T5E"
+			(at 48.26 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6213,8 +5482,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND_PWR\""
-			(at 55.88 101.6 0)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 48.26 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6222,15 +5491,40 @@
 				(font
 					(size 0.8 0.8)
 				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 48.26 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "0603 100mW"
+			(at 53.975 91.44 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
-			(uuid "58183441-ec5d-4075-8356-b64925d6f232")
+			(uuid "29c2f1e6-ae26-431d-bb7d-1ab4ccc0d097")
+		)
+		(pin "2"
+			(uuid "66084069-0c4b-4d27-bb9d-b1da8ce5b43d")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "#PWR902")
+					(reference "R901")
 					(unit 1)
 				)
 			)
@@ -6315,161 +5609,6 @@
 	)
 	(symbol
 		(lib_id "Automotive_ESS_BMS:GND_PWR")
-		(at 90.17 109.22 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0947e818-099a-4a45-9328-4dce8d707f94")
-		(property "Reference" "#PWR904"
-			(at 90.17 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "GND_PWR"
-			(at 90.17 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND_PWR\""
-			(at 90.17 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "89121e7a-967b-41f3-a506-1c69ec87ffbb")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "#PWR904")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Automotive_ESS_BMS:+3V3_ESP")
-		(at 104.14 96.52 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "64b04aed-7f85-454d-b7d4-2d8b28c2d05a")
-		(property "Reference" "#PWR905"
-			(at 104.14 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "+3V3_ESP"
-			(at 104.14 93.218 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 104.14 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 104.14 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3_ESP\""
-			(at 104.14 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "deba8073-b197-45b1-9a44-75d7a277c49b")
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "#PWR905")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Automotive_ESS_BMS:GND_PWR")
 		(at 153.67 137.16 0)
 		(unit 1)
 		(body_style 1)
@@ -6547,8 +5686,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 241.3 82.55 0)
+		(lib_id "Device:R")
+		(at 38.1 93.98 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6556,9 +5695,29 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "ea409584-aaab-4bb6-a8c4-5a5c4d35f182")
-		(property "Reference" "#PWR907"
-			(at 241.3 82.55 0)
+		(uuid "caab1a96-890f-4837-aba6-a8ee5874c917")
+		(property "Reference" "R902"
+			(at 38.1 89.535 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Value" "1k 1%"
+			(at 38.1 90.805 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 38.1 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6568,18 +5727,8 @@
 				)
 			)
 		)
-		(property "Value" "+3V3"
-			(at 241.3 79.248 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 241.3 82.55 0)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
+			(at 38.1 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6589,8 +5738,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 241.3 82.55 0)
+		(property "Description" "1k 1% 0603, ESP_EN (U801 P12, drive low = reset) into the EN node: EN = 3.3 x 1/11 = 0.30 V < VIL 0.83 V (calc, ESP DS p.21); limits C903 discharge"
+			(at 38.1 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6600,9 +5749,41 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 241.3 82.55 0)
+		(property "MPN" "0603WAF1001T5E"
+			(at 38.1 93.98 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 38.1 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 38.1 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "0603 100mW"
+			(at 38.1 92.075 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6612,30 +5793,53 @@
 			)
 		)
 		(pin "1"
-			(uuid "317cf75a-0a67-4674-8a13-2c66237cc4b5")
+			(uuid "2d0781cf-5f58-4ac9-8a33-eb861d7f37b3")
+		)
+		(pin "2"
+			(uuid "26b4bbe0-e944-48fd-8181-929e96409821")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "#PWR907")
+					(reference "R902")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Automotive_ESS_BMS:GND_PWR")
-		(at 226.06 148.59 0)
+		(lib_id "Device:R")
+		(at 231.14 125.73 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
-		(uuid "8aaa1a72-df4b-482e-b327-c8b92644e32b")
-		(property "Reference" "#PWR908"
-			(at 226.06 148.59 0)
+		(dnp yes)
+		(uuid "d0235816-d05b-4919-abbe-de75afc31d77")
+		(property "Reference" "R905"
+			(at 231.14 121.285 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Value" "1k 1%"
+			(at 231.14 122.555 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 231.14 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6645,8 +5849,8 @@
 				)
 			)
 		)
-		(property "Value" "GND_PWR"
-			(at 226.06 152.4 0)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
+			(at 231.14 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6656,8 +5860,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 226.06 148.59 0)
+		(property "Description" "DNP - 1k 1% 0603, ESP GPIO4 -> MCU_BOOT0 for STM32 ROM re-flash over USART3 PC10/PC11; fit only if the owner accepts D-46"
+			(at 231.14 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6667,8 +5871,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 226.06 148.59 0)
+		(property "MPN" "0603WAF1001T5E"
+			(at 231.14 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6678,9 +5882,30 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND_PWR\""
-			(at 226.06 148.59 0)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 231.14 125.73 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 231.14 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "0603 100mW"
+			(at 231.14 123.825 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6690,12 +5915,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "17dc330c-5d61-4b6c-91cc-7b4a4e151d3b")
+			(uuid "613a9d1f-2866-42db-a6e3-ed1918320226")
+		)
+		(pin "2"
+			(uuid "b0aeef71-a481-4f8c-b493-47d119a3a685")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "#PWR908")
+					(reference "R905")
 					(unit 1)
 				)
 			)
@@ -6781,7 +6009,7 @@
 	)
 	(symbol
 		(lib_id "Automotive_ESS_BMS:GND_PWR")
-		(at 279.4 133.35 90)
+		(at 55.88 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6789,9 +6017,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "668ced66-505f-4dca-a5aa-0becbda29c5c")
-		(property "Reference" "#PWR910"
-			(at 279.4 133.35 90)
+		(uuid "d55b032b-9642-4a44-b107-97e5ffae5ae4")
+		(property "Reference" "#PWR902"
+			(at 55.88 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6802,7 +6030,7 @@
 			)
 		)
 		(property "Value" "GND_PWR"
-			(at 283.21 133.35 90)
+			(at 55.88 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6810,11 +6038,10 @@
 				(font
 					(size 0.8 0.8)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 279.4 133.35 0)
+			(at 55.88 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6825,7 +6052,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 279.4 133.35 0)
+			(at 55.88 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6836,7 +6063,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND_PWR\""
-			(at 279.4 133.35 0)
+			(at 55.88 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6847,20 +6074,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "8825f6c0-7dfc-44e2-982d-e5113df115b4")
+			(uuid "58183441-ec5d-4075-8356-b64925d6f232")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "#PWR910")
+					(reference "#PWR902")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Automotive_ESS_BMS:+3V3_ESP")
-		(at 279.4 146.05 270)
+		(lib_id "Device:R")
+		(at 231.14 101.6 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6868,9 +6095,29 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "7762eac9-dcaa-46fa-a520-f97be0e12f63")
-		(property "Reference" "#PWR911"
-			(at 279.4 146.05 90)
+		(uuid "e476c466-8859-4787-ba45-8be583f532df")
+		(property "Reference" "R908"
+			(at 231.14 97.155 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Value" "1k 1%"
+			(at 231.14 98.425 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 231.14 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6880,19 +6127,120 @@
 				)
 			)
 		)
-		(property "Value" "+3V3_ESP"
-			(at 282.702 146.05 90)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
+			(at 231.14 101.6 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 0.8 0.8)
 				)
-				(justify left)
+			)
+		)
+		(property "Description" "1k 1% 0603, ESP_RXD series (MCU PC10 TX -> RXD0 pin 30), back-power limit while the ESP is off (D 3.1)"
+			(at 231.14 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 231.14 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 231.14 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 231.14 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "0603 100mW"
+			(at 231.14 99.695 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "221f2346-691e-44c3-b5d7-272e8e9cea0a")
+		)
+		(pin "2"
+			(uuid "cc59c739-1f2c-49bd-97ed-df24953594b1")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "R908")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 241.3 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ea409584-aaab-4bb6-a8c4-5a5c4d35f182")
+		(property "Reference" "#PWR907"
+			(at 241.3 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 241.3 79.248 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
 			)
 		)
 		(property "Footprint" ""
-			(at 279.4 146.05 0)
+			(at 241.3 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6903,7 +6251,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 279.4 146.05 0)
+			(at 241.3 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6913,8 +6261,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3_ESP\""
-			(at 279.4 146.05 0)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 241.3 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6925,12 +6273,641 @@
 			)
 		)
 		(pin "1"
-			(uuid "ad00a043-56a1-4a21-a734-cf435edc1d42")
+			(uuid "317cf75a-0a67-4674-8a13-2c66237cc4b5")
 		)
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
-					(reference "#PWR911")
+					(reference "#PWR907")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x06")
+		(at 271.78 138.43 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "eb44169c-4f95-4bed-bd83-f9e5069fe214")
+		(property "Reference" "J901"
+			(at 273.685 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Value" "PZ254V-11-06P"
+			(at 273.685 129.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
+			(at 271.78 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C492405"
+			(at 271.78 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Description" "DNP - 1x6 2.54 mm header, ESP UART0 flash / probe: 1 GND, 2 TXD0, 3 RXD0, 4 EN, 5 GPIO9, 6 +3V3_ESP (sense only, do not feed); fit only for bench flashing; bare holes = probe points"
+			(at 271.78 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "MPN" "PZ254V-11-06P"
+			(at 271.78 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Manufacturer" "XFCN"
+			(at 271.78 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C492405"
+			(at 271.78 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "1x6P 2.54mm THT"
+			(at 273.685 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e5130871-2b78-468e-ad7b-37a7cc5f227a")
+		)
+		(pin "2"
+			(uuid "c7c560af-3941-4157-ac92-9af48480be7d")
+		)
+		(pin "3"
+			(uuid "0f85f11b-9aaf-4a92-bbeb-145abd5347ac")
+		)
+		(pin "4"
+			(uuid "e6094d43-6e2d-40d8-a196-581594900759")
+		)
+		(pin "5"
+			(uuid "f9dab3b8-b67d-4bb5-8eff-748c57bde597")
+		)
+		(pin "6"
+			(uuid "bb517cfb-9e26-4f8b-abea-ef09adf8c855")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "J901")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 38.1 127 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f0ee3856-5be3-44b0-b853-3db42bac802b")
+		(property "Reference" "R907"
+			(at 38.1 122.555 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Value" "10k 1%"
+			(at 38.1 123.825 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 38.1 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25804"
+			(at 38.1 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Description" "10k 1% 0603, GPIO2 strap pull-up (recommended against glitches, ESP DS p.13 note 2)"
+			(at 38.1 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 38.1 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 38.1 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 38.1 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "0603 100mW"
+			(at 38.1 125.095 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0f98a3f5-0ac6-4365-89e4-2e8716ea6b2b")
+		)
+		(pin "2"
+			(uuid "edd42583-2787-415e-afda-f0ae87a14312")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "R907")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 40.64 149.86 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f1a6ef23-e888-4a00-80c2-c8ee702a3384")
+		(property "Reference" "R910"
+			(at 40.64 145.415 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Value" "1k 1%"
+			(at 40.64 146.685 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 40.64 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C21190"
+			(at 40.64 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Description" "1k 1% 0603, ESP_BOOT (U801 P13) series into GPIO9: low = 0.30 V; limits back-power when +3V3_ESP is off (calc)"
+			(at 40.64 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 40.64 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 40.64 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 40.64 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "0603 100mW"
+			(at 40.64 147.955 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "604a635a-2cfa-4e28-8a67-2d1f6d8f207d")
+		)
+		(pin "2"
+			(uuid "b0a55036-2ba9-4251-9392-1fb37f5ccc6c")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "R910")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 226.06 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "f7b8fd24-fd28-4e90-90cb-6d42ccbf451d")
+		(property "Reference" "R906"
+			(at 220.345 149.86 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k 1%"
+			(at 221.615 149.86 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 226.06 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25803"
+			(at 226.06 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Description" "DNP - 100k 1% 0603, Q901 gate pull-down (D-46 option)"
+			(at 226.06 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 226.06 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 226.06 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 226.06 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "0603 100mW"
+			(at 222.885 149.86 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "2eb637d5-13a2-4e92-9c78-92e737a1ee12")
+		)
+		(pin "2"
+			(uuid "1959984e-b7c3-4865-8099-55b79f0359e6")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "R906")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 55.88 97.79 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f929d2ea-8782-4022-af18-a8780fe26b05")
+		(property "Reference" "C903"
+			(at 50.038 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF 50V"
+			(at 51.308 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 55.88 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C28323"
+			(at 55.88 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Description" "1uF X7R 50 V 0805, U901 EN delay tau = 10 ms (C = 1 uF, ESP DS p.34)"
+			(at 55.88 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "MPN" "CL21B105KBFNNNE"
+			(at 55.88 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 55.88 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "LCSC" "C28323"
+			(at 55.88 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Spec" "X7R 0805"
+			(at 52.578 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "fb370175-95f9-41be-9d35-587dafb26c4c")
+		)
+		(pin "2"
+			(uuid "3fa16e1d-a2f3-4620-be8f-57a365423a3f")
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b/859e7e13-61ac-527a-a26d-29e48a8b43e7"
+					(reference "C903")
 					(unit 1)
 				)
 			)
@@ -6941,5 +6918,4 @@
 			(page "1")
 		)
 	)
-	(embedded_fonts no)
 )

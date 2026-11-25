@@ -37,13 +37,13 @@ Logic: U701 AND3(`FET_EN`, `OC_TRIP_N`, `MCU_NRST`) → `AFE_DFETOFF` (J701-25 a
 | 1 | "F701 2 A / 10 kA @75 VDC; clamp VC 96.8 V @ 51.7 A ×4" | 451 DS p.2; Liown DS p.2 |
 | 2/3 | "8 × 1.5 mΩ per bank: worst FET 1.8 W @ 200 A; VGS clamp 16 V" | (27.5 A)² × 2.4 mΩ (A §4.4, est. hot factor) |
 | 4 | "Kill: 42 V / 47 k = 0.9 mA active, 37 mW; AO3407A wins over CP 200 µA" | A §8.1 |
-| 5 | "Hi-Z → BOTHOFF + kill; +3V3 lost / B2B unplugged → BOTHOFF only (kill needs +3V3)" — see the P5-03 note below | ARCH §5.3; review R1-16 |
+| 5 | v1.1 (P5-03): "Hi-Z inputs → BOTHOFF + kill (100 k pull-downs, 0.5 V < VIL 0.8 V); +3V3 lost → BOTHOFF only. B2B unplugged: no +3V3 = no kill, BQ off the gates; FETs held off only by R719 / R720 10 MΩ (τ 1.0–1.4 s if separated under load). Never unplug the B2B with the pack connected / under load." (v1.0 read "+3V3 lost / B2B unplugged → BOTHOFF only") | ARCH §5.3; reviews R1-16, P5-03 |
 | 6 | "P-FET sources on FET_MID (BQ Fig 16-1); R_PRE 50 Ω: 1.17 A / 68 W pk, 174 J; R_PCHG 100 Ω: 0.26 A / 7 W" | BQ DS p.67; A §4.2 |
 | 7 | "PACK clamp 4 × 5.0SMDJ60A + MBRB20200CT freewheel" | review R1-07 |
 | 8 | "Heater ≤ 3.5 A (F702 5 A, 10 kA @75 VDC); VGS ≈ 11.7 V, 16 V clamp" | 451 DS p.2; R1-08 |
 | 9 | "J701 pin map v1 (contract); 3 A / pin" | contract |
 
-**Note (final review P5-03).** The box-5 text "B2B unplugged → BOTHOFF only" overstates what the hardware does. `+3V3` reaches the power board only through J701 pin 28, so with the connector out the kill FETs are never driven and the BQ drivers are no longer connected to the gates. The banks are then held off only by R719 / R720 (10 MΩ) and the zeners. Off-state: sound. Separation while conducting: the gates decay with τ ≈ 10 MΩ × 100–135 nF ≈ 1.0–1.4 s (calc) through the linear region under load. Rule: never separate the boards with the output on; screw the standoffs before the lugs are connected. The on-sheet note is unchanged in v1 and will be corrected in the next schematic revision.
+**Note (final review P5-03).** The box-5 text "B2B unplugged → BOTHOFF only" overstates what the hardware does. `+3V3` reaches the power board only through J701 pin 28, so with the connector out the kill FETs are never driven and the BQ drivers are no longer connected to the gates. The banks are then held off only by R719 / R720 (10 MΩ) and the zeners. Off-state: sound. Separation while conducting: the gates decay with τ ≈ 10 MΩ × 100–135 nF ≈ 1.0–1.4 s (calc) through the linear region under load. Rule: never separate the boards with the output on; screw the standoffs before the lugs are connected. **v1.1:** the on-sheet box-5 note now states this (table row above).
 
 ## 4. Test points
 
@@ -228,4 +228,4 @@ Now 174 refs / 395 pin rows. New LCSC numbers: none (R759 reuses C21189, the 0R 
 | P5-05 | fixed | Block "PACK clamp, snubbers, reverse clamp (DNP)" renamed "PACK clamp, snubbers, reverse clamp" (22 rows) |
 | P5-06 | fixed (drawing only) | Every 07_* net has at least one visible local label on the sheet |
 | P5-07 | fixed (drawing only) | R756 drawn OC_TRIP_N (B2B side, left) -> OC_TRIP_N_PB (gate side, global label at the U701.B input route); "B2B side" / "gate side" text added |
-| P5-03 | documentation | B2B-unplugged behaviour corrected in ARCH §5.3 and in the note above; no hardware change (review proposed none) |
+| P5-03 | fixed (text, v1.1) | Box-5 on-sheet note corrected ("B2B unplugged: no +3V3 = no kill, BQ off the gates; FETs held off only by R719 / R720 10 MΩ …"); ARCH §5.3 corrected; no hardware change (review proposed none) |

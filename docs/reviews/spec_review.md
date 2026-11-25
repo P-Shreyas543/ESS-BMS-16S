@@ -113,7 +113,7 @@ R3 found no wiring error that would make a board non-functional: every MCU alter
 | R3-17 | NOTE | 03 | PB4 is NJTRST: SWD works, JTAG would not | Noted (SWD only) |
 | R3-18 | NOTE | 03 | PA8 I2C2_SDA confirmed against DS12712 Table 12 | Closed |
 | R3-19 | NOTE | 03 | EXTI map has no conflict | Noted (firmware note) |
-| R3-20 | NOTE | 03 / 01 | ROM bootloader / blank MCU does not drive `PWR_HOLD`: first flashing needs FORCE_ON | Carried as a bring-up rule (SCHEMATIC_V1 §5 gate 8) |
+| R3-20 | NOTE | 03 / 01 | ROM bootloader / blank MCU does not drive `PWR_HOLD`: first flashing needs FORCE_ON | Carried as a bring-up rule (SCHEMATIC_V1 §5 gate 6) |
 | R3-21 | NOTE | 03 | PC0–PC3 share TIM1 | **Firmware note** |
 | R3-22 | NOTE | 03 | LSE drive level on the FC-135 class crystal | Carried as a bring-up item: start-up at −40 °C with LSEDRV 10 / 11 |
 | R3-23 | NOTE | 06 | RJ45 pin 1 from a generated footprint; a mirror swaps CANH / CANL | **Layout gate** |

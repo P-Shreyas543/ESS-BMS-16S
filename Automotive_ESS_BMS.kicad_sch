@@ -12,6 +12,897 @@
 		(comment 4 "Sheet 1/9: control board hierarchy")
 	)
 	(lib_symbols)
+	(polyline
+		(pts
+			(xy 166.64 145.45) (xy 167.64 146.05) (xy 166.64 146.65)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "0c871be8-a33b-4ef8-bf4b-b96ec77a7ff7")
+	)
+	(rectangle
+		(start 167.64 158.75)
+		(end 222.25 163.83)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "14105882-1472-4936-bd10-cf6b2b3a68cb")
+	)
+	(polyline
+		(pts
+			(xy 158.75 148.59) (xy 163.195 148.59) (xy 163.195 161.29) (xy 167.64 161.29)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "16b52bc6-8f99-4de8-8d3a-16572efd81e1")
+	)
+	(rectangle
+		(start 38.1 138.43)
+		(end 226.06 207.01)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "1c6d437e-5f00-40dc-94f1-4c5b4a4cc9b9")
+	)
+	(rectangle
+		(start 124.46 216.79)
+		(end 162.56 224.41)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "29fb326e-0a85-47b8-ab05-06c9361255d2")
+	)
+	(rectangle
+		(start 38.1 209.55)
+		(end 226.06 248.92)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "2c8a072d-5eb7-409e-9f35-e90e2dfb6560")
+	)
+	(polyline
+		(pts
+			(xy 158.75 148.59) (xy 163.195 148.59) (xy 163.195 146.05) (xy 167.64 146.05)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "305d960b-a1e0-4a34-a9df-ab34edecee20")
+	)
+	(rectangle
+		(start 167.64 151.13)
+		(end 222.25 156.21)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "378caf61-d81b-4b32-b443-29aa01924400")
+	)
+	(polyline
+		(pts
+			(xy 166.64 153.07) (xy 167.64 153.67) (xy 166.64 154.27)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "41bcb2ab-2bb3-44f0-b672-8259097453df")
+	)
+	(polyline
+		(pts
+			(xy 166.64 160.69) (xy 167.64 161.29) (xy 166.64 161.89)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "45d5d247-fbac-44d6-99c4-576b7c8ba3d7")
+	)
+	(rectangle
+		(start 167.64 143.51)
+		(end 222.25 148.59)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "47c69076-e7d6-47b6-a76d-58af4272ee00")
+	)
+	(polyline
+		(pts
+			(xy 123.46 147.99) (xy 124.46 148.59) (xy 123.46 149.19)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "506542ad-3cc3-47ac-bc22-a71fc5660b9a")
+	)
+	(polyline
+		(pts
+			(xy 116.84 153.67) (xy 120.65 153.67) (xy 120.65 168.91) (xy 124.46 168.91)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "56b9e562-3db1-479e-91f1-e9654bfcb35d")
+	)
+	(polyline
+		(pts
+			(xy 84.09 153.07) (xy 85.09 153.67) (xy 84.09 154.27)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "5758bb4e-0472-46d5-b1c5-07a929af665a")
+	)
+	(polyline
+		(pts
+			(xy 116.84 153.67) (xy 120.65 153.67) (xy 120.65 148.59) (xy 124.46 148.59)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "5921758b-0380-4dd2-b774-1a47fdd04450")
+	)
+	(rectangle
+		(start 41.91 156.21)
+		(end 78.74 161.29)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "61e4009c-407c-4f5d-bd07-83690cc6f13e")
+	)
+	(rectangle
+		(start 229.87 209.55)
+		(end 383.54 248.92)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "62abd037-dfe1-4ef1-a2bf-cfaef47ef445")
+	)
+	(polyline
+		(pts
+			(xy 78.74 158.75) (xy 81.915 158.75) (xy 81.915 153.67) (xy 85.09 153.67)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "648d7311-ba06-4a79-b1c0-aab0b3c698d9")
+	)
+	(rectangle
+		(start 124.46 166.37)
+		(end 158.75 171.45)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "71b1d924-c4c9-4f71-bc43-7daa679a3a90")
+	)
+	(rectangle
+		(start 285.75 176.53)
+		(end 316.23 181.61)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "7d204a42-60d6-45ec-b3f4-6af98b716e9f")
+	)
+	(polyline
+		(pts
+			(xy 78.74 148.59) (xy 81.915 148.59) (xy 81.915 153.67) (xy 85.09 153.67)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "8d482502-d20d-43ca-bf73-38538f0b1613")
+	)
+	(rectangle
+		(start 85.09 151.13)
+		(end 116.84 156.21)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "a5b43b3c-ec31-4d81-bbe1-68fa672ebbb9")
+	)
+	(rectangle
+		(start 41.91 216.79)
+		(end 80.01 224.41)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "aa1b8e4a-967c-4115-8645-af0ed744b48b")
+	)
+	(polyline
+		(pts
+			(xy 84.09 153.07) (xy 85.09 153.67) (xy 84.09 154.27)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "abc4bd27-872f-406c-a2dc-26fdbe040cbb")
+	)
+	(polyline
+		(pts
+			(xy 123.46 168.31) (xy 124.46 168.91) (xy 123.46 169.51)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "b6684ec0-32f9-4116-8565-6c1696dfd397")
+	)
+	(rectangle
+		(start 124.46 146.05)
+		(end 158.75 151.13)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "c7be44d8-0906-44b6-bca7-965125221795")
+	)
+	(rectangle
+		(start 229.87 138.43)
+		(end 383.54 207.01)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "cf85d972-b728-492e-8899-da803b7477c3")
+	)
+	(rectangle
+		(start 236.22 176.53)
+		(end 266.7 181.61)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "e4ac31c6-f218-459c-bfba-1eea1cd5baca")
+	)
+	(rectangle
+		(start 41.91 146.05)
+		(end 78.74 151.13)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "ebac5861-12df-4be6-827d-171fec9950fb")
+	)
+	(polyline
+		(pts
+			(xy 158.75 148.59) (xy 163.195 148.59) (xy 163.195 153.67) (xy 167.64 153.67)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "ee705a35-90bd-4b71-b146-3c84bb44d8e8")
+	)
+	(rectangle
+		(start 335.28 176.53)
+		(end 365.76 181.61)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "f67d1e24-18d8-4228-bdf3-0042734666d5")
+	)
+	(text "VBAT_MCU = max(+3V3, AFE_REG1) - 0.3 V (D109); AFE_REG1 from U201 (sheet 02).\n+5V_USB only from the service USB-C (sheet 06, GND_USB domain).\nPWR_EN latch (sheet 01) enables U101; +12V / +3V3_ESP / +5V_ISO are MCU-switched leaves."
+		(exclude_from_sim no)
+		(at 41.91 176.53 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "0292a565-92fc-4fb7-987c-32a5a086a6ed")
+	)
+	(text "Each pair meets only through an isolator (functional barrier for USB, CPG 4 mm)."
+		(exclude_from_sim no)
+		(at 233.68 186.69 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "054e0459-e35d-41ec-b1f3-f8468910c1f9")
+	)
+	(text "POWER BOARD  04 07"
+		(exclude_from_sim no)
+		(at 125.73 218.39 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "11ca1bdc-93a0-421d-b9ed-5c3ae8d95cdc")
+	)
+	(text "+5V_ISO  U105 + U106 B0505S (EN_ISO)"
+		(exclude_from_sim no)
+		(at 168.91 160.35 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "232a0ebb-ad96-45e4-9075-996c66fbe469")
+	)
+	(text "+3V3_ESP  U104 TLV62569 (EN_ESP)"
+		(exclude_from_sim no)
+		(at 168.91 152.73 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "2349ada7-3f11-4df0-8b16-dbb81f9626f5")
+	)
+	(text "CONTROL BOARD  01-03 05 06 08-10"
+		(exclude_from_sim no)
+		(at 43.18 218.39 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "23c2ae76-4e6e-4b74-86b6-c818ce35e81f")
+	)
+	(text "BAT- (power copper, global label) is not a rail: it is the GND_PWR node beyond NT401."
+		(exclude_from_sim no)
+		(at 233.68 194.31 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "248a2ca5-a68f-4c94-a494-e1e14fb5720e")
+	)
+	(text "J206 = J701"
+		(exclude_from_sim no)
+		(at 87.63 221.74 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "2ce84378-d810-4c1d-a433-cebebd9f13ce")
+	)
+	(text "GND_PWR - signal ground of both boards (AFE VSS, MCU, B2B pins 13 / 17 / 30).\n      Joins the 200 A copper BAT- at one net tie only: NT401 (sheet 04, shunt Kelvin edge).\nGND_ISO - CAN / RS-485 bus side: U106 B0505S output (sheet 01), barriers U601-U604 (sheet 06).\nGND_USB - service USB-C only: barrier U606 ISO7721 (sheet 06).\nCHASSIS - RJ45 shields + MH601-MH604 (control), MH701-MH706 (power);\n      1 nF 2 kV // 1 MOhm to GND_ISO (C618 / R626, sheet 06)."
+		(exclude_from_sim no)
+		(at 233.68 144.78 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "380151d3-1eba-45a7-affa-1cc328b828fe")
+	)
+	(text "Any input low = FETs off; every input has a fail-safe pull-down."
+		(exclude_from_sim no)
+		(at 233.68 235.71 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "3c49ee9f-46d6-4382-b576-338ed6e3e452")
+	)
+	(text "2 x 15, 2.54 mm"
+		(exclude_from_sim no)
+		(at 85.09 217.17 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "499509c0-b526-45a1-a0da-3237099c5610")
+	)
+	(text "VSUP  (D101 / D102 OR)"
+		(exclude_from_sim no)
+		(at 86.36 152.73 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "4da83191-5970-45b2-855a-75608ed9ff85")
+	)
+	(text "Power tree (sheet 01 unless noted)"
+		(exclude_from_sim no)
+		(at 39.37 139.7 0)
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+				(color 0 0 132 1)
+			)
+			(justify left top)
+		)
+		(uuid "706b1f0e-0b3f-44a7-ae5a-889222e8d271")
+	)
+	(text "Power board: +3V3, +3V3_A, +12V, GND_PWR over J206 / J701; VSUP_TAP back from F701 at the B+ lug."
+		(exclude_from_sim no)
+		(at 41.91 194.31 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "773dfac1-1275-4f09-ba4a-3b49106a1034")
+	)
+	(text "Wake chain and kill chain"
+		(exclude_from_sim no)
+		(at 231.14 210.82 0)
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+				(color 0 0 132 1)
+			)
+			(justify left top)
+		)
+		(uuid "7bda4c93-b361-4f1c-aa0f-1471c385cff8")
+	)
+	(text "WAKE: WAKE_BTN_N (Q101) / AFE_ALERT (Q102) / AUX_IN / PWR_HOLD -> diode OR -> PWR_EN\n      -> U101 EN -> +5V -> +3V3 -> MCU boots -> PWR_HOLD high holds the latch (sheet 01)."
+		(exclude_from_sim no)
+		(at 233.68 216.79 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "81c71c54-4464-40f9-9b68-42eb46f6b194")
+	)
+	(text "KILL: FET_EN . OC_TRIP_N . MCU_NRST -> U701 -> AFE_DFETOFF;  . AFE_FLT_DSG_N . AFE_FLT_CHG_N\n      -> U702 -> KILL_N -> U703 -> 07_KILL -> gate-kill P-FETs turn off CHG + DSG banks (sheet 07)."
+		(exclude_from_sim no)
+		(at 233.68 226.06 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "8226e599-adaa-4010-ab37-cebb60c1185a")
+	)
+	(text "Ground domains (never merged)"
+		(exclude_from_sim no)
+		(at 231.14 139.7 0)
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+				(color 0 0 132 1)
+			)
+			(justify left top)
+		)
+		(uuid "89747667-d756-4c45-ae1a-d6684fa7377f")
+	)
+	(text "VSUP_TAP  (J206-1, F701)"
+		(exclude_from_sim no)
+		(at 43.18 147.65 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "8e45166a-1a73-4092-b9f7-ee6ce3813d88")
+	)
+	(text "+5V  U101 LM5013-Q1"
+		(exclude_from_sim no)
+		(at 125.73 147.65 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "974eeaba-a95d-4c27-b60b-3ed77d3b98a9")
+	)
+	(text "AUX_IN  (J101, F101)"
+		(exclude_from_sim no)
+		(at 43.18 157.81 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "99ec89df-6064-4411-acb9-be78e4508f72")
+	)
+	(text "GND_ISO"
+		(exclude_from_sim no)
+		(at 237.49 178.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "9d77e22c-7a1c-4c4b-a236-4e03a2a1eee2")
+	)
+	(text "U601-U604\n5 kVrms"
+		(exclude_from_sim no)
+		(at 268.22 176.03 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "9ee732cd-1b64-45e3-a58f-133892ec4fc9")
+	)
+	(text "GND_PWR"
+		(exclude_from_sim no)
+		(at 287.02 178.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "a384230f-7d98-4ba9-b4eb-9b59ec836199")
+	)
+	(text "+12V  U102 (EN_12V)"
+		(exclude_from_sim no)
+		(at 125.73 167.97 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "b4722e7a-9d3a-495c-aacf-a5628f71660b")
+	)
+	(text "U606 ISO7721\nCPG 4 mm"
+		(exclude_from_sim no)
+		(at 317.72 176.03 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "bf62174e-a440-4f74-8e53-859efd6dc01a")
+	)
+	(text "Pin n <-> pin n. Pins 1-8 HV group: VSUP_TAP, AFE_PACK, AFE_CHG, AFE_DSG (x2), AFE_PCHG,\nAFE_PDSG, AFE_LD; pins 9-10 empty creepage gap.\nPins 11-30 LV: SHUNT_K_BAT / _PACK, ISENSE_OUT, NTC_FET, NTC_SHUNT, +3V3_A, OC_TRIP_N, OC_CLR,\nFET_EN, MCU_NRST, AFE_FLT_DSG_N / _CHG_N, AFE_DFETOFF, KILL_N, HEATER_EN, +3V3, +12V, GND_PWR x3.\nPower board adds fail-safe pull-downs on FET_EN, MCU_NRST, AFE_FLT_*_N, HEATER_EN."
+		(exclude_from_sim no)
+		(at 41.91 227.33 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "c972f5db-64bd-4463-b8f1-3e92d342feba")
+	)
+	(text "GND_USB"
+		(exclude_from_sim no)
+		(at 336.55 178.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "d414ffd3-d1bd-469b-98a4-5e454f1030a8")
+	)
+	(text "CONTROL BOARD - sheets 01 02 03 05 06 08 09 10\nSheets 04 Current Sensing and 07 Power Stage are in the power_board project.\nThe boards meet at J206 (sheet 02, male) = J701 (sheet 07, female), 2 x 15 pin.\nAll rails are power symbols; cross-sheet signals are global labels."
+		(exclude_from_sim no)
+		(at 38.1 256.54 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "e46a6779-c577-5b2c-ac3d-201c5193e524")
+	)
+	(text "Board-to-board  J206 (sheet 02, male) <-> J701 (sheet 07, female)"
+		(exclude_from_sim no)
+		(at 39.37 210.82 0)
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+				(color 0 0 132 1)
+			)
+			(justify left top)
+		)
+		(uuid "f04aefd1-abc6-4b92-a12f-fb2dbb95b5a0")
+	)
+	(text "+3V3  U103 TPS7B82 -> +3V3_A (FB101)"
+		(exclude_from_sim no)
+		(at 168.91 145.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "fe53d2e4-c999-4f1a-a5ea-7fbea2c8bcdb")
+	)
+	(polyline
+		(pts
+			(xy 266.7 179.07) (xy 285.75 179.07)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(uuid "3490f7aa-a14c-4031-92fa-76fdf0c60c90")
+	)
+	(polyline
+		(pts
+			(xy 316.23 179.07) (xy 335.28 179.07)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(uuid "e32e9cf3-1dc6-4e7b-a218-407c6eb1ca98")
+	)
+	(polyline
+		(pts
+			(xy 80.01 220.6) (xy 124.46 220.6)
+		)
+		(stroke
+			(width 0.6)
+			(type solid)
+			(color 0 0 132 1)
+		)
+		(uuid "fae2fc2a-a135-47cd-a903-b53dc7a2e59e")
+	)
+	(sheet
+		(at 119.38 50.8)
+		(size 63.5 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "31d8d49b-339e-4e55-aff4-e5e38a9f60e4")
+		(property "Sheetname" "AFE_Cell_Monitor"
+			(at 119.38 50.165 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "02_AFE_Cell_Monitor.kicad_sch"
+			(at 119.38 76.835 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 38.1 101.6)
+		(size 63.5 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "5dcf46bf-7392-489e-b68d-2f07bc50ec76")
+		(property "Sheetname" "Communications"
+			(at 38.1 100.965 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "06_Communications.kicad_sch"
+			(at 38.1 127.635 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "6")
+				)
+			)
+		)
+	)
 	(sheet
 		(at 38.1 50.8)
 		(size 63.5 25.4)
@@ -59,7 +950,7 @@
 		)
 	)
 	(sheet
-		(at 119.38 50.8)
+		(at 119.38 101.6)
 		(size 63.5 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -73,9 +964,9 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "31d8d49b-339e-4e55-aff4-e5e38a9f60e4")
-		(property "Sheetname" "AFE_Cell_Monitor"
-			(at 119.38 50.165 0)
+		(uuid "71ace6a4-67a6-5ab3-99c1-88d53f19bbe1")
+		(property "Sheetname" "IO_Front_Panel"
+			(at 119.38 100.965 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -85,8 +976,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "02_AFE_Cell_Monitor.kicad_sch"
-			(at 119.38 76.835 0)
+		(property "Sheetfile" "08_IO_Front_Panel.kicad_sch"
+			(at 119.38 127.635 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -99,7 +990,99 @@
 		(instances
 			(project "Automotive_ESS_BMS"
 				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
-					(page "3")
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 281.94 101.6)
+		(size 63.5 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "71b2bb4c-f355-5e55-8f8d-6cc961d24c4d")
+		(property "Sheetname" "Memory_Sensors"
+			(at 281.94 100.965 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "10_Memory_Sensors.kicad_sch"
+			(at 281.94 127.635 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 200.66 101.6)
+		(size 63.5 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "859e7e13-61ac-527a-a26d-29e48a8b43e7")
+		(property "Sheetname" "Wireless"
+			(at 200.66 100.965 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "09_Wireless.kicad_sch"
+			(at 200.66 127.635 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Automotive_ESS_BMS"
+				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
+					(page "8")
 				)
 			)
 		)
@@ -196,265 +1179,6 @@
 			)
 		)
 	)
-	(sheet
-		(at 38.1 101.6)
-		(size 63.5 25.4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "5dcf46bf-7392-489e-b68d-2f07bc50ec76")
-		(property "Sheetname" "Communications"
-			(at 38.1 100.965 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "06_Communications.kicad_sch"
-			(at 38.1 127.635 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
-					(page "6")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 119.38 101.6)
-		(size 63.5 25.4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "71ace6a4-67a6-5ab3-99c1-88d53f19bbe1")
-		(property "Sheetname" "IO_Front_Panel"
-			(at 119.38 100.965 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "08_IO_Front_Panel.kicad_sch"
-			(at 119.38 127.635 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
-					(page "7")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 200.66 101.6)
-		(size 63.5 25.4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "859e7e13-61ac-527a-a26d-29e48a8b43e7")
-		(property "Sheetname" "Wireless"
-			(at 200.66 100.965 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "09_Wireless.kicad_sch"
-			(at 200.66 127.635 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
-					(page "8")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 281.94 101.6)
-		(size 63.5 25.4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "71b2bb4c-f355-5e55-8f8d-6cc961d24c4d")
-		(property "Sheetname" "Memory_Sensors"
-			(at 281.94 100.965 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "10_Memory_Sensors.kicad_sch"
-			(at 281.94 127.635 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "Automotive_ESS_BMS"
-				(path "/3d230c7b-fb77-475b-887e-a4c7f611181b"
-					(page "9")
-				)
-			)
-		)
-	)
-	(text "CONTROL BOARD - sheets 01 02 03 05 06 08 09 10\nSheets 04 Current Sensing and 07 Power Stage are in the power_board project.\nThe boards meet at J206 (sheet 02, male) = J701 (sheet 07, female), 2 x 15 pin.\nAll rails are power symbols; cross-sheet signals are global labels."
-		(exclude_from_sim no)
-		(at 38.1 256.54 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left top)
-		)
-		(uuid "e46a6779-c577-5b2c-ac3d-201c5193e524")
-	)
-	(rectangle (start 38.1 138.43) (end 226.06 207.01) (stroke (width 0.254) (type dash) (color 0 0 132 1)) (fill (type none)) (uuid "1c6d437e-5f00-40dc-94f1-4c5b4a4cc9b9"))
-	(text "Power tree (sheet 01 unless noted)" (exclude_from_sim no) (at 39.370000000000005 139.70000000000002 0) (effects (font (size 1 1) (bold yes) (color 0 0 132 1)) (justify left top)) (uuid "706b1f0e-0b3f-44a7-ae5a-889222e8d271"))
-	(rectangle (start 41.91 146.05) (end 78.74 151.13) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "ebac5861-12df-4be6-827d-171fec9950fb"))
-	(text "VSUP_TAP  (J206-1, F701)" (exclude_from_sim no) (at 43.18 147.65 0) (effects (font (size 1 1)) (justify left top)) (uuid "8e45166a-1a73-4092-b9f7-ee6ce3813d88"))
-	(rectangle (start 41.91 156.21) (end 78.74 161.29) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "61e4009c-407c-4f5d-bd07-83690cc6f13e"))
-	(text "AUX_IN  (J101, F101)" (exclude_from_sim no) (at 43.18 157.81 0) (effects (font (size 1 1)) (justify left top)) (uuid "99ec89df-6064-4411-acb9-be78e4508f72"))
-	(rectangle (start 85.09 151.13) (end 116.84 156.21) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "a5b43b3c-ec31-4d81-bbe1-68fa672ebbb9"))
-	(text "VSUP  (D101 / D102 OR)" (exclude_from_sim no) (at 86.36 152.73 0) (effects (font (size 1 1)) (justify left top)) (uuid "4da83191-5970-45b2-855a-75608ed9ff85"))
-	(rectangle (start 124.46 146.05) (end 158.75 151.13) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "c7be44d8-0906-44b6-bca7-965125221795"))
-	(text "+5V  U101 LM5013-Q1" (exclude_from_sim no) (at 125.72999999999999 147.65 0) (effects (font (size 1 1)) (justify left top)) (uuid "974eeaba-a95d-4c27-b60b-3ed77d3b98a9"))
-	(rectangle (start 124.46 166.37) (end 158.75 171.45) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "71b1d924-c4c9-4f71-bc43-7daa679a3a90"))
-	(text "+12V  U102 (EN_12V)" (exclude_from_sim no) (at 125.72999999999999 167.97 0) (effects (font (size 1 1)) (justify left top)) (uuid "b4722e7a-9d3a-495c-aacf-a5628f71660b"))
-	(rectangle (start 167.64 143.51) (end 222.25 148.59) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "47c69076-e7d6-47b6-a76d-58af4272ee00"))
-	(text "+3V3  U103 TPS7B82 -> +3V3_A (FB101)" (exclude_from_sim no) (at 168.91 145.10999999999999 0) (effects (font (size 1 1)) (justify left top)) (uuid "fe53d2e4-c999-4f1a-a5ea-7fbea2c8bcdb"))
-	(rectangle (start 167.64 151.13) (end 222.25 156.21) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "378caf61-d81b-4b32-b443-29aa01924400"))
-	(text "+3V3_ESP  U104 TLV62569 (EN_ESP)" (exclude_from_sim no) (at 168.91 152.73 0) (effects (font (size 1 1)) (justify left top)) (uuid "2349ada7-3f11-4df0-8b16-dbb81f9626f5"))
-	(rectangle (start 167.64 158.75) (end 222.25 163.83) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "14105882-1472-4936-bd10-cf6b2b3a68cb"))
-	(text "+5V_ISO  U105 + U106 B0505S (EN_ISO)" (exclude_from_sim no) (at 168.91 160.35 0) (effects (font (size 1 1)) (justify left top)) (uuid "232a0ebb-ad96-45e4-9075-996c66fbe469"))
-	(polyline (pts (xy 78.74 148.59) (xy 81.915 148.59) (xy 81.915 153.67) (xy 85.09 153.67)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "8d482502-d20d-43ca-bf73-38538f0b1613"))
-	(polyline (pts (xy 84.09 153.07) (xy 85.09 153.67) (xy 84.09 154.26999999999998)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "abc4bd27-872f-406c-a2dc-26fdbe040cbb"))
-	(polyline (pts (xy 78.74 158.75) (xy 81.915 158.75) (xy 81.915 153.67) (xy 85.09 153.67)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "648d7311-ba06-4a79-b1c0-aab0b3c698d9"))
-	(polyline (pts (xy 84.09 153.07) (xy 85.09 153.67) (xy 84.09 154.26999999999998)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "5758bb4e-0472-46d5-b1c5-07a929af665a"))
-	(polyline (pts (xy 116.84 153.67) (xy 120.65 153.67) (xy 120.65 148.59) (xy 124.46 148.59)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "5921758b-0380-4dd2-b774-1a47fdd04450"))
-	(polyline (pts (xy 123.46 147.99) (xy 124.46 148.59) (xy 123.46 149.19)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "506542ad-3cc3-47ac-bc22-a71fc5660b9a"))
-	(polyline (pts (xy 116.84 153.67) (xy 120.65 153.67) (xy 120.65 168.91) (xy 124.46 168.91)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "56b9e562-3db1-479e-91f1-e9654bfcb35d"))
-	(polyline (pts (xy 123.46 168.31) (xy 124.46 168.91) (xy 123.46 169.51)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "b6684ec0-32f9-4116-8565-6c1696dfd397"))
-	(polyline (pts (xy 158.75 148.59) (xy 163.195 148.59) (xy 163.195 146.05) (xy 167.64 146.05)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "305d960b-a1e0-4a34-a9df-ab34edecee20"))
-	(polyline (pts (xy 166.64 145.45000000000002) (xy 167.64 146.05) (xy 166.64 146.65)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "0c871be8-a33b-4ef8-bf4b-b96ec77a7ff7"))
-	(polyline (pts (xy 158.75 148.59) (xy 163.195 148.59) (xy 163.195 153.67) (xy 167.64 153.67)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "ee705a35-90bd-4b71-b146-3c84bb44d8e8"))
-	(polyline (pts (xy 166.64 153.07) (xy 167.64 153.67) (xy 166.64 154.26999999999998)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "41bcb2ab-2bb3-44f0-b672-8259097453df"))
-	(polyline (pts (xy 158.75 148.59) (xy 163.195 148.59) (xy 163.195 161.29) (xy 167.64 161.29)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "16b52bc6-8f99-4de8-8d3a-16572efd81e1"))
-	(polyline (pts (xy 166.64 160.69) (xy 167.64 161.29) (xy 166.64 161.89)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "45d5d247-fbac-44d6-99c4-576b7c8ba3d7"))
-	(text "VBAT_MCU = max(+3V3, AFE_REG1) - 0.3 V (D109); AFE_REG1 from U201 (sheet 02).\n+5V_USB only from the service USB-C (sheet 06, GND_USB domain).\nPWR_EN latch (sheet 01) enables U101; +12V / +3V3_ESP / +5V_ISO are MCU-switched leaves." (exclude_from_sim no) (at 41.91 176.53 0) (effects (font (size 1 1)) (justify left top)) (uuid "0292a565-92fc-4fb7-987c-32a5a086a6ed"))
-	(text "Power board: +3V3, +3V3_A, +12V, GND_PWR over J206 / J701; VSUP_TAP back from F701 at the B+ lug." (exclude_from_sim no) (at 41.91 194.31 0) (effects (font (size 1 1)) (justify left top)) (uuid "773dfac1-1275-4f09-ba4a-3b49106a1034"))
-	(rectangle (start 229.87 138.43) (end 383.54 207.01) (stroke (width 0.254) (type dash) (color 0 0 132 1)) (fill (type none)) (uuid "cf85d972-b728-492e-8899-da803b7477c3"))
-	(text "Ground domains (never merged)" (exclude_from_sim no) (at 231.14000000000001 139.70000000000002 0) (effects (font (size 1 1) (bold yes) (color 0 0 132 1)) (justify left top)) (uuid "89747667-d756-4c45-ae1a-d6684fa7377f"))
-	(text "GND_PWR - signal ground of both boards (AFE VSS, MCU, B2B pins 13 / 17 / 30).\n      Joins the 200 A copper BAT- at one net tie only: NT401 (sheet 04, shunt Kelvin edge).\nGND_ISO - CAN / RS-485 bus side: U106 B0505S output (sheet 01), barriers U601-U604 (sheet 06).\nGND_USB - service USB-C only: barrier U606 ISO7721 (sheet 06).\nCHASSIS - RJ45 shields + MH601-MH604 (control), MH701-MH706 (power);\n      1 nF 2 kV // 1 MOhm to GND_ISO (C618 / R626, sheet 06)." (exclude_from_sim no) (at 233.68 144.78 0) (effects (font (size 1 1)) (justify left top)) (uuid "380151d3-1eba-45a7-affa-1cc328b828fe"))
-	(rectangle (start 236.22 176.53) (end 266.7 181.61) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "e4ac31c6-f218-459c-bfba-1eea1cd5baca"))
-	(text "GND_ISO" (exclude_from_sim no) (at 237.49 178.13 0) (effects (font (size 1 1)) (justify left top)) (uuid "9d77e22c-7a1c-4c4b-a236-4e03a2a1eee2"))
-	(rectangle (start 285.75 176.53) (end 316.23 181.61) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "7d204a42-60d6-45ec-b3f4-6af98b716e9f"))
-	(text "GND_PWR" (exclude_from_sim no) (at 287.02 178.13 0) (effects (font (size 1 1)) (justify left top)) (uuid "a384230f-7d98-4ba9-b4eb-9b59ec836199"))
-	(rectangle (start 335.28 176.53) (end 365.76 181.61) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "f67d1e24-18d8-4228-bdf3-0042734666d5"))
-	(text "GND_USB" (exclude_from_sim no) (at 336.54999999999995 178.13 0) (effects (font (size 1 1)) (justify left top)) (uuid "d414ffd3-d1bd-469b-98a4-5e454f1030a8"))
-	(text "U601-U604\n5 kVrms" (exclude_from_sim no) (at 268.22 176.03 0) (effects (font (size 1 1)) (justify left top)) (uuid "9ee732cd-1b64-45e3-a58f-133892ec4fc9"))
-	(text "U606 ISO7721\nCPG 4 mm" (exclude_from_sim no) (at 317.72 176.03 0) (effects (font (size 1 1)) (justify left top)) (uuid "bf62174e-a440-4f74-8e53-859efd6dc01a"))
-	(polyline (pts (xy 266.7 179.07) (xy 285.75 179.07)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "3490f7aa-a14c-4031-92fa-76fdf0c60c90"))
-	(polyline (pts (xy 316.23 179.07) (xy 335.28 179.07)) (stroke (width 0.254) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "e32e9cf3-1dc6-4e7b-a218-407c6eb1ca98"))
-	(text "Each pair meets only through an isolator (functional barrier for USB, CPG 4 mm)." (exclude_from_sim no) (at 233.68 186.69 0) (effects (font (size 1 1)) (justify left top)) (uuid "054e0459-e35d-41ec-b1f3-f8468910c1f9"))
-	(text "BAT- (power copper, global label) is not a rail: it is the GND_PWR node beyond NT401." (exclude_from_sim no) (at 233.68 194.31 0) (effects (font (size 1 1)) (justify left top)) (uuid "248a2ca5-a68f-4c94-a494-e1e14fb5720e"))
-	(rectangle (start 38.1 209.55) (end 226.06 248.92) (stroke (width 0.254) (type dash) (color 0 0 132 1)) (fill (type none)) (uuid "2c8a072d-5eb7-409e-9f35-e90e2dfb6560"))
-	(text "Board-to-board  J206 (sheet 02, male) <-> J701 (sheet 07, female)" (exclude_from_sim no) (at 39.370000000000005 210.82000000000002 0) (effects (font (size 1 1) (bold yes) (color 0 0 132 1)) (justify left top)) (uuid "f04aefd1-abc6-4b92-a12f-fb2dbb95b5a0"))
-	(rectangle (start 41.91 216.79) (end 80.01 224.41) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "aa1b8e4a-967c-4115-8645-af0ed744b48b"))
-	(text "CONTROL BOARD  01-03 05 06 08-10" (exclude_from_sim no) (at 43.18 218.39 0) (effects (font (size 1 1)) (justify left top)) (uuid "23c2ae76-4e6e-4b74-86b6-c818ce35e81f"))
-	(rectangle (start 124.46 216.79) (end 162.56 224.41) (stroke (width 0.1524) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "29fb326e-0a85-47b8-ab05-06c9361255d2"))
-	(text "POWER BOARD  04 07" (exclude_from_sim no) (at 125.72999999999999 218.39 0) (effects (font (size 1 1)) (justify left top)) (uuid "11ca1bdc-93a0-421d-b9ed-5c3ae8d95cdc"))
-	(polyline (pts (xy 80.01 220.6) (xy 124.46 220.6)) (stroke (width 0.6) (type solid) (color 0 0 132 1)) (fill (type none)) (uuid "fae2fc2a-a135-47cd-a903-b53dc7a2e59e"))
-	(text "2 x 15, 2.54 mm" (exclude_from_sim no) (at 85.09 217.17 0) (effects (font (size 1 1)) (justify left top)) (uuid "499509c0-b526-45a1-a0da-3237099c5610"))
-	(text "J206 = J701" (exclude_from_sim no) (at 87.63 221.74 0) (effects (font (size 1 1)) (justify left top)) (uuid "2ce84378-d810-4c1d-a433-cebebd9f13ce"))
-	(text "Pin n <-> pin n. Pins 1-8 HV group: VSUP_TAP, AFE_PACK, AFE_CHG, AFE_DSG (x2), AFE_PCHG,\nAFE_PDSG, AFE_LD; pins 9-10 empty creepage gap.\nPins 11-30 LV: SHUNT_K_BAT / _PACK, ISENSE_OUT, NTC_FET, NTC_SHUNT, +3V3_A, OC_TRIP_N, OC_CLR,\nFET_EN, MCU_NRST, AFE_FLT_DSG_N / _CHG_N, AFE_DFETOFF, KILL_N, HEATER_EN, +3V3, +12V, GND_PWR x3.\nPower board adds fail-safe pull-downs on FET_EN, MCU_NRST, AFE_FLT_*_N, HEATER_EN." (exclude_from_sim no) (at 41.91 227.33 0) (effects (font (size 1 1)) (justify left top)) (uuid "c972f5db-64bd-4463-b8f1-3e92d342feba"))
-	(rectangle (start 229.87 209.55) (end 383.54 248.92) (stroke (width 0.254) (type dash) (color 0 0 132 1)) (fill (type none)) (uuid "62abd037-dfe1-4ef1-a2bf-cfaef47ef445"))
-	(text "Wake chain and kill chain" (exclude_from_sim no) (at 231.14000000000001 210.82000000000002 0) (effects (font (size 1 1) (bold yes) (color 0 0 132 1)) (justify left top)) (uuid "7bda4c93-b361-4f1c-aa0f-1471c385cff8"))
-	(text "WAKE: WAKE_BTN_N (Q101) / AFE_ALERT (Q102) / AUX_IN / PWR_HOLD -> diode OR -> PWR_EN\n      -> U101 EN -> +5V -> +3V3 -> MCU boots -> PWR_HOLD high holds the latch (sheet 01)." (exclude_from_sim no) (at 233.68 216.79 0) (effects (font (size 1 1)) (justify left top)) (uuid "81c71c54-4464-40f9-9b68-42eb46f6b194"))
-	(text "KILL: FET_EN . OC_TRIP_N . MCU_NRST -> U701 -> AFE_DFETOFF;  . AFE_FLT_DSG_N . AFE_FLT_CHG_N\n      -> U702 -> KILL_N -> U703 -> 07_KILL -> gate-kill P-FETs turn off CHG + DSG banks (sheet 07)." (exclude_from_sim no) (at 233.68 226.06 0) (effects (font (size 1 1)) (justify left top)) (uuid "8226e599-adaa-4010-ab37-cebb60c1185a"))
-	(text "Any input low = FETs off; every input has a fail-safe pull-down." (exclude_from_sim no) (at 233.68 235.71 0) (effects (font (size 1 1)) (justify left top)) (uuid "3c49ee9f-46d6-4382-b576-338ed6e3e452"))
 	(sheet_instances
 		(path "/"
 			(page "1")
